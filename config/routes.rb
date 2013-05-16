@@ -1,4 +1,16 @@
 GoninisB1::Application.routes.draw do
+  resources :jobs
+
+  resources :job_categories
+
+  resources :bathrooms
+
+  resources :rooms
+
+  resources :floors
+
+  resources :levels
+
   get "tasks/show"
   get "tasks/add"
   # The priority is based upon order of creation: first created -> highest priority.

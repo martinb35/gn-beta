@@ -1,0 +1,81 @@
+<%= form_for(@job) do |f| %>
+  <% if @job.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@job.errors.count, "error") %> prohibited this job from being saved:</h2>
+
+      <ul>
+      <% @job.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :level %><br>
+    <%= f.number_field :level %>
+  </div>
+  <div class="field">
+    <%= f.label :floor %><br>
+    <%= f.number_field :floor %>
+  </div>
+  <div class="field">
+    <%= f.label :room %><br>
+    <%= f.number_field :room %>
+  </div>
+  <div class="field">
+    <%= f.label :bathroom %><br>
+    <%= f.number_field :bathroom %>
+  </div>
+  <div class="field">
+    <%= f.label :material %><br>
+    <%= f.check_box :material %>
+  </div>
+  <div class="field">
+    <%= f.label :notes %><br>
+    <%= f.text_field :notes %>
+  </div>
+  <div class="field">
+    <%= f.label :address %><br>
+    <%= f.text_field :address %>
+  </div>
+  <div class="field">
+    <%= f.label :location_ref %><br>
+    <%= f.text_field :location_ref %>
+  </div>
+  <div class="field">
+    <%= f.label :second_address %><br>
+    <%= f.text_field :second_address %>
+  </div>
+  <div class="field">
+    <%= f.label :stored_address %><br>
+    <%= f.number_field :stored_address %>
+  </div>
+  <div class="field">
+    <%= f.label :map %><br>
+    <%= f.text_field :map %>
+  </div>
+  <div class="field">
+    <%= f.label :when %><br>
+    <%= f.datetime_select :when %>
+  </div>
+  <div class="field">
+    <%= f.label :offer %><br>
+    <%= f.text_field :offer %>
+  </div>
+  <div class="field">
+    <%= f.label :private %><br>
+    <%= f.check_box :private %>
+  </div>
+  <div class="field">
+    <%= f.label :auto_assign %><br>
+    <%= f.check_box :auto_assign %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

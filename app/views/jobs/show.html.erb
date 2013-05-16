@@ -1,0 +1,84 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @job.title %>
+</p>
+
+<p>
+  <strong>Level:</strong>
+  <%= @job.level %>
+</p>
+
+<p>
+  <strong>Floor:</strong>
+  <%= @job.floor %>
+</p>
+
+<p>
+  <strong>Room:</strong>
+  <%= @job.room %>
+</p>
+
+<p>
+  <strong>Bathroom:</strong>
+  <%= @job.bathroom %>
+</p>
+
+<p>
+  <strong>Material:</strong>
+  <%= @job.material %>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @job.notes %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @job.address %>
+</p>
+
+<p>
+  <strong>Location ref:</strong>
+  <%= @job.location_ref %>
+</p>
+
+<p>
+  <strong>Second address:</strong>
+  <%= @job.second_address %>
+</p>
+
+<p>
+  <strong>Stored address:</strong>
+  <%= @job.stored_address %>
+</p>
+
+<p>
+  <strong>Map:</strong>
+  <%= @job.map %>
+</p>
+
+<p>
+  <strong>When:</strong>
+  <%= @job.when %>
+</p>
+
+<p>
+  <strong>Offer:</strong>
+  <%= @job.offer %>
+</p>
+
+<p>
+  <strong>Private:</strong>
+  <%= @job.private %>
+</p>
+
+<p>
+  <strong>Auto assign:</strong>
+  <%= @job.auto_assign %>
+</p>
+
+<%= link_to 'Edit', edit_job_path(@job) %> |
+<%= link_to 'Back', jobs_path %>
