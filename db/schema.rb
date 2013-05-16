@@ -11,12 +11,58 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130516230619) do
+ActiveRecord::Schema.define(version: 20130516231931) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "bathrooms", force: true do |t|
+    t.string   "title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "floors", force: true do |t|
+    t.string   "title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "job_categories", force: true do |t|
+    t.string   "title"
+    t.string   "icon"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "jobs", force: true do |t|
+    t.string   "title"
+    t.integer  "level"
+    t.integer  "floor"
+    t.integer  "room"
+    t.integer  "bathroom"
+    t.boolean  "material"
+    t.string   "notes"
+    t.string   "address"
+    t.string   "location_ref"
+    t.string   "second_address"
+    t.integer  "stored_address"
+    t.string   "map"
+    t.datetime "when"
+    t.decimal  "offer"
+    t.boolean  "private"
+    t.boolean  "auto_assign"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "levels", force: true do |t|
+    t.string   "title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "rooms", force: true do |t|
     t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
