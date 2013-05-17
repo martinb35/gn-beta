@@ -7,8 +7,12 @@
   <%= csrf_meta_tags %>
 </head>
 <body class='<%= controller.controller_name %>'>
-
-<%= yield %>
-
+  <div class="container">
+    <%= render(partial: "header") %>
+    <section>
+      <%= yield %>
+    </section>
+    <%= render(partial: "footer") %>
+  </div>
 </body>
 </html>
