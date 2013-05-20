@@ -37,6 +37,7 @@ a {
     color: #fff;
     background-color: #000;
   }
+  text-decoration:none;
 }
 
 div {
@@ -76,4 +77,10 @@ div {
     font-size: 12px;
     list-style: square;
   }
+}
+
+nav > ul > li {
+  float:left;
+  padding:10px 10px 0px 10px;
+  list-style:none;
 }
