@@ -11,3 +11,30 @@
  *= require_self
  *= require_tree .
  */
+
+/* Add Bitter Font */
+@import url(http://fonts.googleapis.com/css?family=Bitter&subset=latin,latin-ext);
+
+header {
+  height:38px;
+  background-image:url(/assets/images/header_bg_1x38.jpg);
+}
+header > nav > ul {
+  margin-left:35%;
+}
+header > nav > ul > li {
+  float:left;
+  padding:10px 10px 0px 10px;
+  list-style:none;
+}
+header > nav > ul > li.menu.divider {
+  padding:10px 0px 0px 0px;
+  color:#a1c142;
+}
+header > nav > ul > li > a:active,
+header > nav > ul > li > a:link,
+header > nav > ul > li > a:visited,
+header > nav > ul > li > a:hover {
+  color:#dfdfdf;
+  text-decoration:none;
+}

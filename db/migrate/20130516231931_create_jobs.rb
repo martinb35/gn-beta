@@ -14,7 +14,7 @@ class CreateJobs < ActiveRecord::Migration
       t.integer :stored_address
       t.string :map
       t.datetime :when
-      t.decimal :offer, scale: 2
+      t.decimal :offer, precision:8, scale: 2
       t.boolean :private
       t.boolean :auto_assign
 

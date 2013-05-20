@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(version: 20130516231931) do
     t.integer  "stored_address"
     t.string   "map"
     t.datetime "when"
-    t.decimal  "offer"
+    t.decimal  "offer",          precision: 8, scale: 2
     t.boolean  "private"
     t.boolean  "auto_assign"
     t.datetime "created_at"
