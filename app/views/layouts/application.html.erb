@@ -9,9 +9,7 @@
 <body class='<%= controller.controller_name %>'>
   <div class="container">
     <%= render(partial: "shared/header") %>
-    <section>
-      <%= yield %>
-    </section>
+    <%= yield %>
     <%= render(partial: "shared/footer") %>
   </div>
 </body>

@@ -1,3 +1,22 @@
 // Place all the styles related to the Tasks controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.logo {
+  background-position:0px -40px;
+  width:240px;
+  height:80px;
+}
+section#brand {
+  padding:30px;
+  height:187px;
+  h1 {
+    white-space: nowrap;
+    text-indent: -9999px;
+  }
+  div.clickable.ingresa {
+    background-position:0px -120px;
+    width:240px;
+    height:80px;
+  }
+}

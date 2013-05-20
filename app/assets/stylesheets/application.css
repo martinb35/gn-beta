@@ -72,7 +72,7 @@ div.clickable > a {
 footer > section.left {
   padding-right:400px;
 }
-footer > section.right > strong {
+footer > section.about > strong {
   padding:15px 10px 0px 10px;
   color:#a5c643;
 }
@@ -87,4 +87,7 @@ footer > section nav > ul > li > a:hover {
 }
 .left {
   float:left;
+}
+.right {
+  float:right;
 }

@@ -1,7 +1,12 @@
 <% if notice %>
   <p id="notice"><%= notice %></p>
 <% end %>
-<h1>Handys para tu hogar</h1>
+<section id="brand">
+  <h1 class="icon logo left">goninis | Beta privado</h1>
+  <div class="clickable icon ingresa right">
+    <a href="#">Ingresa</a>
+  </div>
+</section>
 <% @categories.each do |category| %>
 <div class="entry">
 <%= image_tag(category.icon) %> <h3><%= category.title %></h3>
