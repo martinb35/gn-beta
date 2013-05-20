@@ -15,9 +15,14 @@
 /* Add Bitter Font */
 @import url(http://fonts.googleapis.com/css?family=Bitter&subset=latin,latin-ext);
 
+div.container {
+  margin:0px;
+  padding:0px;
+}
 header {
   height:38px;
   background-image:url(/assets/images/header_bg_1x38.jpg);
+  margin-bottom:30px;
 }
 header > nav > ul {
   margin-left:35%;
@@ -90,4 +95,18 @@ footer > section nav > ul > li > a:hover {
 }
 .right {
   float:right;
+}
+section {
+  padding:0px 30px 0px 30px;
+}
+.clearfix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+.clearfix {
+  display: inline-block;
 }

@@ -7,9 +7,11 @@
     <a href="#">Ingresa</a>
   </div>
 </section>
+<section id="categories">
 <% @categories.each do |category| %>
-<div class="entry">
-<%= image_tag(category.icon) %> <h3><%= category.title %></h3>
-<%= sanitize(category.title) %>
-</div>
+  <div class="icon category <%= cycle("left", "right") -%>">
+    <%= image_tag(category.icon) %> 
+    <h3><%= category.title %></h3>
+  </div>
 <% end %>
+</section>
