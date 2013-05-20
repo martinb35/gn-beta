@@ -7,6 +7,15 @@
     <a href="#">Ingresa</a>
   </div>
 </section>
+<section id="instructions">
+  <div class="wrapper">
+    <div class="clickable icon pin">
+      <a href="#">&nbsp;</a>
+    </div>
+    <h2>Publica una tarea</h2>
+    <p>Lo que necesites,<br/> donde quieras<br/> y cuando quieras...</p>
+  </div>
+</section>
 <section id="categories">
 <% @categories.each do |category| %>
   <div class="icon category <%= cycle("left", "right") -%>">
@@ -14,4 +23,11 @@
     <h3><%= category.title %></h3>
   </div>
 <% end %>
+</section>
+<section id="pager">
+  <div class="right clickable icon question">
+    <a href="#">&nbsp;</a>
+  </div>
+  <h4 class="right">¿Otra tarea?</h4>
+  <div class="clearfix"></div>
 </section>
