@@ -126,6 +126,10 @@ div.container > form {
   div.field {
     clear:both;
     padding-top:10px;
+    input[type='radio'] {
+      margin-right:10px;
+      margin-top:10px;
+    }
   }
   div.field > label {
     width:130px;
