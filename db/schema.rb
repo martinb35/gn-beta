@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130516231931) do
+ActiveRecord::Schema.define(version: 20130522190012) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,6 +54,8 @@ ActiveRecord::Schema.define(version: 20130516231931) do
     t.boolean  "auto_assign"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "job_category"
+    t.integer  "floor_id"
   end
 
   create_table "levels", force: true do |t|
