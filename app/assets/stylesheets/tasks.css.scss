@@ -51,11 +51,17 @@ section#categories {
     img {
       margin:80px 0px 0px 100px;
     }
-    h3 {
+    p {
       font-size: 15px; font-size: 1.5rem; /* = 15px */
       text-align:center;
-      color:#006b85;
       padding-top:20px;
+      a:active,
+      a:link,
+      a:visited,
+      a:hover {
+        color:#006b85;
+        background-color:transparent;
+      }
     }
   }
 }

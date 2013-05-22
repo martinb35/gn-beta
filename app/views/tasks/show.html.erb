@@ -20,7 +20,7 @@
 <% @categories.each do |category| %>
   <div class="icon category <%= cycle("left", "right") -%>">
     <%= image_tag(category.icon) %> 
-    <h3><%= category.title %></h3>
+    <p><%= link_to category.title, new_job_path %></p>
   </div>
 <% end %>
 </section>
