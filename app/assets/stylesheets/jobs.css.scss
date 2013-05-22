@@ -1,3 +1,50 @@
 // Place all the styles related to the Jobs controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+select.category-title {
+  font-size: 18px; font-size: 1.8rem; /* = 18px */
+  width: 18em;
+  height: 28px;
+  outline: none;
+  color: #006b85;
+  text-transform:uppercase;
+  border: none;
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.notIE label.category-title:after {
+  content: '';
+  width: 25px;
+  height: 20px;
+  position: absolute;
+  display: inline-block;
+  top: 4px;
+  right: 3px;
+  background: url(/images/green-select-button_25x20.png) no-repeat left center white;
+  pointer-events: none;
+}
+section.job.logo {
+  margin-left:30px;
+  background-image:url(/images/header_686x135.png);
+  background-repeat:no-repeat;
+  width:686px;
+  height:135px;
+  background-position:0;
+}
+body.jobs > div.container > form {
+  padding-top:0px;
+}
+body.jobs form > section {
+  padding:40px;
+  margin:0px;
+  border-top:1px solid #b0b0b0;
+  border-left:28px solid #e6e6e6;
+  div.field {
+    div.notIE {
+      float:left;
+      padding-right:20px;
+    }
+  }
+}

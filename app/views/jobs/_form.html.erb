@@ -10,52 +10,68 @@
       </ul>
     </div>
   <% end %>
-  <%= collection_select(:job, :job_category, JobCategory.all, :id, :title) %>
-  <hr />
-  <div class="field">
-    <%= f.label "Nivel de limpieza" %><br>
-    <%= collection_select(:job, :level, Level.all, :id, :title, {:include_blank => 'Nivel de limpieza'}) %>
-  </div>
-  <div class="field">
-    <%= f.label "Tamaño del hogar" %><br>
-    <%= collection_select(:job, :floor, Floor.all, :id, :title, {:include_blank => 'Número de pisos'}) %>
-  </div>
-  <div class="field">
-    <%= collection_select(:job, :room, Room.all, :id, :title, {:include_blank => 'Número de dormitorios'}) %>
-  </div>
-  <div class="field">
-    <%= collection_select(:job, :bathroom, Bathroom.all, :id, :title, {:include_blank => 'Número de baños'}) %>
-  </div>
-  <div class="field">
-    <%= f.radio_button :material, true %> Tengo todos los artículos de limpieza en casa
-    <%= f.radio_button :material, false %> El handy debe traer material de limpieza
-  </div>
-  <hr />
-  <div class="field">
-    <%= f.label :address %><br>
-    <%= f.text_area :address, {:placeholder => "Ubicación (calle y número, colonia, delegación)"} %>
-    <small>La dirección completa solo se comparte con el Handy asignado.</small>
-  </div>
-  <hr />
-  <div class="field">
-    <%= f.label 'Requiero que la limpieza se lleve a cabo:' %><br>
-    <%= f.datetime_select :when %>
-  </div>
-  <hr />
-  <div class="field">
-    <%= f.label '¿Cuánto estás dispuesto a pagar por esta tarea?' %><br>
-    <%= f.text_field :offer, {:placeholder => 'Oferta promedio: $150.00 - $300.00'} %>
-    <small>El pago se hace hasta que la tarea ha sido completada.</small>
-  </div>
-  <hr />
-  <div class="field">
-    <%= f.label 'Esta tarea es privada' %><br>
-    <%= f.check_box :private %>
-  </div>
-  <div class="field">
-    <%= f.radio_button :auto_assign, false %>Asignar al Handy que ofrezca mejor costo
-    <%= f.radio_button :auto_assign, true %>Deseo asignar el Handy
-  </div>
+  <!--[if !IE]> --><div class="notIE"><!-- <![endif]-->
+  <label class="category-title" />
+  <%= collection_select(:job, :job_category, JobCategory.all, :id, :title,{}, {:class => 'category-title'}) %>
+  <!--[if !IE]> --></div> <!-- <![endif]-->
+  <section class="levels">
+    <div class="field">
+      <%= f.label "Nivel de limpieza" %>
+      <!--[if !IE]> --><div class="notIE"><!-- <![endif]-->
+      <label />
+      <%= collection_select(:job, :level, Level.all, :id, :title, {:include_blank => 'Nivel de limpieza'}) %>
+      <!--[if !IE]> --></div> <!-- <![endif]-->
+    </div>
+    <div class="field">
+      <%= f.label "Tamaño del hogar" %>
+      <!--[if !IE]> --><div class="notIE"><!-- <![endif]-->
+      <label />
+      <%= collection_select(:job, :floor, Floor.all, :id, :title, {:include_blank => 'Número de pisos'}) %>
+      <!--[if !IE]> --></div> <!-- <![endif]-->
+      <!--[if !IE]> --><div class="notIE"><!-- <![endif]-->
+      <label />
+      <%= collection_select(:job, :room, Room.all, :id, :title, {:include_blank => 'Número de dormitorios'}) %>
+      <!--[if !IE]> --></div> <!-- <![endif]-->
+      <!--[if !IE]> --><div class="notIE"><!-- <![endif]-->
+      <label />
+      <%= collection_select(:job, :bathroom, Bathroom.all, :id, :title, {:include_blank => 'Número de baños'}) %>
+      <!--[if !IE]> --></div> <!-- <![endif]-->
+    </div>
+    <div class="field">
+      <%= f.radio_button :material, true %> Tengo todos los artículos de limpieza en casa
+      <%= f.radio_button :material, false %> El handy debe traer material de limpieza
+    </div>
+  </section>
+  <section>
+    <div class="field">
+      <%= f.label :address %>
+      <%= f.text_area :address, {:placeholder => "Ubicación (calle y número, colonia, delegación)"} %>
+      <small>La dirección completa solo se comparte con el Handy asignado.</small>
+    </div>
+  </section>
+  <section>
+    <div class="field">
+      <%= f.label 'Requiero que la limpieza se lleve a cabo:' %>
+      <%= f.datetime_select :when %>
+    </div>
+  </section>
+  <section>
+    <div class="field">
+      <%= f.label '¿Cuánto estás dispuesto a pagar por esta tarea?' %>
+      <%= f.text_field :offer, {:placeholder => 'Oferta promedio: $150.00 - $300.00'} %>
+      <small>El pago se hace hasta que la tarea ha sido completada.</small>
+    </div>
+  </section>
+  <section>
+    <div class="field">
+      <%= f.label 'Esta tarea es privada' %>
+      <%= f.check_box :private %>
+    </div>
+    <div class="field">
+      <%= f.radio_button :auto_assign, false %>Asignar al Handy que ofrezca mejor costo
+      <%= f.radio_button :auto_assign, true %>Deseo asignar el Handy
+    </div>
+  </section>
   <div class="actions">
     <%= f.submit %>
   </div>
