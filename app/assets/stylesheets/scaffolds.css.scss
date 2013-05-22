@@ -130,6 +130,24 @@ div.container > form {
       margin-right:10px;
       margin-top:10px;
     }
+    input[type='checkbox'] {
+      margin-right:10px;
+      margin-top:10px;
+    }
+    input[type='text'],
+    textarea {
+      height:31px;
+      width:100px;
+      border: 1px solid #C8BFC4;
+      border-radius: 4px;
+      box-shadow: inset 1px 1px 2px #ddd8dc;
+      background-color: #f5f5f5;
+      color:#4b525f;
+    }
+    textarea {
+      width:400px;
+      padding:10px;
+    }
   }
   div.field > label {
     width:130px;

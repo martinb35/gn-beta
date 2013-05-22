@@ -35,6 +35,16 @@ section.job.logo {
 }
 body.jobs > div.container > form {
   padding-top:0px;
+  div.actions {
+    input[type="submit"]
+    {
+      background-image:url(/images/add_button_196x48.png);
+      width:196px;
+      height:48px;
+      border:none;
+      margin-top:20px;
+    }
+  }
 }
 body.jobs form > section {
   padding:40px;
@@ -45,6 +55,22 @@ body.jobs form > section {
     div.notIE {
       float:left;
       padding-right:20px;
+    }
+    small {
+      float:right;
+      width:130px;
+      text-align:right;
+      background-image:url(/images/nota_52x13.png);
+      background-repeat:no-repeat;
+      background-position: top right;
+      padding-top:20px;
+      font-size: 12px; font-size: 1.2rem; /* = 12px */
+      color:#bababa;
+    }
+  }
+  div.field.when {
+    select {
+      width:100px;
     }
   }
 }

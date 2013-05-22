@@ -44,35 +44,33 @@
   </section>
   <section>
     <div class="field">
-      <%= f.label :address %>
       <%= f.text_area :address, {:placeholder => "Ubicación (calle y número, colonia, delegación)"} %>
       <small>La dirección completa solo se comparte con el Handy asignado.</small>
     </div>
   </section>
   <section>
-    <div class="field">
+    <div class="field when">
       <%= f.label 'Requiero que la limpieza se lleve a cabo:' %>
       <%= f.datetime_select :when %>
     </div>
   </section>
   <section>
     <div class="field">
-      <%= f.label '¿Cuánto estás dispuesto a pagar por esta tarea?' %>
+      <%= f.label '¿Cuánto estás dispuesto a pagar por esta tarea?' %><br/>
       <%= f.text_field :offer, {:placeholder => 'Oferta promedio: $150.00 - $300.00'} %>
       <small>El pago se hace hasta que la tarea ha sido completada.</small>
     </div>
   </section>
   <section>
     <div class="field">
-      <%= f.label 'Esta tarea es privada' %>
-      <%= f.check_box :private %>
+      <%= f.check_box :private %>Esta tarea es privada
     </div>
     <div class="field">
-      <%= f.radio_button :auto_assign, false %>Asignar al Handy que ofrezca mejor costo
+      <%= f.radio_button :auto_assign, false %>Asignar al Handy que ofrezca mejor costo<br/>
       <%= f.radio_button :auto_assign, true %>Deseo asignar el Handy
     </div>
   </section>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "" %>
   </div>
 <% end %>
