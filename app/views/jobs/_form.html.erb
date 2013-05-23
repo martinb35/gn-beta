@@ -14,7 +14,8 @@
   <label class="category-title" />
   <%= collection_select(:job, :job_category, JobCategory.all, :id, :title,{}, {:class => 'category-title'}) %>
   <!--[if !IE]> --></div> <!-- <![endif]-->
-  <section class="levels">
+  <section>
+    <div class="icon levels">&nbsp;</div>
     <div class="field">
       <%= f.label "Nivel de limpieza" %>
       <!--[if !IE]> --><div class="notIE"><!-- <![endif]-->
@@ -43,18 +44,21 @@
     </div>
   </section>
   <section>
+    <div class="icon map">&nbsp;</div>
     <div class="field">
       <%= f.text_area :address, {:placeholder => "Ubicación (calle y número, colonia, delegación)"} %>
       <small>La dirección completa solo se comparte con el Handy asignado.</small>
     </div>
   </section>
   <section>
+    <div class="icon calendar">&nbsp;</div>
     <div class="field when">
       <%= f.label 'Requiero que la limpieza se lleve a cabo:' %>
       <%= f.datetime_select :when %>
     </div>
   </section>
   <section>
+    <div class="icon money">&nbsp;</div>
     <div class="field">
       <%= f.label '¿Cuánto estás dispuesto a pagar por esta tarea?' %><br/>
       <%= f.text_field :offer, {:placeholder => 'Oferta promedio: $150.00 - $300.00'} %>
@@ -62,6 +66,7 @@
     </div>
   </section>
   <section>
+    <div class="icon edit">&nbsp;</div>
     <div class="field">
       <%= f.check_box :private %>Esta tarea es privada
     </div>

@@ -12,6 +12,7 @@ select.category-title {
   border: none;
   background-color: transparent;
   box-shadow: none;
+  margin-bottom:10px;
 }
 
 .notIE label.category-title:after {
@@ -47,10 +48,11 @@ body.jobs > div.container > form {
   }
 }
 body.jobs form > section {
+  position:relative;
   padding:40px;
   margin:0px;
   border-top:1px solid #b0b0b0;
-  border-left:28px solid #e6e6e6;
+  background: url(/images/section_bg_28x1.png) repeat-y top left;
   div.field {
     div.notIE {
       float:left;
@@ -72,5 +74,33 @@ body.jobs form > section {
     select {
       width:100px;
     }
+  }
+  div.icon {
+    position:absolute;
+    background: url(/images/pin_28x27.png) no-repeat top left;
+    width:28px;
+    height:27px;
+    top:100px;
+    left:0px;
+  }
+  div.icon.levels {
+    background: url(/images/pin_28x27.png) no-repeat top left;
+    top:100px;
+  }
+  div.icon.map {
+    background: url(/images/map_28x27.png) no-repeat top left;
+    top:60px;
+  }
+  div.icon.calendar {
+    background: url(/images/calendar_28x27.png) no-repeat top left;
+    top:55px;
+  }
+  div.icon.money {
+    background: url(/images/money_28x27.png) no-repeat top left;
+    top:60px;
+  }
+  div.icon.edit {
+    background: url(/images/edit_28x29.png) no-repeat top left;
+    top:80px;
   }
 }
