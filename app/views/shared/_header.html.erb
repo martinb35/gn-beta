@@ -14,7 +14,11 @@
   </nav>
 </header>
 <% if @branding %>
-<section class="job logo"></section>
+<section>
+  <div class="clickable job logo">
+    <%= link_to "Home", tasks_path %>
+  </div>
+</section>
 <% elsif @publish %>
 <section>
   <div class="clickable job logo publish">

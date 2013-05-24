@@ -4,8 +4,9 @@
     <div class="item">
     <% if job.private == true %>
       <p class="title"><%= link_to cat.title, job %></p>
-      <p class="offer"><%= job.offer %></p>
+      <p class="offer"><%= number_to_currency(job.offer) %></p>
     <% end %>
     </div>
   <% end %>
 </section>
+<div class="clearfix">&nbsp;</div>
