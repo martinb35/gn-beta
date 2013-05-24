@@ -2,7 +2,7 @@
   <% @jobs.each do |job| %>
     <% cat = JobCategory.find_by_id(job.job_category_id) %>
     <div class="item">
-    <% if job.private == true %>
+    <% if job.private == false %>
       <p class="title"><%= link_to cat.title, job %></p>
       <p class="offer"><%= number_to_currency(job.offer) %></p>
     <% end %>
