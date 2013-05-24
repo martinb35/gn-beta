@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130522190012) do
+ActiveRecord::Schema.define(version: 20130524003848) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,13 +49,14 @@ ActiveRecord::Schema.define(version: 20130522190012) do
     t.integer  "stored_address"
     t.string   "map"
     t.datetime "when"
-    t.decimal  "offer",          precision: 8, scale: 2
+    t.decimal  "offer",           precision: 8, scale: 2
     t.boolean  "private"
     t.boolean  "auto_assign"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "job_category"
     t.integer  "floor_id"
+    t.integer  "job_category_id"
   end
 
   create_table "levels", force: true do |t|

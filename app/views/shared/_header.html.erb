@@ -15,4 +15,11 @@
 </header>
 <% if @branding %>
 <section class="job logo"></section>
+<% elsif @publish %>
+<section>
+  <div class="clickable job logo publish">
+    <%= link_to "New job", tasks_path %>
+  </div>
+  <div class="clickable new"><%= link_to "New job", new_job_path %></div>
+</section>
 <% end %>

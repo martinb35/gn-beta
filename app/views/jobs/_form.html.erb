@@ -12,7 +12,7 @@
   <% end %>
   <!--[if !IE]> --><div class="notIE"><!-- <![endif]-->
   <label class="category-title" />
-  <%= collection_select(:job, :job_category, JobCategory.all, :id, :title,{}, {:class => 'category-title'}) %>
+  <%= f.collection_select :job_category_id, JobCategory.all, :id, :title, {}, {:class => 'category-title'} %>
   <!--[if !IE]> --></div> <!-- <![endif]-->
   <section>
     <div class="icon levels">&nbsp;</div>
@@ -20,22 +20,22 @@
       <%= f.label "Nivel de limpieza" %>
       <!--[if !IE]> --><div class="notIE"><!-- <![endif]-->
       <label />
-      <%= collection_select(:job, :level, Level.all, :id, :title, {:include_blank => 'Nivel de limpieza'}) %>
+      <%= f.collection_select :level, Level.all, :id, :title, {:include_blank => 'Nivel de limpieza'} %>
       <!--[if !IE]> --></div> <!-- <![endif]-->
     </div>
     <div class="field">
       <%= f.label "Tamaño del hogar" %>
       <!--[if !IE]> --><div class="notIE"><!-- <![endif]-->
       <label />
-      <%= collection_select(:job, :floor, Floor.all, :id, :title, {:include_blank => 'Número de pisos'}) %>
+      <%= f.collection_select(:floor, Floor.all, :id, :title, {:include_blank => 'Número de pisos'}) %>
       <!--[if !IE]> --></div> <!-- <![endif]-->
       <!--[if !IE]> --><div class="notIE"><!-- <![endif]-->
       <label />
-      <%= collection_select(:job, :room, Room.all, :id, :title, {:include_blank => 'Número de dormitorios'}) %>
+      <%= f.collection_select(:room, Room.all, :id, :title, {:include_blank => 'Número de dormitorios'}) %>
       <!--[if !IE]> --></div> <!-- <![endif]-->
       <!--[if !IE]> --><div class="notIE"><!-- <![endif]-->
       <label />
-      <%= collection_select(:job, :bathroom, Bathroom.all, :id, :title, {:include_blank => 'Número de baños'}) %>
+      <%= f.collection_select(:bathroom, Bathroom.all, :id, :title, {:include_blank => 'Número de baños'}) %>
       <!--[if !IE]> --></div> <!-- <![endif]-->
     </div>
     <div class="field">

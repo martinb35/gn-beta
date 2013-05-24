@@ -1,57 +1,11 @@
-<h1>Listing jobs</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Level</th>
-      <th>Floor</th>
-      <th>Room</th>
-      <th>Bathroom</th>
-      <th>Material</th>
-      <th>Notes</th>
-      <th>Address</th>
-      <th>Location ref</th>
-      <th>Second address</th>
-      <th>Stored address</th>
-      <th>Map</th>
-      <th>When</th>
-      <th>Offer</th>
-      <th>Private</th>
-      <th>Auto assign</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @jobs.each do |job| %>
-      <tr>
-        <td><%= job.title %></td>
-        <td><%= job.level %></td>
-        <td><%= job.floor %></td>
-        <td><%= job.room %></td>
-        <td><%= job.bathroom %></td>
-        <td><%= job.material %></td>
-        <td><%= job.notes %></td>
-        <td><%= job.address %></td>
-        <td><%= job.location_ref %></td>
-        <td><%= job.second_address %></td>
-        <td><%= job.stored_address %></td>
-        <td><%= job.map %></td>
-        <td><%= job.when %></td>
-        <td><%= job.offer %></td>
-        <td><%= job.private %></td>
-        <td><%= job.auto_assign %></td>
-        <td><%= link_to 'Show', job %></td>
-        <td><%= link_to 'Edit', edit_job_path(job) %></td>
-        <td><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+<section id="listing">
+  <% @jobs.each do |job| %>
+    <% cat = JobCategory.find_by_id(job.job_category_id) %>
+    <div class="item">
+    <% if job.private == true %>
+      <p class="title"><%= link_to cat.title, job %></p>
+      <p class="offer"><%= job.offer %></p>
     <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Job', new_job_path %>
+    </div>
+  <% end %>
+</section>

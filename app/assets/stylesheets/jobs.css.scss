@@ -26,13 +26,26 @@ select.category-title {
   background: url(/images/green-select-button_25x20.png) no-repeat left center white;
   pointer-events: none;
 }
-section.job.logo {
+section.job {
   margin-left:30px;
-  background-image:url(/images/header_686x135.png);
   background-repeat:no-repeat;
   width:686px;
   height:135px;
   background-position:0;
+}
+div.job.logo.publish {
+  background: url(/images/logo_221x75.png) no-repeat;
+  width:221px;
+}
+div.clickable.new {
+  background: url(/images/publish_button_191x48.png) no-repeat;
+  width:191px;
+  height:48px;
+  float:right;
+  margin-top:-50px;
+}
+section.job.logo {
+  background-image:url(/images/header_686x135.png);
 }
 body.jobs > div.container > form {
   padding-top:0px;
@@ -102,5 +115,19 @@ body.jobs form > section {
   div.icon.edit {
     background: url(/images/edit_28x29.png) no-repeat top left;
     top:80px;
+  }
+}
+/*
+ * Listing Styles
+ */
+section#listing {
+  div.item {
+    border:1px solid #acaeae;
+    background-color:#e6e6e6;
+    width:385px;
+    height:38px;
+    p.title {
+      text-transform:uppercase;
+    }
   }
 }
