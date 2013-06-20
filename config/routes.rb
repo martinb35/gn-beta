@@ -1,4 +1,6 @@
 GoninisB1::Application.routes.draw do
+  resources :users
+
   resources :jobs
 
   resources :job_categories

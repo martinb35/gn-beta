@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130524003848) do
+ActiveRecord::Schema.define(version: 20130620185440) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,6 +57,8 @@ ActiveRecord::Schema.define(version: 20130524003848) do
     t.integer  "job_category"
     t.integer  "floor_id"
     t.integer  "job_category_id"
+    t.string   "contact"
+    t.integer  "status"
   end
 
   create_table "levels", force: true do |t|
@@ -67,6 +69,13 @@ ActiveRecord::Schema.define(version: 20130524003848) do
 
   create_table "rooms", force: true do |t|
     t.string   "title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users", force: true do |t|
+    t.string   "name"
+    t.string   "password_digest"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
