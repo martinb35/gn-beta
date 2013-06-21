@@ -50,6 +50,10 @@
   <section>
     <div class="icon map">&nbsp;</div>
     <div class="field">
+      <%= f.label "Correo electrónico de contacto" %>
+      <%= f.text_field :contact, {:placeholder => 'usuario@ejemplo.com', :class => 'email'} %>
+    </div>
+    <div class="field">
       <%= f.text_area :address, {:placeholder => "Ubicación (calle y número, colonia, delegación)"} %>
       <small>La dirección completa solo se comparte con el Handy asignado.</small>
     </div>

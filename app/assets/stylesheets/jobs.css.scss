@@ -100,6 +100,9 @@ body.jobs form > section {
       text-decoration:underline;
       cursor:pointer;
     }
+    input.email {
+      width:290px;
+    }
   }
   div.field.when {
     select {
