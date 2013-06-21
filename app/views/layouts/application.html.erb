@@ -11,6 +11,9 @@
 <body class='<%= controller.controller_name %>'>
   <div class="container">
     <%= render(partial: "shared/header") %>
+    <% if flash[:notice] %>
+      <p class="notice"><%= flash[:notice] %></p>
+    <% end %>
     <%= yield %>
     <%= render(partial: "shared/footer") %>
   </div>

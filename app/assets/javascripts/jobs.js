@@ -82,6 +82,9 @@ function onInit_Jobs() {
         map.setCenter(latlong);
       }
     });
+    jQuery('div.clickable.choose').bind('click', function () {
+      
+    });
     initialize_map ('single-map-canvas', jQuery('#job_latlong').val());
   }
   jQuery('div.show').bind('click', function (item) {

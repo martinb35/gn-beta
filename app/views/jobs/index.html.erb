@@ -1,3 +1,4 @@
+<h1><%= @debug %></h1>
 <section id="listing">
   <div class="items left">
     <% @jobs.each do |job| %>
@@ -9,10 +10,20 @@
         bring_material = job.material ? 'Debes traer tu herramienta de trabajo.' : 'No necesitas traer tu herramienta de trabajo.'
         last_index = job.contact.to_s.index('@')
         contact = job.contact.to_s[0, last_index.to_i]
+        case job.status
+        when 1
+          status = "Disponible"
+        when 2
+          status = "Propuesta enviada"
+        when 3
+          status = "Tarea Aceptada"
+        else
+          status = "Terminada"
+        end
       %>
       <% if job.private == false %>
       <div class="item">
-        <p class="title"><%= level.title %></p>
+        <p class="title"><%= level.title %><strong><%= status  %></strong></p>
         <p class="offer"><%= number_to_currency(job.offer) %></p>
       </div>
       <div class="item wrapper">
@@ -26,7 +37,9 @@
           <p class=""><%= floor.title %> pisos, <%= room.title %> dormitorios y <%= bathroom.title %> baños</p>
           <p class=""><%= bring_material %></p>
           <p class=""><%= job.notes %></p>
-          <div class="clickable choose"><a href="#"></a></div>
+          <% if job.status == 1 || job.status == 2 %>
+          <div class="clickable choose"><%= link_to "", :controller => "jobs", :action => "index", :id => job.id %></div>
+          <% end %>
         </div>
       </div>
       <div class="clearfix"></div>

@@ -4,15 +4,20 @@ class JobsController < ApplicationController
   # GET /jobs
   # GET /jobs.json
   def index
+    if params[:id]
+      Job.find_by_id(params[:id]).update_attributes(:status => 2)
+      flash[:notice] = "Estamos tramitando la aprobacion de esta tarea. Espera un mensaje de confirmacion en tu buzon de correo."
+      JobMailer.notify_assigned(Job.find_by_id(params[:id])).deliver
+    end
     @jobs = Job.all
     @publish = true
   end
-
+  
   # GET /jobs/1
   # GET /jobs/1.json
   def show
   end
-
+  
   # GET /jobs/new
   def new
     @job = Job.new
@@ -71,6 +76,6 @@ class JobsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def job_params
-      params.require(:job).permit(:title, :job_category_id, :level, :floor, :room, :bathroom, :material, :notes, :address, :location_ref, :second_address, :stored_address, :latlong, :when, :offer, :private, :auto_assign, :contact)
+      params.require(:job).permit(:title, :job_category_id, :level, :floor, :room, :bathroom, :material, :notes, :address, :location_ref, :second_address, :stored_address, :latlong, :when, :offer, :private, :auto_assign, :contact, :status)
     end
 end

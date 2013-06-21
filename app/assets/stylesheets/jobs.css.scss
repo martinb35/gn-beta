@@ -176,6 +176,7 @@ section#listing {
         }
       }
       p.title {
+        position:relative;
         border:1px solid #acaeae;
         background: #e6e6e6 url(/images/marker_open_13x14.png) no-repeat 95% 50%;
         width:385px;
@@ -187,6 +188,12 @@ section#listing {
           font-size: 14px; font-size: 1.4rem; /* = 14px */
           background-color:transparent;
           color:#006b85;
+        }
+        strong {
+          position:absolute;
+          color:#000;
+          right:50px;
+          text-transform:none;
         }
       }
       p.offer {

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Hola <%= @job.contact.to_s[0, @last_index.to_i] %>!</h1>
+    <p>
+      Tenemos un nini listo para hacer tu tarea.<br/>
+    </p>
+    <p>
+      Para aceptar la propuesta da click en el siguiente link: <%= @url %>.
+    </p>
+    <p>¡Gracias por utilizar goninis!</p>
+  </body>
+</html>
