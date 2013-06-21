@@ -7,7 +7,7 @@ class JobsController < ApplicationController
     if params[:id]
       Job.find_by_id(params[:id]).update_attributes(:status => 2)
       flash[:notice] = "Estamos tramitando la aprobacion de esta tarea. Espera un mensaje de confirmacion en tu buzon de correo."
-      JobMailer.notify_assigned(Job.find_by_id(params[:id])).deliver
+      # JobMailer.notify_assigned(Job.find_by_id(params[:id])).deliver
     end
     @jobs = Job.all
     @publish = true
