@@ -15,50 +15,78 @@ function set_marker (evt) {
   markersArray.push(marker);
   jQuery('#job_latlong').val(evt.latLng);
 }
-function load_map (latitud, longitud) {
+function load_map (map_id, latitud, longitud) {
   google.maps.visualRefresh = true;
   var mapOptions = {
     zoom: 8,
     center: new google.maps.LatLng(latitud, longitud),
     mapTypeId: google.maps.MapTypeId.ROADMAP
   };
-  map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+  map = new google.maps.Map(document.getElementById(map_id), mapOptions);
   google.maps.event.addListener(map, 'click', function(evt) {
     set_marker (evt);
   });
 }
-function initialize_map () {
+function initialize_map (map_id, latlong) {
   var loc = {};
   var geocoder = new google.maps.Geocoder();
   var latitud = 19.432560;
   var longitud = -99.128952;
-  if(google.loader.ClientLocation) {
-      loc.lat = google.loader.ClientLocation.latitude;
-      loc.lng = google.loader.ClientLocation.longitude;
-
-      var latlng = new google.maps.LatLng(loc.lat, loc.lng);
-      geocoder.geocode({'latLng': latlng}, function(results, status) {
-          if(status == google.maps.GeocoderStatus.OK) {
-              latitud = results[0].geometry.location.jb;
-              longitud = results[0].geometry.location.kb;
-              load_map (latitud, longitud);
-          };
-      });
+  if (typeof latlong != 'undefined') {
+    var coords = string_to_coords (latlong);
+    latitud = jQuery.trim(coords[0]);
+    longitud = jQuery.trim(coords[1]);
+    load_map (map_id, latitud, longitud);
   }else{
-    load_map (latitud, longitud);
+    if(google.loader.ClientLocation) {
+        loc.lat = google.loader.ClientLocation.latitude;
+        loc.lng = google.loader.ClientLocation.longitude;
+
+        var latlng = new google.maps.LatLng(loc.lat, loc.lng);
+        geocoder.geocode({'latLng': latlng}, function(results, status) {
+            if(status == google.maps.GeocoderStatus.OK) {
+                latitud = results[0].geometry.location.jb;
+                longitud = results[0].geometry.location.kb;
+                load_map (map_id, latitud, longitud);
+            };
+        });
+    }else{
+      load_map (map_id, latitud, longitud);
+    }
   }
 }
+function string_to_coords (latlong) {
+  latlong = latlong.replace ('(', '');
+  latlong = latlong.replace (')', '');
+  return coords = latlong.split (',');
+}
 function onInit_Jobs() {
-  jQuery('section#listing > div.item').bind('click', function(item) {
-    jQuery(this).next().toggle();
-  });
   if (jQuery('#map-canvas').exists()) {
     jQuery('div.show').bind('click', function (item) {
       jQuery(this).next().toggle();
       google.maps.event.trigger(map, 'resize');
     });
     google.maps.visualRefresh = true;
-    initialize_map ();
+    initialize_map ('map-canvas');
+  }else{
+    jQuery('section#listing > div.items > div.item').bind('click', function(item) {
+      jQuery(this).next().toggle();
+    });
+    jQuery('section#listing > div.items > div.item.wrapper div.map').bind('click', function () {
+      var latlong = jQuery(this).next().val();
+      if (latlong != '') {
+        var coords = string_to_coords (latlong);
+        var latlong = new google.maps.LatLng (coords[0], coords[1]);
+        new google.maps.Marker({
+          position: latlong,
+          map: map
+        });
+        jQuery('#single-map-canvas').show();
+        google.maps.event.trigger (map, 'resize');
+        map.setCenter(latlong);
+      }
+    });
+    initialize_map ('single-map-canvas', jQuery('#job_latlong').val());
   }
 }
 jQuery (document)

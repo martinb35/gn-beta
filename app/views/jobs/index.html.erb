@@ -1,32 +1,36 @@
 <section id="listing">
-  <% @jobs.each do |job| %>
-    <% 
-      level = Level.find_by_id(job.level)
-      floor = Floor.find_by_id(job.floor)
-      room = Room.find_by_id(job.room)
-      bathroom = Bathroom.find_by_id(job.bathroom)
-      bring_material = job.material ? 'Debes traer tu herramienta de trabajo.' : 'No necesitas traer tu herramienta de trabajo.'
-    %>
-    <% if job.private == false %>
-    <div class="item">
-      <p class="title"><%= link_to level.title, job %></p>
-      <p class="offer"><%= number_to_currency(job.offer) %></p>
-    </div>
-    <div class="item wrapper">
-      <div class="left content">
-        <h1 class="when"><%= job.when.strftime('%d-%b-%Y %H:%M %p') %></h1>
-        <p class="contact">Publicado por: <br/><%= job.contact %></p>
-        <p class="show"><a href="#">Ver zona en mapa</a> <%= job.latlong %></p>
+  <div class="items left">
+    <% @jobs.each do |job| %>
+      <% 
+        level = Level.find_by_id(job.level)
+        floor = Floor.find_by_id(job.floor)
+        room = Room.find_by_id(job.room)
+        bathroom = Bathroom.find_by_id(job.bathroom)
+        bring_material = job.material ? 'Debes traer tu herramienta de trabajo.' : 'No necesitas traer tu herramienta de trabajo.'
+      %>
+      <% if job.private == false %>
+      <div class="item">
+        <p class="title"><%= level.title %></p>
+        <p class="offer"><%= number_to_currency(job.offer) %></p>
       </div>
-      <div class="right content">
-        <p class=""><%= floor.title %> pisos, <%= room.title %> dormitorios y <%= bathroom.title %> baños</p>
-        <p class=""><%= bring_material %></p>
-        <p class=""><%= job.notes %></p>
-        <div class="clickable choose"><a href="#"></a></div>
+      <div class="item wrapper">
+        <div class="left content">
+          <h1 class="when"><%= job.when.strftime('%d-%b-%Y %H:%M %p') %></h1>
+          <p class="contact">Publicado por: <br/><%= job.contact %></p>
+          <div class="map">Ver zona en mapa</div>
+          <input type="hidden" name="job_latlong" id="job_latlong" value="<%= job.latlong %>" />
+        </div>
+        <div class="right content">
+          <p class=""><%= floor.title %> pisos, <%= room.title %> dormitorios y <%= bathroom.title %> baños</p>
+          <p class=""><%= bring_material %></p>
+          <p class=""><%= job.notes %></p>
+          <div class="clickable choose"><a href="#"></a></div>
+        </div>
       </div>
-    </div>
-    <div class="clearfix"></div>
+      <div class="clearfix"></div>
+      <% end %>
     <% end %>
-  <% end %>
+  </div>
+  <div id="single-map-canvas" class="right"></div>
 </section>
-<div class="clearfix">&nbsp;</div>
+<div class="clearfix"></div>
