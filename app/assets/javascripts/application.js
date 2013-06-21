@@ -14,3 +14,5 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+jQuery.fn.exists = function(){return this.length>0;};

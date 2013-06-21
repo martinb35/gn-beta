@@ -16,7 +16,7 @@
       <div class="left content">
         <h1 class="when"><%= job.when.strftime('%d-%b-%Y %H:%M %p') %></h1>
         <p class="contact">Publicado por: <br/><%= job.contact %></p>
-        <p class="map"><a href="#">Ver zona en mapa<%= job.map %></a></p>
+        <p class="show"><a href="#">Ver zona en mapa</a> <%= job.latlong %></p>
       </div>
       <div class="right content">
         <p class=""><%= floor.title %> pisos, <%= room.title %> dormitorios y <%= bathroom.title %> baños</p>

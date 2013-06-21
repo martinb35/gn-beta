@@ -114,3 +114,6 @@ section {
 .clearfix {
   display: inline-block;
 }
+.hidden {
+  display:none;
+}

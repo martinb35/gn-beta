@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130620185440) do
+ActiveRecord::Schema.define(version: 20130621052743) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,12 +42,12 @@ ActiveRecord::Schema.define(version: 20130620185440) do
     t.integer  "room"
     t.integer  "bathroom"
     t.boolean  "material"
-    t.string   "notes"
+    t.text     "notes"
     t.string   "address"
     t.string   "location_ref"
     t.string   "second_address"
     t.integer  "stored_address"
-    t.string   "map"
+    t.string   "latlong"
     t.datetime "when"
     t.decimal  "offer",           precision: 8, scale: 2
     t.boolean  "private"

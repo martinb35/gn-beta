@@ -73,6 +73,12 @@ body.jobs form > section {
   margin:0px;
   border-top:1px solid #b0b0b0;
   background: url(/images/section_bg_28x1.png) repeat-y top left;
+  div#map-canvas {
+    margin-top:20px;
+    width:420px;
+    height:420px;
+    display:none;
+  }
   div.field {
     div.notIE {
       float:left;
@@ -88,6 +94,11 @@ body.jobs form > section {
       padding-top:20px;
       font-size: 12px; font-size: 1.2rem; /* = 12px */
       color:#bababa;
+    }
+    div.show {
+      color:#006b85;
+      text-decoration:underline;
+      cursor:pointer;
     }
   }
   div.field.when {
