@@ -7,6 +7,8 @@
         room = Room.find_by_id(job.room)
         bathroom = Bathroom.find_by_id(job.bathroom)
         bring_material = job.material ? 'Debes traer tu herramienta de trabajo.' : 'No necesitas traer tu herramienta de trabajo.'
+        last_index = job.contact.to_s.index('@')
+        contact = job.contact.to_s[0, last_index.to_i]
       %>
       <% if job.private == false %>
       <div class="item">
@@ -16,7 +18,7 @@
       <div class="item wrapper">
         <div class="left content">
           <h1 class="when"><%= job.when.strftime('%d-%b-%Y %H:%M %p') %></h1>
-          <p class="contact">Publicado por: <br/><%= job.contact %></p>
+          <p class="contact">Publicado por: <br/><%= contact  %></p>
           <div class="map">Ver zona en mapa</div>
           <input type="hidden" name="job_latlong" id="job_latlong" value="<%= job.latlong %>" />
         </div>
