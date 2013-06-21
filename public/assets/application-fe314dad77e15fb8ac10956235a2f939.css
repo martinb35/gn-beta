@@ -1,0 +1,589 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+
+
+ */
+
+/* Add Bitter Font */
+
+@import url(http://fonts.googleapis.com/css?family=Bitter&subset=latin,latin-ext);
+
+
+
+div.container {
+  margin:0px;
+  padding:0px;
+  min-width:1110px;
+}
+header {
+  height:38px;
+  background-image:url(/assets/images/header_bg_1x38.jpg);
+  margin-bottom:30px;
+}
+header > nav > ul {
+  margin-left:35%;
+}
+header > nav > ul > li.menu.divider {
+  padding:10px 0px 0px 0px;
+  color:#a1c142;
+}
+header > nav > ul > li > a:active,
+header > nav > ul > li > a:link,
+header > nav > ul > li > a:visited,
+header > nav > ul > li > a:hover {
+  color:#dfdfdf;
+}
+
+footer {
+  font-size: 11px; font-size: 1.1rem; /* = 11px */
+  height:58px;
+  background-image:url(/assets/images/footer_bg_1x73.jpg);
+  padding:15px 0px 0px 30px;
+  margin-top:30px;
+}
+footer nav > ul > li {
+  font-size: 11px; font-size: 1.1rem; /* = 11px */
+}
+div.clickable {
+  position:relative;
+}
+div.clickable > a {
+  position:absolute;
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
+  text-decoration:none;
+  z-index:10;
+  background-color:white;
+  opacity: 0;
+  filter: alpha(opacity=1);
+}
+.icon {
+  width:40px;
+  height:40px;
+  background-image:url(/assets/images/icons_sprite_40x40.png);
+  margin-right:5px;
+}
+.twitter {
+  background-position:0px 0px;
+}
+.facebook {
+  background-position:-40px 0px;
+}
+footer > section.left {
+  padding-right:350px;
+}
+footer > section.about > strong {
+  padding:15px 10px 0px 10px;
+  color:#a5c643;
+}
+footer > section nav > ul > li {
+  padding:14px 10px 0px 10px;
+}
+footer > section nav > ul > li > a:active,
+footer > section nav > ul > li > a:visited,
+footer > section nav > ul > li > a:link,
+footer > section nav > ul > li > a:hover {
+  color:#f2f2f2;
+}
+.left {
+  float:left;
+}
+.right {
+  float:right;
+}
+section {
+  padding:0px 30px 0px 30px;
+}
+.clearfix:before,
+.clearfix:after {
+    content:"";
+    display:table;
+}
+.clearfix:after {
+    clear:both;
+}
+/* For IE 6/7 (trigger hasLayout) */
+.clearfix {
+    zoom:1;
+}
+.hidden {
+  display:none;
+}
+select.category-title {
+  font-size: 18px;
+  font-size: 1.8rem;
+  /* = 18px */
+  width: 18em;
+  height: 28px;
+  outline: none;
+  color: #006b85;
+  text-transform: uppercase;
+  border: none;
+  background-color: transparent;
+  box-shadow: none;
+  margin-bottom: 10px; }
+
+.notIE label.category-title:after {
+  content: '';
+  width: 25px;
+  height: 20px;
+  position: absolute;
+  display: inline-block;
+  top: 4px;
+  right: 3px;
+  background: url(/images/green-select-button_25x20.png) no-repeat left center white;
+  pointer-events: none; }
+
+div.job {
+  margin-left: 30px;
+  background-repeat: no-repeat;
+  width: 686px;
+  height: 135px;
+  background-position: 0; }
+
+div.job.logo.publish {
+  background: url(/images/logo_221x75.png) no-repeat;
+  width: 221px; }
+
+div.clickable.new {
+  background: url(/images/publish_button_191x48.png) no-repeat;
+  width: 191px;
+  height: 48px;
+  float: right;
+  margin-top: -50px; }
+
+div.clickable.choose {
+  background: url(/images/choose_button_159x48.png) no-repeat;
+  width: 159px;
+  height: 48px;
+  float: right;
+  margin-top: 20px; }
+
+div.job.logo {
+  background-image: url(/images/header_686x135.png); }
+
+body.jobs > div.container > form {
+  padding-top: 0px; }
+  body.jobs > div.container > form div.actions input[type="submit"] {
+    background-image: url(/images/add_button_196x48.png);
+    width: 196px;
+    height: 48px;
+    border: none;
+    margin-top: 20px; }
+
+body.jobs form a {
+  text-decoration: underline;
+  color: #006b85;
+  cursor: pointer; }
+body.jobs form a:hover {
+  background-color: transparent; }
+
+body.jobs form > section {
+  position: relative;
+  padding: 40px;
+  margin: 0px;
+  border-top: 1px solid #b0b0b0;
+  background: url(/images/section_bg_28x1.png) repeat-y top left; }
+  body.jobs form > section div#map-canvas {
+    margin-top: 20px;
+    width: 420px;
+    height: 420px;
+    display: none; }
+  body.jobs form > section div.field div.notIE {
+    float: left;
+    padding-right: 20px; }
+  body.jobs form > section div.field small {
+    float: right;
+    width: 130px;
+    text-align: right;
+    background-image: url(/images/nota_52x13.png);
+    background-repeat: no-repeat;
+    background-position: top right;
+    padding-top: 20px;
+    font-size: 12px;
+    font-size: 1.2rem;
+    /* = 12px */
+    color: #bababa; }
+  body.jobs form > section div.field div.show {
+    color: #006b85;
+    text-decoration: underline;
+    cursor: pointer; }
+  body.jobs form > section div.field input.email {
+    width: 290px; }
+  body.jobs form > section div.field.when select {
+    width: 100px; }
+  body.jobs form > section div.icon {
+    position: absolute;
+    background: url(/images/pin_28x27.png) no-repeat top left;
+    width: 28px;
+    height: 27px;
+    top: 100px;
+    left: 0px; }
+  body.jobs form > section div.icon.levels {
+    background: url(/images/pin_28x27.png) no-repeat top left;
+    top: 100px; }
+  body.jobs form > section div.icon.map {
+    background: url(/images/map_28x27.png) no-repeat top left;
+    top: 60px; }
+  body.jobs form > section div.icon.calendar {
+    background: url(/images/calendar_28x27.png) no-repeat top left;
+    top: 55px; }
+  body.jobs form > section div.icon.money {
+    background: url(/images/money_28x27.png) no-repeat top left;
+    top: 60px; }
+  body.jobs form > section div.icon.edit {
+    background: url(/images/edit_28x29.png) no-repeat top left;
+    top: 80px; }
+
+/*
+ * Listing Styles
+ */
+section#listing h1 {
+  font-size: 18px;
+  font-size: 1.8rem;
+  /* = 18px */
+  color: #006b85;
+  width: 130px;
+  line-height: 21px;
+  line-height: 2.1rem;
+  padding: 10px 10px 0px 10px; }
+section#listing div.items {
+  width: 550px;
+  height: 100%; }
+  section#listing div.items div.item {
+    clear: both;
+    cursor: pointer; }
+    section#listing div.items div.item p {
+      padding: 10px 10px 0px 10px;
+      text-transform: uppercase;
+      float: left;
+      color: #006b85; }
+      section#listing div.items div.item p a {
+        font-size: 12px;
+        font-size: 1.2rem;
+        /* = 18px */
+        color: #006b85; }
+    section#listing div.items div.item p.title {
+      border: 1px solid #acaeae;
+      background: #e6e6e6 url(/images/marker_open_13x14.png) no-repeat 95% 50%;
+      width: 385px;
+      height: 28px; }
+      section#listing div.items div.item p.title a:active,
+      section#listing div.items div.item p.title a:link,
+      section#listing div.items div.item p.title a:visited,
+      section#listing div.items div.item p.title a:hover {
+        font-size: 14px;
+        font-size: 1.4rem;
+        /* = 14px */
+        background-color: transparent;
+        color: #006b85; }
+    section#listing div.items div.item p.offer {
+      background: transparent url(/images/offer_border_102x42.png) no-repeat;
+      width: 100px;
+      height: 40px;
+      text-align: center; }
+  section#listing div.items div.item.wrapper {
+    display: none;
+    position: relative;
+    padding: 10px;
+    width: 485px;
+    background-color: #EEE;
+    min-height: 220px;
+    border: 1px solid #afb3b4;
+    cursor: inherit; }
+    section#listing div.items div.item.wrapper p {
+      color: #393a45;
+      text-transform: none;
+      font-size: 13px;
+      font-size: 1.3rem;
+      /* = 13px */ }
+    section#listing div.items div.item.wrapper div.left.content {
+      width: 210px; }
+      section#listing div.items div.item.wrapper div.left.content div.map {
+        text-decoration: underline;
+        color: #006b85;
+        position: absolute;
+        bottom: 20px;
+        padding-left: 10px;
+        cursor: pointer; }
+    section#listing div.items div.item.wrapper div.right.content {
+      width: 270px; }
+      section#listing div.items div.item.wrapper div.right.content p {
+        float: none;
+        text-align: right; }
+      section#listing div.items div.item.wrapper div.right.content div.clickable.choose {
+        position: absolute;
+        bottom: 20px;
+        right: 20px; }
+section#listing div#single-map-canvas.right {
+  border: 1px solid #000;
+  margin: 0px 20px 0px 0px;
+  width: 430px;
+  height: 630px;
+  display: none; }
+/* YUI 3.5.0 reset.css (http://developer.yahoo.com/yui/3/cssreset/) */
+html {
+  color: #000;
+  background: #FFF; }
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td {
+  margin: 0;
+  padding: 0; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+fieldset, img {
+  border: 0; }
+
+address, caption, cite, code, dfn, em, strong, th, var {
+  font-style: normal;
+  font-weight: normal; }
+
+ol, ul {
+  list-style: none; }
+
+caption, th {
+  text-align: left; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+  font-weight: normal; }
+
+q:before, q:after {
+  content: ''; }
+
+abbr, acronym {
+  border: 0;
+  font-variant: normal; }
+
+sup {
+  vertical-align: text-top; }
+
+sub {
+  vertical-align: text-bottom; }
+
+input, textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit; }
+
+input, textarea, select {
+  *font-size: 100%; }
+
+legend {
+  color: #000; }
+
+#yui3-css-stamp.cssreset {
+  display: none; }
+
+html {
+  font-size: 62.5%;
+  padding: 0px;
+  margin: 0px; }
+
+body {
+  background-color: #f2f2f2;
+  color: #333;
+  font-family: 'Bitter', serif;
+  font-size: 12px;
+  font-size: 1.2rem;
+  /* = 12px */
+  line-height: 18px;
+  padding: 0px;
+  margin: 0px; }
+
+p, ol, ul, td {
+  font-size: 13px;
+  line-height: 18px; }
+
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px; }
+
+a {
+  color: #000;
+  text-decoration: none; }
+  a:visited {
+    color: #666; }
+  a:hover {
+    color: #fff;
+    background-color: #000; }
+
+div.field, div.actions {
+  margin-bottom: 10px; }
+
+#notice {
+  color: green; }
+
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table; }
+
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0; }
+  #error_explanation h2 {
+    text-align: left;
+    font-weight: bold;
+    padding: 5px 5px 5px 15px;
+    font-size: 12px;
+    margin: -7px;
+    margin-bottom: 0px;
+    background-color: #c00;
+    color: #fff; }
+  #error_explanation ul li {
+    font-size: 12px;
+    list-style: square; }
+
+nav > ul > li {
+  float: left;
+  padding: 10px 10px 0px 10px;
+  list-style: none; }
+
+/*
+ * Style Forms
+ */
+label {
+  position: relative;
+  display: inline-block; }
+
+select {
+  display: inline-block;
+  padding: 4px 3px 5px 5px;
+  width: 170px;
+  height: 28px;
+  outline: none;
+  color: #bababa;
+  border: 1px solid #C8BFC4;
+  border-radius: 4px;
+  box-shadow: inset 1px 1px 2px #ddd8dc;
+  background-color: #fff; }
+
+.notIE label:after {
+  content: '';
+  width: 23px;
+  height: 19px;
+  position: absolute;
+  display: inline-block;
+  top: 4px;
+  right: 4px;
+  background: url(/images/select-button_18x19.png) no-repeat left center white;
+  pointer-events: none; }
+
+@media screen and (min-width: 0 \0) {
+  .notIE label:after {
+    display: none; } }
+div.container > form {
+  padding: 30px;
+  color: #4b525f; }
+  div.container > form div.field {
+    clear: both;
+    padding-top: 10px; }
+    div.container > form div.field input[type='radio'] {
+      margin-right: 10px;
+      margin-top: 10px; }
+    div.container > form div.field input[type='checkbox'] {
+      margin-right: 10px;
+      margin-top: 10px; }
+    div.container > form div.field input[type='text'],
+    div.container > form div.field textarea {
+      height: 31px;
+      width: 100px;
+      border: 1px solid #C8BFC4;
+      border-radius: 4px;
+      box-shadow: inset 1px 1px 2px #ddd8dc;
+      background-color: #f5f5f5;
+      color: #4b525f; }
+    div.container > form div.field textarea {
+      width: 400px;
+      padding: 10px; }
+  div.container > form div.field > label {
+    width: 130px;
+    float: left; }
+.logo {
+  background-position: 0px -40px;
+  width: 240px;
+  height: 80px; }
+
+section#brand {
+  height: 137px; }
+  section#brand h1 {
+    white-space: nowrap;
+    text-indent: -9999px; }
+  section#brand div.clickable.ingresa {
+    background-position: 0px -120px;
+    width: 170px;
+    height: 80px; }
+
+.pin {
+  background-position: -80px 0px; }
+
+section#instructions {
+  position: relative;
+  margin: 0 auto;
+  width: 155px; }
+  section#instructions div.wrapper {
+    position: absolute;
+    top: 100px;
+    text-align: center;
+    color: #808080; }
+    section#instructions div.wrapper div.pin {
+      margin: 0px 0px 15px 64px; }
+    section#instructions div.wrapper h2 {
+      color: #4b525f;
+      font-size: 18px;
+      font-size: 1.8rem;
+      /* = 18px */ }
+
+section#categories {
+  padding-left: 50px;
+  padding-right: 50px;
+  min-height: 350px; }
+  section#categories div.category {
+    background-position: 0px -200px;
+    width: 340px;
+    height: 320px; }
+    section#categories div.category img {
+      margin: 80px 0px 0px 100px; }
+    section#categories div.category p {
+      font-size: 15px;
+      font-size: 1.5rem;
+      /* = 15px */
+      text-align: center;
+      padding-top: 20px; }
+      section#categories div.category p a:active,
+      section#categories div.category p a:link,
+      section#categories div.category p a:visited,
+      section#categories div.category p a:hover {
+        color: #006b85;
+        background-color: transparent; }
+
+.question {
+  background-position: -120px 0px; }
+
+section#pager {
+  padding-right: 50px; }
+  section#pager h4 {
+    font-size: 14px;
+    font-size: 1.4rem;
+    /* = 14px */
+    text-align: right;
+    color: #4b525f; }

@@ -62,13 +62,9 @@ function string_to_coords (latlong) {
 }
 function onInit_Jobs() {
   if (jQuery('#map-canvas').exists()) {
-    jQuery('div.show').bind('click', function (item) {
-      jQuery(this).next().toggle();
-      google.maps.event.trigger(map, 'resize');
-    });
     google.maps.visualRefresh = true;
     initialize_map ('map-canvas');
-  }else{
+  }else if (jQuery('#single-map-canvas').exists()) {
     jQuery('section#listing > div.items > div.item').bind('click', function(item) {
       jQuery(this).next().toggle();
     });
@@ -88,6 +84,12 @@ function onInit_Jobs() {
     });
     initialize_map ('single-map-canvas', jQuery('#job_latlong').val());
   }
+  jQuery('div.show').bind('click', function (item) {
+    jQuery(this).next().toggle();
+    if (jQuery('#map-canvas').exists() || jQuery('#single-map-canvas').exists()) {
+      google.maps.event.trigger(map, 'resize');
+    }
+  });
 }
 jQuery (document)
   .on('page:change', function() {

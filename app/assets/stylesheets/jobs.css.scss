@@ -67,6 +67,16 @@ body.jobs > div.container > form {
     }
   }
 }
+body.jobs form {
+  a {
+    text-decoration:underline;
+    color:#006b85;
+    cursor:pointer;
+  }
+  a:hover {
+    background-color:transparent;
+  }
+}
 body.jobs form > section {
   position:relative;
   padding:40px;
