@@ -16,7 +16,7 @@
         <li><a href="#">Condiciones</a></li>
         <li><a href="#">Ayuda</a></li>
         <% if session[:user_id] %>
-          <li><%= button_to 'Logout', logout_path, method: :delete %></li>
+          <li><%= button_to 'Salir', logout_path, method: :delete %></li>
         <% end %>
       </ul>
     </nav>

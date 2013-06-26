@@ -1,4 +1,6 @@
 GoninisB1::Application.routes.draw do
+  resources :roles
+
   controller :sessions do
     get  'login' => :new
     post 'login' => :create
