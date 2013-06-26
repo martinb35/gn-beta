@@ -46,8 +46,13 @@ div {
   }
 }
 
-#notice {
-  color: green;
+#notice,
+.notice {
+  color: #444;
+  border:1px solid #FF6;
+  background-color:#FF8;
+  margin:30px;
+  padding:5px;
 }
 
 .field_with_errors {
