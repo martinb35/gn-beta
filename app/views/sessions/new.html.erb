@@ -1,6 +1,3 @@
-<% if flash[:alert] %>
-  <%= flash[:alert] %>
-<% end %>
 <%= form_tag do %> 
   Please Log In
   <%= label_tag :name, 'Name:' %> <%= text_field_tag :name, params[:name] %>
