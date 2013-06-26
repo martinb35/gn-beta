@@ -1,5 +1,6 @@
 GoninisB1::Application.routes.draw do
-  resources :users
+  resources :users  # give us our some normal resource routes for users
+  resource :user, :as => 'account'  # a convenience route
 
   resources :jobs
 
@@ -12,7 +13,12 @@ GoninisB1::Application.routes.draw do
   resources :floors
 
   resources :levels
+  
+  get 'login' => "user_sessions#new",      :as => :login
+  get 'logout' => "user_sessions#destroy", :as => :logout  
 
+  get 'signup' => 'users#new', :as => :signup
+  
   get "tasks/show"
   get "tasks/add"
   # The priority is based upon order of creation: first created -> highest priority.

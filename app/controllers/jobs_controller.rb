@@ -5,9 +5,14 @@ class JobsController < ApplicationController
   # GET /jobs.json
   def index
     if params[:id]
-      Job.find_by_id(params[:id]).update_attributes(:status => 2)
-      flash[:notice] = "Estamos tramitando la aprobacion de esta tarea. Espera un mensaje de confirmacion en tu buzon de correo."
-      # JobMailer.notify_assigned(Job.find_by_id(params[:id])).deliver
+      if params[:status]
+      else
+        if Job.find_by_id(params[:id]).status == 1
+          Job.find_by_id(params[:id]).update_attributes(:status => 2)
+          flash[:notice] = "Estamos tramitando la aprobacion de esta tarea. Espera un mensaje de confirmacion en tu buzon de correo."
+          JobMailer.notify_assigned(Job.find_by_id(params[:id])).deliver
+        end
+      end
     end
     @jobs = Job.all
     @publish = true

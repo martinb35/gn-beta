@@ -47,3 +47,6 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+# Permission and Authorization
+gem 'authlogic', :git => 'git@github.com:christophemaximin/authlogic.git', :branch => 'fix_deprecated_with_scope'

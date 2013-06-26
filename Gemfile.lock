@@ -1,3 +1,12 @@
+GIT
+  remote: git@github.com:christophemaximin/authlogic.git
+  revision: 4f7e8cf6219fc7c4e92dca02d4f3e3ca934ad25d
+  branch: fix_deprecated_with_scope
+  specs:
+    authlogic (3.2.1)
+      activerecord (>= 3.0.0)
+      activesupport (>= 3.0.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -116,6 +125,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  authlogic!
   bcrypt-ruby (~> 3.0.0)
   coffee-rails (~> 4.0.0)
   jbuilder (~> 1.0.1)
