@@ -1,4 +1,13 @@
 GoninisB1::Application.routes.draw do
+  controller :sessions do
+    get  'login' => :new
+    post 'login' => :create
+    delete 'logout' => :destroy
+  end
+  
+  get "sessions/create"
+  get "sessions/destroy"
+  
   resources :users
 
   resources :users  # give us our some normal resource routes for users
@@ -15,11 +24,6 @@ GoninisB1::Application.routes.draw do
   resources :floors
 
   resources :levels
-  
-  get 'login' => "user_sessions#new",      :as => :login
-  get 'logout' => "user_sessions#destroy", :as => :logout  
-
-  get 'signup' => 'users#new', :as => :signup
   
   get "tasks/show"
   get "tasks/add"
