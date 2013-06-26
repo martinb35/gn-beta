@@ -5,19 +5,29 @@ ruby '1.9.3'
 gem 'thin'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.0.rc1'
+gem "rails", "~> 4.0.0"
 
 # Use sqlite3 as the database for Active Record
 gem 'pg'
 
+group :assets do
+  gem 'sprockets-rails', '~> 2.0.0'
+  gem 'sass-rails',   '~> 4.0.0'
+  gem 'coffee-rails', '~> 4.0.0'
+  gem 'uglifier', '>= 1.0.3'
+  gem "activesupport", "~> 4.0.0"
+  gem "actionpack", "~> 4.0.0"
+  gem "actionmailer", "~> 4.0.0"
+end
+
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.0.rc1'
+# gem 'sass-rails', '~> 4.0.0.rc1'
 
 # Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 1.3.0'
+# gem 'uglifier', '>= 1.3.0'
 
 # Use CoffeeScript for .js.coffee assets and views
-gem 'coffee-rails', '~> 4.0.0'
+# gem 'coffee-rails', '~> 4.0.0'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
@@ -47,6 +57,3 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-
-# Permission and Authorization
-gem 'authlogic', :git => 'git@github.com:christophemaximin/authlogic.git', :branch => 'fix_deprecated_with_scope'

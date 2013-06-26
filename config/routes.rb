@@ -1,4 +1,6 @@
 GoninisB1::Application.routes.draw do
+  resources :users
+
   resources :users  # give us our some normal resource routes for users
   resource :user, :as => 'account'  # a convenience route
 
