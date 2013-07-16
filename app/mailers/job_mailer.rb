@@ -5,7 +5,8 @@ class JobMailer < ActionMailer::Base
     @job = job
     @user_id = user_id
     @last_index = @job.contact.to_s.index('@')
-    @cat_name = JobCategory.find_by_id (@job.job_category_id).title
+    @cat_name = JobCategory.find_by_id (@job.job_category_id)
+    @cat_name = @cat_name.title
     @url  = "http://pre.goninis.com/jobs?id=#{@job.id}&status=3&revision=#{@user_id}"
     mail(to: @job.contact, subject: 'goninis - Permiso para realizar tarea')
   end

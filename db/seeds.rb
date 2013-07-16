@@ -25,8 +25,8 @@ User.create([
     role_id: 3}
 ])
 
-Level.create([{title: 'Uno'}, {title: 'Dos'}, {title: 'Tres'}])
+Level.create([{title: 'Limpieza Profunda'}, {title: 'Limpieza Normal'}, {title: 'De Temporada'}])
 Floor.create([{title: 'Uno'}, {title: 'Dos'}, {title: 'Tres'}])
 Room.create([{title: 'Uno'}, {title: 'Dos'}, {title: 'Tres'}])
 Bathroom.create([{title: 'Uno'}, {title: 'Dos'}, {title: 'Tres'}])
-JobCategory.create([{title: 'Hogar', icon: 'house.png'}, {title: 'Profesionales', icon: 'building.png'}])
+JobCategory.create([{title: 'Tareas del Hogar', icon: 'house.png'}, {title: 'Servicios Profesionales', icon: 'building.png'}])
