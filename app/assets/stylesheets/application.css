@@ -81,6 +81,12 @@ div.clickable > a {
 footer > section.left {
   padding-right:350px;
 }
+footer > section.about {
+  width:620px;
+  float:right;
+  margin:0;
+  padding:0;
+}
 footer > section.about > strong {
   padding:15px 10px 0px 10px;
   color:#a5c643;

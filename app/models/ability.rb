@@ -3,10 +3,11 @@ class Ability
 
   def initialize(user)
     user ||= User.new # guest user (not logged in)
+    puts "Role: #{user.role_id}"
     if user.role_id == 1
       can :manage, :all
     elsif user.role_id == 2
-      can :manage, [Bathroom, Room]
+      can :manage, [Level, Floor, Bathroom, Room, JobCategory]
     elsif user.role_id == 3
       can :read, Job
     end
