@@ -1,6 +1,7 @@
 class BathroomsController < ApplicationController
   before_action :set_bathroom, only: [:show, :edit, :update, :destroy]
-
+  load_and_authorize_resource
+  
   # GET /bathrooms
   # GET /bathrooms.json
   def index

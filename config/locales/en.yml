@@ -21,3 +21,7 @@
 
 en:
   hello: "Hello world"
+  unauthorized:
+      manage:
+        all: "No tienes acceso: %{action} %{subject}."
+        user: "No tienes permiso para administrar otras cuentas de usuarios."
