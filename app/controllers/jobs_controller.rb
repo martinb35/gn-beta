@@ -29,9 +29,14 @@ class JobsController < ApplicationController
         end
       else
         if Job.find_by_id(params[:id]).status == 1
-          Job.find_by_id(params[:id]).update_attributes(:status => 2)
-          flash[:notice] = "Estamos tramitando la aprobacion de esta tarea. Espera un mensaje de confirmacion en tu buzon de correo."
-          JobMailer.notify_assigned(Job.find_by_id(params[:id]), session[:user_id]).deliver
+          @cur_user = User.find_by_id(session[:user_id])
+          if Job.find_by_id(params[:id]).contact != @cur_user.email
+            Job.find_by_id(params[:id]).update_attributes(:status => 2)
+            flash[:notice] = "Estamos tramitando la aprobacion de esta tarea. Espera un mensaje de confirmacion en tu buzon de correo."
+            JobMailer.notify_assigned(Job.find_by_id(params[:id]), session[:user_id]).deliver
+          else
+            flash[:notice] = "Hey! estamos para ayudarte, no puedes asignarte tu propia tarea."
+          end
         end
       end
     end
