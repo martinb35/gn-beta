@@ -41,7 +41,7 @@
           <td><%= @job.notes %></td>
         </tr>
       </table><br/><br/>
-      También puedes ver la ubicación en el siguiente <a href="https://maps.google.com.mx/maps?q=18.92187618976372,+-98.3935546875" target="_blank">mapa</a>.
+      También puedes ver la ubicación en el siguiente <a href="https://maps.google.com.mx/maps?q=<%= @job.latlong %>" target="_blank">mapa</a>.
     </p>
     <p>
       Si deseas declinar esta oferta puedes hacerlo dando click en el siguiente link: <%= @url %>.
