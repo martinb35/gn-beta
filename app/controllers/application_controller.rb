@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   check_authorization
   
   rescue_from CanCan::AccessDenied do |exception|
-    redirect_to tasks_url, :alert => exception.message
+    redirect_to login_url, :alert => exception.message
   end
   before_filter do
     resource = controller_path.singularize.gsub('/', '_').to_sym

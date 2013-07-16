@@ -4,6 +4,7 @@ class JobMailer < ActionMailer::Base
   def notify_assigned(job, user_id)
     @job = job
     @user_id = user_id
+    @user = User.find_by_id(@user_id)
     @last_index = @job.contact.to_s.index('@')
     @cat_name = JobCategory.find_by_id (@job.job_category_id)
     @cat_name = @cat_name.title

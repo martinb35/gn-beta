@@ -4,11 +4,11 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h1>Felicidades <%= @user.name %>!</h1>
+    <h1>¡Felicidades <%= @user.name %>!</h1>
     <p>
-      ¡La tarea <%= @cat_name %> te ha sido asignada y recibirás <%= @job.offer %>!<br/>
-      Estos son los datos de contacto:<br/>
-      <table>
+      ¡La tarea <%= @cat_name %> te ha sido asignada y recibirás <%= @job.offer %>!<br/><br/>
+      Estos son los datos de contacto:<br/><br/>
+      <table border="1">
         <th>
           Dirección
         </th>
@@ -21,16 +21,17 @@
         <tr>
           <td><%= @job.address %></td>
           <td><%= @job.location_ref %></td>
-          <td><%= @job.when %></td>
+          <td><%= @job.when.in_time_zone("CST") %></td>
         </tr>
-      </table>
-      <table>
-        <th>Plantas<th>
-        <th>Pisos<th>
-        <th>Cuartos<th>
-        <th>Baños<th>
-        <th>¿Traer material para realizar la tarea?<th>
-        <th>Notas adicionales<th>
+      </table><br/><br/>
+      <p>Los detalles de la tarea son:</p>
+      <table border="1">
+        <th>Plantas</th>
+        <th>Pisos</th>
+        <th>Cuartos</th>
+        <th>Baños</th>
+        <th>¿Traer material para realizar la tarea?</th>
+        <th>Notas adicionales</th>
         <tr>
           <td><%= @job.level %></td>
           <td><%= @job.floor %></td>
@@ -39,8 +40,8 @@
           <td><% if @job.material == true %>SI<% else %>NO<% end %></td>
           <td><%= @job.notes %></td>
         </tr>
-      </table>
-      También puedes ver la ubicación en el siguiente <a href="https://maps.google.com.mx/maps?q=18.92187618976372,+-98.3935546875&hl=es-419&ll=18.921876,-98.393555" target="_blank">mapa</a>.
+      </table><br/><br/>
+      También puedes ver la ubicación en el siguiente <a href="https://maps.google.com.mx/maps?q=18.92187618976372,+-98.3935546875" target="_blank">mapa</a>.
     </p>
     <p>
       Si deseas declinar esta oferta puedes hacerlo dando click en el siguiente link: <%= @url %>.
