@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  skip_authorization_check :only => [:new, :create]
 
   # GET /users
   # GET /users.json
@@ -60,10 +61,6 @@ class UsersController < ApplicationController
       format.json { head :no_content }
     end
   end
-  
-  def current_user
-    @user = User.find_by_id(session[:user_id])
-  end
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
@@ -73,5 +70,8 @@ class UsersController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
       params.require(:user).permit(:name, :password, :password_confirmation, :email, :role_id)
+    end
+    def current_user
+      @user = User.find_by_id(session[:user_id])
     end
 end

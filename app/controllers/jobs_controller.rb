@@ -84,4 +84,7 @@ class JobsController < ApplicationController
     def job_params
       params.require(:job).permit(:title, :job_category_id, :level, :floor, :room, :bathroom, :material, :notes, :address, :location_ref, :second_address, :stored_address, :latlong, :when, :offer, :private, :auto_assign, :contact, :status)
     end
+    def current_user
+      @user = User.find_by_id(session[:user_id])
+    end
 end

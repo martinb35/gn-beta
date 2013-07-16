@@ -72,4 +72,7 @@ class BathroomsController < ApplicationController
     def bathroom_params
       params.require(:bathroom).permit(:title)
     end
+    def current_user
+      @user = User.find_by_id(session[:user_id])
+    end
 end

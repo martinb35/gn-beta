@@ -1,5 +1,6 @@
 class FloorsController < ApplicationController
   before_action :set_floor, only: [:show, :edit, :update, :destroy]
+  load_and_authorize_resource
 
   # GET /floors
   # GET /floors.json
@@ -70,5 +71,8 @@ class FloorsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def floor_params
       params.require(:floor).permit(:title)
+    end
+    def current_user
+      @user = User.find_by_id(session[:user_id])
     end
 end

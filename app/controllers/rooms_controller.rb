@@ -72,4 +72,7 @@ class RoomsController < ApplicationController
     def room_params
       params.require(:room).permit(:title)
     end
+    def current_user
+      @user = User.find_by_id(session[:user_id])
+    end
 end
