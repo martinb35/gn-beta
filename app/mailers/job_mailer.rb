@@ -4,7 +4,7 @@ class JobMailer < ActionMailer::Base
   def notify_assigned(job)
     @job = job
     @last_index = @job.contact.to_s.index('@')
-    @url  = "http://goninis.com/jobs?id=#{@job.id}&status=3&email=#{@job.contact}"
+    @url  = "http://goninis.com/jobs?id=#{@job.id}&status=3"
     mail(to: @job.contact, subject: 'goninis - Permiso para realizar tarea')
   end
 end
