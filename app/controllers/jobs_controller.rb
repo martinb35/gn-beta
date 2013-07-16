@@ -6,12 +6,32 @@ class JobsController < ApplicationController
   # GET /jobs.json
   def index
     if params[:id]
-      if params[:status]
+      if params[:status] && params[:revision]
+        @job = Job.find_by_id (params[:id])
+        @user = User.find_by_id (params[:revision])
+        @employer = User.find_by_id(session[:user_id])
+        puts "El cliente #{@employer.email} acepto la propuesta de #{@user.email}"
+        if @user != @employer
+          if params[:status].to_i == 3
+            Job.find_by_id(params[:id]).update_attributes(:status => params[:status])
+            JobMailer.notify_accepted(@user, Job.find_by_id(params[:id])).deliver
+            flash[:notice] = "Gracias, #{@user.name} se comunicara contigo para realizar esta tarea."
+          elsif params[:status].to_i == 4
+            Job.find_by_id(params[:id]).update_attributes(:status => 1)
+            puts "Rechazado por #{@user.email}"
+            JobMailer.notify_rejected(@user, Job.find_by_id(params[:id])).deliver
+            flash[:notice] = "Gracias, notificaremos al cliente sobre el cambio en esta tarea."
+          else
+            flash[:notice] = "El link ha caducado (err #{params[:status]})."
+          end 
+        else
+          flash[:notice] = "Hey! estamos para ayudarte, no puedes asignarte tu propia tarea."
+        end
       else
         if Job.find_by_id(params[:id]).status == 1
           Job.find_by_id(params[:id]).update_attributes(:status => 2)
           flash[:notice] = "Estamos tramitando la aprobacion de esta tarea. Espera un mensaje de confirmacion en tu buzon de correo."
-          JobMailer.notify_assigned(Job.find_by_id(params[:id])).deliver
+          JobMailer.notify_assigned(Job.find_by_id(params[:id]), session[:user_id]).deliver
         end
       end
     end

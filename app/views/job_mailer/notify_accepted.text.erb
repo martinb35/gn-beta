@@ -1,0 +1,23 @@
+¡Felicidades <%= @user.name %>!
+===============================
+¡La tarea <%= @cat_name %> te ha sido asignada y recibirás <%= @job.offer %>!
+
+Estos son los datos de contacto:
+Dirección: <%= @job.address %>
+Referencias: <%= @job.location_ref %>
+Fecha: <%= @job.when %>
+
+Información sobre la tarea:
+
+Plantas: <%= @job.level %>
+Pisos: <%= @job.floor %>
+Cuartos: <%= @job.room %>
+Baños: <%= @job.bathroom %>
+¿Traer material para realizar la tarea?: <% if @job.material == true %>SI<% else %>NO<% end %>
+Notas adicionales: <%= @job.notes %>
+
+También puedes ver la ubicación en el siguiente link: https://maps.google.com.mx/maps?q=18.92187618976372,+-98.3935546875&hl=es-419&ll=18.921876,-98.393555 
+
+Si deseas declinar esta oferta puedes hacerlo dando click en el siguiente link: <%= @url %>.
+
+¡Gracias por ser parte de goninis!

@@ -6,10 +6,10 @@
   <body>
     <h1>Hola <%= @job.contact.to_s[0, @last_index.to_i] %>!</h1>
     <p>
-      Tenemos un nini listo para realizar tu tarea <%= @cat_name %>.<br/>
+      Desafortunadamente <%= @user.name %> ha rechazado la oferta por la tarea.<br/>
     </p>
     <p>
-      Para aceptar la propuesta da click en el siguiente link: <%= @url %>.
+      La tarea sigue activa, y puedes compartirla usando el siguiente link: <a href="http://pre.goninis.com/jobs">http://pre.goninis.com/jobs</a>
     </p>
     <p>¡Gracias por utilizar goninis!</p>
   </body>
