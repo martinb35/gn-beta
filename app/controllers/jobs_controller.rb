@@ -11,10 +11,10 @@ class JobsController < ApplicationController
         @user = User.find_by_id (params[:revision])
         @employer = User.find_by_id(session[:user_id])
         puts "El cliente #{@employer.email} acepto la propuesta de #{@user.email}"
-        if @user != @employer
+        if @user.email != @employer.email
           if params[:status].to_i == 3
             Job.find_by_id(params[:id]).update_attributes(:status => params[:status])
-            JobMailer.notify_accepted(@user, Job.find_by_id(params[:id])).deliver
+            JobMailer.notify_accepted(@user, @job).deliver
             flash[:notice] = "Gracias, #{@user.name} se comunicara contigo para realizar esta tarea."
           elsif params[:status].to_i == 4
             Job.find_by_id(params[:id]).update_attributes(:status => 1)
