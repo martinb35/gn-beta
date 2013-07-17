@@ -58,6 +58,9 @@ class JobsController < ApplicationController
   
   # GET /jobs/new
   def new
+    if !session[:user_id]
+      redirect_to login_url, :alert => 'Debes iniciar sesión para ver las tareas disponibles'
+    end
     @job = Job.new
     @branding = true
   end
