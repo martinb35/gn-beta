@@ -9,7 +9,7 @@ class JobsController < ApplicationController
   # GET /jobs.json
   def index
     if !session[:user_id]
-      redirect_to login_url, :alert => 'Debes iniciar sesión para ver las tareas disponibles'
+      redirect_to login_url, :alert => 'Debes iniciar sesion para ver las tareas disponibles'
     else
       if params[:id]
         if params[:status] && params[:revision]

@@ -5,7 +5,7 @@
 Estos son los datos de contacto:
 Dirección: <%= @job.address %>
 Referencias: <%= @job.location_ref %>
-Fecha: <%= @job.when %>
+Fecha: <%= @job.when.in_time_zone("America/Mexico_City") %>
 
 Información sobre la tarea:
 
