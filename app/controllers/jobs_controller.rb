@@ -8,46 +8,47 @@ class JobsController < ApplicationController
   # GET /jobs
   # GET /jobs.json
   def index
-    @jobs = Job.all
     if !session[:user_id]
       redirect_to login_url, :alert => 'Debes iniciar sesión para ver las tareas disponibles'
-    end
-    if params[:id]
-      if params[:status] && params[:revision]
-        @user = User.find_by_id (params[:revision])
-        @job = Job.find_by_id (params[:id])
-        if params[:status].to_i == 4
-          Job.find_by_id(params[:id]).update_attributes(:status => 1)
-          JobMailer.notify_rejected(@user, @job).deliver
-          flash[:notice] = "Gracias, notificaremos al cliente sobre el cambio en esta tarea."
-        else
-          @employer = User.find_by_id(session[:user_id])
-          if @user.email != @employer.email
-            if params[:status].to_i == 3
-              Job.find_by_id(params[:id]).update_attributes(:status => params[:status])
-              JobMailer.notify_accepted(@user, @job).deliver
-              flash[:notice] = "Gracias, #{@user.name} se comunicara contigo para realizar esta tarea."
+    else
+      if params[:id]
+        if params[:status] && params[:revision]
+          @user = User.find_by_id (params[:revision])
+          @job = Job.find_by_id (params[:id])
+          if params[:status].to_i == 4
+            Job.find_by_id(params[:id]).update_attributes(:status => 1)
+            JobMailer.notify_rejected(@user, @job).deliver
+            flash[:notice] = "Gracias, notificaremos al cliente sobre el cambio en esta tarea."
+          else
+            @employer = User.find_by_id(session[:user_id])
+            if @user.email != @employer.email
+              if params[:status].to_i == 3
+                Job.find_by_id(params[:id]).update_attributes(:status => params[:status])
+                JobMailer.notify_accepted(@user, @job).deliver
+                flash[:notice] = "Gracias, #{@user.name} se comunicara contigo para realizar esta tarea."
+              else
+                flash[:notice] = "El link ha caducado (err #{params[:status]})."
+              end 
             else
-              flash[:notice] = "El link ha caducado (err #{params[:status]})."
-            end 
-          else
-            flash[:notice] = "Hey! estamos para ayudarte, no puedes asignarte tu propia tarea."
+              flash[:notice] = "Hey! estamos para ayudarte, no puedes asignarte tu propia tarea."
+            end
           end
-        end
-      else
-        if Job.find_by_id(params[:id]).status == 1
-          @cur_user = User.find_by_id(session[:user_id])
-          if Job.find_by_id(params[:id]).contact != @cur_user.email
-            Job.find_by_id(params[:id]).update_attributes(:status => 2)
-            flash[:notice] = "Estamos tramitando la aprobacion de esta tarea. Espera un mensaje de confirmacion en tu buzon de correo."
-            JobMailer.notify_assigned(Job.find_by_id(params[:id]), session[:user_id]).deliver
-          else
-            flash[:notice] = "Hey! estamos para ayudarte, no puedes asignarte tu propia tarea."
+        else
+          if Job.find_by_id(params[:id]).status == 1
+            @cur_user = User.find_by_id(session[:user_id])
+            if Job.find_by_id(params[:id]).contact != @cur_user.email
+              Job.find_by_id(params[:id]).update_attributes(:status => 2)
+              flash[:notice] = "Estamos tramitando la aprobacion de esta tarea. Espera un mensaje de confirmacion en tu buzon de correo."
+              JobMailer.notify_assigned(Job.find_by_id(params[:id]), session[:user_id]).deliver
+            else
+              flash[:notice] = "Hey! estamos para ayudarte, no puedes asignarte tu propia tarea."
+            end
           end
         end
       end
+      @jobs = Job.all
+      @publish = true
     end
-    @publish = true
   end
   
   # GET /jobs/1
