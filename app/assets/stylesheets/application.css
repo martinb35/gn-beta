@@ -15,6 +15,8 @@
 /* Add Bitter Font */
 @import url(http://fonts.googleapis.com/css?family=Bitter&subset=latin,latin-ext);
 
+
+
 div.container {
   margin:0px;
   padding:0px;
@@ -79,6 +81,12 @@ div.clickable > a {
 footer > section.left {
   padding-right:350px;
 }
+footer > section.about {
+  width:620px;
+  float:right;
+  margin:0;
+  padding:0;
+}
 footer > section.about > strong {
   padding:15px 10px 0px 10px;
   color:#a5c643;
@@ -101,14 +109,18 @@ footer > section nav > ul > li > a:hover {
 section {
   padding:0px 30px 0px 30px;
 }
+.clearfix:before,
 .clearfix:after {
-  content: ".";
-  display: block;
-  clear: both;
-  visibility: hidden;
-  line-height: 0;
-  height: 0;
+    content:"";
+    display:table;
 }
+.clearfix:after {
+    clear:both;
+}
+/* For IE 6/7 (trigger hasLayout) */
 .clearfix {
-  display: inline-block;
+    zoom:1;
+}
+.hidden {
+  display:none;
 }

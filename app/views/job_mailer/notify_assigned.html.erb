@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>¡Hola <%= @job.contact.to_s[0, @last_index.to_i] %>!</h1>
+    <p>
+      <%= @user.name %> quiere realizar la tarea "<%= @cat_name %>".<br/>
+    </p>
+    <p>
+      Para asignarle esta tarea da click en el siguiente <a href="<%= @url %>">link</a>
+    </p>
+    <p>
+      Sino, puedes esperar a recibir más propuestas.
+    </p>
+    <p>¡Gracias por utilizar goninis!</p>
+  </body>
+</html>

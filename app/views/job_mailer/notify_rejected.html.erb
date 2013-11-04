@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>¡Hola <%= @job.contact.to_s[0, @last_index.to_i] %>!</h1>
+    <p>
+      Desafortunadamente <%= @user.name %> ha rechazado la oferta por la tarea.<br/>
+    </p>
+    <p>
+      Sin embargo la tarea sigue activa, y puedes compartirla en tus redes sociales usando el siguiente link: <a href="http://pre.goninis.com/jobs">http://pre.goninis.com/jobs</a>
+    </p>
+    <p>¡Gracias por utilizar goninis!</p>
+  </body>
+</html>

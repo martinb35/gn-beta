@@ -1,6 +1,7 @@
 class JobCategoriesController < ApplicationController
   before_action :set_job_category, only: [:show, :edit, :update, :destroy]
-
+  load_and_authorize_resource
+  
   # GET /job_categories
   # GET /job_categories.json
   def index
@@ -70,5 +71,8 @@ class JobCategoriesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def job_category_params
       params.require(:job_category).permit(:title, :icon)
+    end
+    def current_user
+      @user = User.find_by_id(session[:user_id])
     end
 end

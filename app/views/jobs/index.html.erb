@@ -1,12 +1,51 @@
+<h1><%= @debug %></h1>
 <section id="listing">
-  <% @jobs.each do |job| %>
-    <% cat = JobCategory.find_by_id(job.job_category_id) %>
-    <div class="item">
-    <% if job.private == false %>
-      <p class="title"><%= link_to cat.title, job %></p>
-      <p class="offer"><%= number_to_currency(job.offer) %></p>
+  <div class="items left">
+    <% @jobs.each do |job| %>
+      <% 
+        level = Level.find_by_id(job.level)
+        floor = Floor.find_by_id(job.floor)
+        room = Room.find_by_id(job.room)
+        bathroom = Bathroom.find_by_id(job.bathroom)
+        bring_material = job.material ? 'Debes traer tu herramienta de trabajo.' : 'No necesitas traer tu herramienta de trabajo.'
+        last_index = job.contact.to_s.index('@')
+        contact = job.contact.to_s[0, last_index.to_i]
+        case job.status
+        when 1
+          status = "Disponible"
+        when 2
+          status = "Evaluando propuestas"
+        when 3
+          status = "Tarea Asignada"
+        else
+          status = "Terminada"
+        end
+      %>
+      <% if job.private == false %>
+      <div class="item">
+        <p class="title"><%= level.title %><strong><%= status  %></strong></p>
+        <p class="offer"><%= number_to_currency(job.offer) %></p>
+      </div>
+      <div class="item wrapper">
+        <div class="left content">
+          <h1 class="when"><%= job.when.strftime('%d-%b-%Y %H:%M %p') %></h1>
+          <p class="contact">Publicado por: <br/><%= contact  %></p>
+          <div class="map">Ver zona en mapa</div>
+          <input type="hidden" name="job_latlong" id="job_latlong" value="<%= job.latlong %>" />
+        </div>
+        <div class="right content">
+          <p class=""><%= floor.title %> pisos, <%= room.title %> dormitorios y <%= bathroom.title %> baños</p>
+          <p class=""><%= bring_material %></p>
+          <p class=""><%= job.notes %></p>
+          <% if job.status == 1 || job.status == 2 %>
+          <div class="clickable choose"><%= link_to "", :controller => "jobs", :action => "index", :id => job.id %></div>
+          <% end %>
+        </div>
+      </div>
+      <div class="clearfix"></div>
+      <% end %>
     <% end %>
-    </div>
-  <% end %>
+  </div>
+  <div id="single-map-canvas" class="right"></div>
 </section>
-<div class="clearfix">&nbsp;</div>
+<div class="clearfix"></div>

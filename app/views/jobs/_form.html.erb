@@ -42,12 +42,26 @@
       <%= f.radio_button :material, true %> Tengo todos los artículos de limpieza en casa<br/>
       <%= f.radio_button :material, false %> El handy debe traer material de limpieza
     </div>
+    <div class="field">
+      <div class="show" href="#">Deseo añadir notas adicionales</div>
+      <%= f.text_area :notes, {:placeholder => "Agrega notas adicionales aquí", :class => 'hidden' } %>
+    </div>
   </section>
   <section>
     <div class="icon map">&nbsp;</div>
     <div class="field">
+      <%= f.label "Correo electrónico de contacto" %>
+      <%= f.text_field :contact, {:value => User.find_by_id(session[:user_id]).email, :class => 'email'} %>
+    </div>
+    <div class="field">
       <%= f.text_area :address, {:placeholder => "Ubicación (calle y número, colonia, delegación)"} %>
       <small>La dirección completa solo se comparte con el Handy asignado.</small>
+    </div>
+    <div class="field">
+      <div class="show" href="#">Indicar en mapa</div>
+      <div id="map-canvas"></div>
+      <%= f.hidden_field :latlong, :value => "19.2644,-99.6569" %>
+      <%= f.hidden_field :status, :value => 1 %>
     </div>
   </section>
   <section>
@@ -72,7 +86,7 @@
     </div>
     <div class="field">
       <%= f.radio_button :auto_assign, false %>Asignar al Handy que ofrezca mejor costo<br/>
-      <%= f.radio_button :auto_assign, true %>Deseo asignar el Handy
+      <%= f.radio_button :auto_assign, true, {checked: true}  %>Deseo asignar el Handy
     </div>
   </section>
   <div class="actions">

@@ -1,4 +1,5 @@
 class Job < ActiveRecord::Base
+  default_scope order('id DESC')
   belongs_to :job_category
   belongs_to :floors
   belongs_to :rooms

@@ -1,5 +1,6 @@
 class RoomsController < ApplicationController
   before_action :set_room, only: [:show, :edit, :update, :destroy]
+  load_and_authorize_resource
 
   # GET /rooms
   # GET /rooms.json
@@ -70,5 +71,8 @@ class RoomsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def room_params
       params.require(:room).permit(:title)
+    end
+    def current_user
+      @user = User.find_by_id(session[:user_id])
     end
 end
