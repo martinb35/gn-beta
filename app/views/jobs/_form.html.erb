@@ -11,82 +11,152 @@
     </div>
   <% end %>
   <!--[if !IE]> --><div class="notIE"><!-- <![endif]-->
-  <label class="category-title" />
-  <%= f.collection_select :job_category_id, JobCategory.all, :id, :title, {}, {:class => 'category-title'} %>
+  <div class="iconH-cleaning">
+    <label class="category-title" />
+    <%= f.collection_select :job_category_id, JobCategory.all, :id, :title, {}, {:class => 'category-title'} %>
+  </div>
+  <div class="job-btn" id="gn-change-category"></div>
   <!--[if !IE]> --></div> <!-- <![endif]-->
-  <section>
+  <section id="gn-sub-form-description">
     <div class="icon levels">&nbsp;</div>
-    <div class="field">
+     <div class="field">
       <%= f.label "Nivel de limpieza" %>
-      <!--[if !IE]> --><div class="notIE"><!-- <![endif]-->
-      <label />
-      <%= f.collection_select :level, Level.all, :id, :title, {:include_blank => 'Nivel de limpieza'} %>
-      <!--[if !IE]> --></div> <!-- <![endif]-->
+      <ul id="job_level">        
+        <% @levels = Level.all %>
+        <% @levels.each do |level| %>
+        <li><div class="toggle-btn"><%= level.title  %></div><span class="gn-icon guides small"></span></li>
+        <% end %>
+      </ul>
     </div>
     <div class="field">
       <%= f.label "Tamaño del hogar" %>
       <!--[if !IE]> --><div class="notIE"><!-- <![endif]-->
       <label />
-      <%= f.collection_select(:floor, Floor.all, :id, :title, {:include_blank => 'Número de pisos'}) %>
+      <%= f.collection_select(:floor, Floor.all, :id, :title, {:include_blank => 'No. de pisos'}) %>
       <!--[if !IE]> --></div> <!-- <![endif]-->
       <!--[if !IE]> --><div class="notIE"><!-- <![endif]-->
       <label />
-      <%= f.collection_select(:room, Room.all, :id, :title, {:include_blank => 'Número de dormitorios'}) %>
+      <%= f.collection_select(:room, Room.all, :id, :title, {:include_blank => 'No. de dormitorios'}) %>
       <!--[if !IE]> --></div> <!-- <![endif]-->
       <!--[if !IE]> --><div class="notIE"><!-- <![endif]-->
       <label />
-      <%= f.collection_select(:bathroom, Bathroom.all, :id, :title, {:include_blank => 'Número de baños'}) %>
+      <%= f.collection_select(:bathroom, Bathroom.all, :id, :title, {:include_blank => 'No. de baños'}) %>
       <!--[if !IE]> --></div> <!-- <![endif]-->
     </div>
+    <div class="clear"></div>
     <div class="field">
-      <%= f.radio_button :material, true %> Tengo todos los artículos de limpieza en casa<br/>
-      <%= f.radio_button :material, false %> El handy debe traer material de limpieza
+      <div class="gn-radio-button"><%= f.radio_button :material, true %></div>Tengo todos los artículos de limpieza en casa
+      <div class="clear"></div>
+      <div class="gn-radio-button"><%= f.radio_button :material, false %></div> El handy debe traer material de limpieza
     </div>
     <div class="field">
       <div class="show" href="#">Deseo añadir notas adicionales</div>
       <%= f.text_area :notes, {:placeholder => "Agrega notas adicionales aquí", :class => 'hidden' } %>
     </div>
   </section>
-  <section>
+  <section id="gn-sub-form-when">
+    <div class="icon calendar">&nbsp;</div>
+    <div class="field">      
+      <label class="text-label">Requiero que la limpieza</label>
+      <!--[if !IE]> --><div class="notIE"><!-- <![endif]-->
+      <label id="gn-skin-require-cleaning" />
+      <select id="job_require_cleaning" name="job[require_cleaning]">
+        <option>Comienze</option>
+        <option>Termine</option>
+      </select>
+      <!--[if !IE]> --></div> <!-- <![endif]-->      
+      <label>el d&iacute;a:</label>
+      <!--[if !IE]> --><div class="notIE"><!-- <![endif]-->
+      <label id="gn-skin-when-date" />
+      <input type="text" id="job_when_date" name="job[when]" placeholder="Elige la fecha"/>      
+      <!--[if !IE]> --></div> <!-- <![endif]-->   
+    </div>
+    <div class="clear"></div>
+    <div class="field">
+      <label class="text-label">a las:</label>
+      <div class="gn-job-time">
+        <!--[if !IE]> --><div class="notIE"><!-- <![endif]-->
+        <label class="gn-skin-when-time"/>
+        <select id="job_when_hr" name="job[when]">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+          <option>6</option>
+          <option>7</option>
+          <option>8</option>
+          <option>9</option>
+          <option>10</option>
+          <option>11</option>
+          <option>12</option>
+        </select>
+        <!--[if !IE]> --></div> <!-- <![endif]-->   
+        <!--[if !IE]> --><div class="notIE"><!-- <![endif]-->
+        <label class="gn-skin-when-time"/>
+        <select id="job_when_min" name="job[when]">
+          <option>00</option>
+          <option>10</option>
+          <option>20</option>
+          <option>30</option>
+          <option>40</option>
+          <option>50</option>
+        </select>
+        <!--[if !IE]> --></div> <!-- <![endif]-->   
+        <!--[if !IE]> --><div class="notIE"><!-- <![endif]-->
+        <label class="gn-skin-when-time-last"/>
+        <select id="job_when_meridian" name="job[when]">
+          <option>AM</option>
+          <option>PM</option>
+        </select>
+        <!--[if !IE]> --></div> <!-- <![endif]--> 
+      </div>        
+      <label id="gn-checkbox-repeat-task">
+        <div class="gn-checkbox">
+          <input type="checkbox" name="job[repeat]" id="job_repeat_task"></div> 
+          Repetir tarea peri&oacute;dicamente
+      </label>
+    </div>
+  </section>
+  </section>
+  <section id="gn-sub-form-where">
     <div class="icon map">&nbsp;</div>
     <div class="field">
-      <%= f.label "Correo electrónico de contacto" %>
-      <%= f.text_field :contact, {:value => User.find_by_id(session[:user_id]).email, :class => 'email'} %>
+      <input type="text" name="job_address" id="job_address" placeholder="Ubicación (calle y número, colonia, delegación)" maxlength="300">
+      <label class="checkbox">
+        <div class="gn-checkbox"><input type="checkbox" name="job_save_address" id="job_save_address"></div> Guardar direcci&oacute;n
+      </label>
+    </div>
+    <div class="clear"></div>
+    <div class="field">
+      <div class="show" id="gn-add-reference" href="#">Añadir referencias</div>
+      <div class="show" id="gn-use-address" href="#">Usar mis direcciones</div>
     </div>
     <div class="field">
-      <%= f.text_area :address, {:placeholder => "Ubicación (calle y número, colonia, delegación)"} %>
-      <small>La dirección completa solo se comparte con el Handy asignado.</small>
+      <textarea id="job_references" class="hidden" placeholder ="Agrega referencias como color de fachada, negocios al rededor, etc"></textarea>
     </div>
-    <div class="field">
-      <div class="show" href="#">Indicar en mapa</div>
-      <div id="map-canvas"></div>
-      <%= f.hidden_field :latlong, :value => "19.2644,-99.6569" %>
-      <%= f.hidden_field :status, :value => 1 %>
-    </div>
+    <div class="field"><small>No te preocupes! La dirección completa solo se comparte con el Handy asignado.</small></div>
+    <%= f.hidden_field :latlong, :value => "19.2644,-99.6569" %>
+    <%= f.hidden_field :status, :value => 1 %>
   </section>
-  <section>
-    <div class="icon calendar">&nbsp;</div>
-    <div class="field when">
-      <%= f.label 'Requiero que la limpieza se lleve a cabo:' %>
-      <%= f.datetime_select :when %>
-    </div>
-  </section>
-  <section>
+  <section id="gn-sub-form-money">
     <div class="icon money">&nbsp;</div>
     <div class="field">
-      <%= f.label '¿Cuánto estás dispuesto a pagar por esta tarea?' %><br/>
-      <%= f.text_field :offer, {:placeholder => 'Oferta promedio: $150.00 - $300.00'} %>
-      <small>El pago se hace hasta que la tarea ha sido completada.</small>
-    </div>
-  </section>
-  <section>
-    <div class="icon edit">&nbsp;</div>
-    <div class="field">
-      <%= f.check_box :private %>Esta tarea es privada
-    </div>
-    <div class="field">
-      <%= f.radio_button :auto_assign, false %>Asignar al Handy que ofrezca mejor costo<br/>
-      <%= f.radio_button :auto_assign, true, {checked: true}  %>Deseo asignar el Handy
+        <ul class="nav-tabs">
+          <li class="active"><a href="javascript:void(0);" data-toggle="tab1">Asignaci&oacute;n r&aacute;pida</a></li>
+          <li><a href="javascript:void(0);" data-toggle="tab2">Revisar ofertas</a></li>
+        </ul>
+        <div class="tab-content">
+          <div class="tab-pane active" id="tab1">
+            <span>Cuanto est&aacute;s dispuesta a pagar?<div class="gn-icon guides small"></div></span>
+            <span>
+              <input type="text" name="job[offer]" id="job_offer" placeholder="$0.00 m.n." maxlength="200">
+              Oferta promedio:<div class="job-flash">$000-00</div>
+            </span>
+          </div>
+          <div class="tab-pane" id="tab2">Container Revisar oferta</div>
+        </div>
+        <div class="tab-footer">El primer handy en aceptar tu oferta sera automaticamente asignado</div>
     </div>
   </section>
   <div class="actions">

@@ -1,2 +1,57 @@
-
-<%= render 'form' %>
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+ <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+<div id="gn-new-job" class="container-form columns">
+  <form class="col" id="gn-form-job-home">
+    <%= render 'form' %>
+  </form>
+  <form class="col" id="gn-form-job-business">
+    <p>Handy Para tu Negocio</p>
+  </form>
+  <div class="job-rightPanel last">
+    <section>
+      <h1>Contacto telefónico</h1>
+      <p>Tienes alguna pregunta o necesitas ayuda?</p>
+      <p>Llámanos al <strong>(55) 5517 7523</strong><br>
+      todos los días de 8am a 8pm</p>
+    </section>
+    <section>
+      <ul>
+          <li>
+              <div class="iconRP-guides"></div>
+              <a>Guías y consejos</a>
+          </li>
+          <li>
+              <div class="iconRP-security"></div>
+              <a>Tu seguridad, tarea no.1</a>
+          </li>
+          <li>
+              <div class="iconRP-features"></div>
+              <a>Características únicas del servicio</a>
+          </li>
+      </ul>
+    </section>
+    <h1>VISUALIZA TU TAREA</h1>
+    <section class="location">
+      <h1>LIMPIEZA DEL HOGAR</h1>
+      <p>La tarea debe ser completada el: <span id="gn-job-date"></span> <span id="gn-job-time"></span></p>
+      <p>Voy a pagar <span id="gn-job-offer">$</span></p>
+      <p>Ubicación</p>
+      <div id="job-map"></div>
+      <ul>
+          <li>
+              <div class="iconRP-notes"></div>
+              <a>Notas</a>
+          </li>
+      </ul>
+    </section>
+    <div class="columns job-privateArea">
+      <label class="checkbox">
+      <div class="gn-checkbox">
+        <input class="col" type="checkbox" id="job_private" name="job[private]">
+      </div>
+      </label>
+      <p class="col">Esta tarea es privada</p>
+      <div class="iconRP-help col"></div>
+    </div>
+  </div>
+</div>
