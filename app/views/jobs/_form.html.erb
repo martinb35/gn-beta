@@ -20,7 +20,7 @@
   <section id="gn-sub-form-description">
     <div class="icon levels">&nbsp;</div>
      <div class="field">
-      <%= f.label "Nivel de limpieza" %>
+      <%= f.label "Nivel de limpieza", :class => 'label-field' %>
       <ul id="job_level">        
         <% @levels = Level.all %>
         <% @levels.each do |level| %>
@@ -29,7 +29,7 @@
       </ul>
     </div>
     <div class="field">
-      <%= f.label "Tamaño del hogar" %>
+      <%= f.label "Tamaño del hogar", :class => 'label-field' %>
       <!--[if !IE]> --><div class="notIE"><!-- <![endif]-->
       <label />
       <%= f.collection_select(:floor, Floor.all, :id, :title, {:include_blank => 'No. de pisos'}) %>
@@ -135,7 +135,7 @@
     <div class="field">
       <textarea id="job_references" class="hidden" placeholder ="Agrega referencias como color de fachada, negocios al rededor, etc"></textarea>
     </div>
-    <div class="field"><small>No te preocupes! La dirección completa solo se comparte con el Handy asignado.</small></div>
+    <div class="field"><small class='label-field'>No te preocupes! La dirección completa solo se comparte con el Handy asignado.</small></div>
     <%= f.hidden_field :latlong, :value => "19.2644,-99.6569" %>
     <%= f.hidden_field :status, :value => 1 %>
   </section>
@@ -148,15 +148,15 @@
         </ul>
         <div class="tab-content">
           <div class="tab-pane active" id="tab1">
-            <span>Cuanto est&aacute;s dispuesta a pagar?<div class="gn-icon guides small"></div></span>
+            <span>&iquest;Cuanto est&aacute;s dispuesta a pagar?<div class="gn-icon guides small"></div></span>
             <span>
               <input type="text" name="job[offer]" id="job_offer" placeholder="$0.00 m.n." maxlength="200">
-              Oferta promedio:<div class="job-flash">$000-00</div>
+              <label>Oferta promedio:</label> <div class="job-flash">$000-00</div>
             </span>
           </div>
           <div class="tab-pane" id="tab2">Container Revisar oferta</div>
         </div>
-        <div class="tab-footer">El primer handy en aceptar tu oferta sera automaticamente asignado</div>
+        <div class="tab-footer label-field">El primer handy en aceptar tu oferta sera automaticamente asignado</div>
     </div>
   </section>
   <div class="actions">
