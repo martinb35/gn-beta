@@ -2,7 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-@import url(http://fonts.googleapis.com/css?family=Bitter&subset=latin,latin-ext);
+@font-face {
+  font-family: BitterRegular;
+
+  src: url('/assets/fonts/Bitter-Regular.otf');
+}
 
 /*###################Genereales##############################*/
 /*inputs*/
@@ -41,7 +45,7 @@ input[type="color"],
         -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
-    font-family: 'Bitter', serif;
+    font-family: 'BitterRegular', serif;
 }
 div#gn-new-job .job-flash{
   color: #006b85;
@@ -94,7 +98,6 @@ div#gn-new-job .job-flash{
   box-shadow:             0px 1px 3px #b2b3b3;
   -moz-box-shadow:        0px 1px 3px #b2b3b3;
     -webkit-box-shadow:   0px 1px 3px  #b2b3b3;
-  font-family: 'Bitter', serif;
 }
 .toggle-btn.btn-selected{
   color: #333333;
@@ -113,6 +116,7 @@ div#gn-new-job .job-flash{
 
 /*###################StartSections ##############################*/
 body.jobs form > section{
+  font-family: 'BitterRegular', serif;
   position:relative;
   padding: 40px 0px 40px 40px;
   margin: 0 22px 0 0;
@@ -133,7 +137,6 @@ body.jobs form > section{
       padding-left:20px;
       margin-top: 20px;
       font-size: 12px; font-size: 1.2rem; /* = 12px */
-      color:#bababa;
     }
     div.show {
       color:#006b85;
@@ -279,6 +282,11 @@ div#gn-new-job section#gn-sub-form-money{
       margin-top: 20px;
       display: block;
     }
+    label{
+      float: none;
+      width: auto;
+      color: #006B85;
+    }
     .gn-icon.guides.small{
       margin-left: 20px;
     }
@@ -316,6 +324,20 @@ div.job.logo.publish {
 
 /* View Jobs  */
 div#gn-new-job{
+  a{
+    outline: 0;
+  }
+  p, ol, ul, td, strong{
+    font-family: 'BitterRegular', serif;
+  }
+  strong{
+    font-weight: bold;
+  }
+  .label-field{
+    font-family: 'BitterItalic', serif;
+    font-style: italic;
+  }
+  font-family: 'BitterRegular', serif;
   select.category-title {
     font-size: 18px; font-size: 1.8rem; /* = 18px */
     width: 18em;
@@ -526,6 +548,12 @@ section#gn-sub-form-description{
       display: inline-block;
     }
   }
+  .gn-radio-button{
+    margin-right: 8px;
+  }
+  label.label-field{
+    padding-top: 6px;
+  }
   select{
     width: 130px;
   }
@@ -623,29 +651,34 @@ section#gn-sub-form-where{
 }
 /*Start sidebar*/
 .job-rightPanel{
-    width: 292px;
-    background: url(/images/rPanel_bg.png) no-repeat center left;
-    height: 100%;
-    min-height:100%;
-    font-size: 13px;
+  font-family: 'BitterRegular', serif;
+  width: 292px;
+  background: url(/images/rPanel_bg.png) no-repeat center left;
+  height: 100%;
+  min-height:100%;
+  font-size: 13px;
+  div.gn-icon.guides.small{
+    float: left;
+    margin: 0 0 0 10px;
+  }
 }
 .job-rightPanel h1 {
-    font-size: 15px;
-    font-weight: bold;
-    margin: 0 30px 0 50px;
-    color: #006b85;
+  font-size: 15px;
+  font-weight: bold;
+  margin: 0 30px 0 50px;
+  color: #006b85;
 }
 .job-rightPanel h1 + section{
-    margin: 5px 30px;
+  margin: 5px 30px;
 }
 .job-rightPanel section {
-    margin: 30px;
-    padding: 25px 20px;
-    border: 1px solid #bbbbbb;
-    background-color: #f2f2f2;
+  margin: 30px;
+  padding: 25px 20px;
+  border: 1px solid #bbbbbb;
+  background-color: #f2f2f2;
 }
 .job-rightPanel section h1, .job-rightPanel section p, .job-rightPanel section a{
-    font-size: 13px;
+  font-size: 13px;
 }
 .job-rightPanel section h1{    
     font-weight: bold;
