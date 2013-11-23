@@ -1,57 +1,71 @@
 <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
- <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
-<div id="gn-new-job" class="container-form columns">
-  <form class="col" id="gn-form-job-home">
-    <%= render 'form' %>
-  </form>
-  <form class="col" id="gn-form-job-business">
-    <p>Handy Para tu Negocio</p>
-  </form>
-  <div class="job-rightPanel last">
-    <section>
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+
+<div id="gn-new-job">
+  <div id="container-form" class="container-form columns">
+    <header class="gn-form-header">
+      <!--[if !IE]> --><div class="notIE"><!-- <![endif]-->
+      <div class="icon category home-task">
+        <label class="category-title" />
+        <%-#= f.collection_select :job_category_id, JobCategory.all, :id, :title, {}, {:class => 'category-title'} %>
+        <select id="job_category_id" class="category-title">
+          <% @levels = JobCategory.all %>
+            <% @levels.each do |level| %>
+            <option value="<%= level.id %>"><%= level.title  %></option>        
+            <% end %>
+        </select>    
+      </div>
+      <div class="button change-category" id="gn-change-category"></div>
+      <!--[if !IE]> --></div> <!-- <![endif]-->
+    </header>
+    <form class="col" id="gn-new-job-form-home-task"><%= render 'form' %></form>
+    <form class="col" id="gn-new-job-form-cook-task"><%= render 'form_cook' %></form>
+  </div>
+  <aside class="gn-sidebar">
+    <section class="gn-widget-contact">
       <h1>Contacto telefónico</h1>
       <p>Tienes alguna pregunta o necesitas ayuda?</p>
       <p>Llámanos al <strong>(55) 5517 7523</strong><br>
       todos los días de 8am a 8pm</p>
     </section>
-    <section>
+    <section class="gn-widget-link">
       <ul>
-          <li>
-              <div class="iconRP-guides"></div>
-              <a>Guías y consejos</a>
-          </li>
-          <li>
-              <div class="iconRP-security"></div>
-              <a>Tu seguridad, tarea no.1</a>
-          </li>
-          <li>
-              <div class="iconRP-features"></div>
-              <a>Características únicas del servicio</a>
-          </li>
+        <li>
+          <div class="icon guides"></div>
+          <a>Guías y consejos</a>
+        </li>
+        <li>
+          <div class="icon security"></div>
+          <a>Tu seguridad, tarea no.1</a>
+        </li>
+        <li>
+          <div class="icon features"></div>
+          <a>Características únicas del servicio</a>
+        </li>
       </ul>
     </section>
     <h1>VISUALIZA TU TAREA</h1>
-    <section class="location">
+    <section class="gn-widget-show-task">
       <h1>LIMPIEZA DEL HOGAR</h1>
       <p>La tarea debe ser completada el: <span id="gn-job-date"></span> <span id="gn-job-time"></span></p>
       <p>Voy a pagar <span id="gn-job-offer">$</span></p>
       <p>Ubicación</p>
-      <div id="job-map"></div>
+      <div id="gn-job-location-map"></div>
       <ul>
-          <li>
-              <div class="iconRP-notes"></div>
-              <a>Notas</a>
-          </li>
+        <li>
+          <div class="icon notes"></div>
+          <a>Notas</a>
+        </li>
       </ul>
     </section>
-    <div class="columns job-privateArea">
+    <footer class="gn-widget-private-area">
       <label class="checkbox">
-      <div class="gn-checkbox">
+      <div class="icon checkbox">
         <input class="col" type="checkbox" id="job_private" name="job[private]">
       </div>
       </label>
-      <p class="col">Esta tarea es privada</p>
-      <div class="gn-icon guides small"></div>
-    </div>
-  </div>
+      <p>Esta tarea es privada</p>
+      <div class="icon guides small"></div>
+    </footer>    
+  </aside>
 </div>

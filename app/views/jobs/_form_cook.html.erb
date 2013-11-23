@@ -15,32 +15,31 @@
     <div class="field">
       <%= f.label "Nivel de limpieza", :class => 'label-field' %>
       <ul id="job_level">        
-        <% @levels = Level.all %>
-        <% @levels.each do |level| %>
-        <li><div class="toggle-btn"><%= level.title  %></div><span class="icon guides small"></span></li>
-        <% end %>
+        <li><div class="toggle-btn active">corrida</div><span class="icon guides small"></span></li>
+        <li><div class="toggle-btn">elaborada</div><span class="icon guides small"></span></li>
+        <li><div class="toggle-btn">especial</div><span class="icon guides small"></span></li>
       </ul>
     </div>
     <div class="field">
-      <%= f.label "Tamaño del hogar", :class => 'label-field' %>
+      <label class="label-field">&iquest;Para cu&aacute;ntos d&iacute;as se preparar&aacute; la comida? </label>
       <!--[if !IE]> --><div class="notIE"><!-- <![endif]-->
       <label />
-      <%= f.collection_select(:floor, Floor.all, :id, :title, {:include_blank => 'No. de pisos'}) %>
-      <!--[if !IE]> --></div> <!-- <![endif]-->
-      <!--[if !IE]> --><div class="notIE"><!-- <![endif]-->
-      <label />
-      <%= f.collection_select(:room, Room.all, :id, :title, {:include_blank => 'No. de dormitorios'}) %>
-      <!--[if !IE]> --></div> <!-- <![endif]-->
-      <!--[if !IE]> --><div class="notIE"><!-- <![endif]-->
-      <label />
-      <%= f.collection_select(:bathroom, Bathroom.all, :id, :title, {:include_blank => 'No. de baños'}) %>
+      <%= f.collection_select(:floor, Floor.all, :id, :title, {:include_blank => 'No. de personas'}) %>
       <!--[if !IE]> --></div> <!-- <![endif]-->
     </div>
     <div class="clear"></div>
     <div class="field">
-      <div class="icon radio"><%= f.radio_button :material, true %></div>Tengo todos los artículos de limpieza en casa
+      <label class="label-field">&iquest;Para cu&aacute;ntas personas se cocinar&aacute;?</label>
+      <!--[if !IE]> --><div class="notIE"><!-- <![endif]-->
+      <label />
+      <%= f.collection_select(:floor, Floor.all, :id, :title, {:include_blank => 'Este dia unicamente'}) %>
+      <!--[if !IE]> --></div> <!-- <![endif]-->
+    </div>
+    <div class="clear"></div>
+    <div class="field">
+      <div class="icon radio"><%= f.radio_button :material, true %></div>Tengo todos los ingredientes de preparaci&oacute;n en casa
       <div class="clear"></div>
-      <div class="icon radio"><%= f.radio_button :material, false %></div> El handy debe traer material de limpieza
+      <div class="icon radio"><%= f.radio_button :material, false %></div> El handy debe traer ingredientes de preparaci&oacute;n
     </div>
     <div class="field">
       <div class="label-highlight">Deseo añadir notas adicionales</div>
