@@ -108,17 +108,21 @@ var Jobs = {
     this.create_geocoding('job_address');
     this.$el.find('.toggle-btn').first().click();
     this.$el.find('.gn-sub-form-description input[type=radio]').first().click();
-    this.$el.find( "#job_when_date" ).datepicker({
+    this.$el.find( ".job_when_date_otro" ).datepicker({
       dateFormat: "dd-M-yy",
       minDate: new Date(),
       onSelect: function(){
-        $('#gn-job-date').text( $( "#job_when_date" ).val() );
+        $('.gn-job-date').text( $( ".job_when_date_otro" ).val() );
          if($( "#job_when_date" )!=="")
           self.active_section('.gn-sub-form-when'); 
         else
           self.inactive_section('.gn-sub-form-when');
       }
     });
+    this.$el.find('#job_repeat_task_date_input').multiDatesPicker({
+      dateFormat: "dd-M-yy"
+    });
+    $('#ui-datepicker-div').hide();
   },
   create_map: function(map_id){
     var latlong = this.$el.find('#job_latlong').val();
@@ -255,11 +259,38 @@ var Jobs = {
         self.inactive_section('.gn-sub-form-description'); 
     });
 
-    this.$el.find('#job_when_date').bind('change', function(e){
-      if($(this).val()!=="")
-        self.active_section('.gn-sub-form-when'); 
-      else
-        self.inactive_section('.gn-sub-form-when');       
+    this.$el.find('select.job_when_date').bind('change', function(e){
+      var date_value = self.$el.find('select.job_when_date option:selected').val();
+      if(date_value!="otro")
+        self.active_section('.gn-sub-form-when');
+      else{
+        self.$el.find('div[name=job_when_date]').hide();
+        self.$el.find('div[name=job_when_date_otro]').show();
+        self.$el.find('section.gn-sub-form-when .close').show();
+      }     
+    });
+
+    this.$el.find('select.job_repeat_task_date').bind('change', function(e){
+      var option_value = self.$el.find( "select.job_repeat_task_date option:selected" ).val();
+      if(option_value=='cada'){
+        self.$el.find(this).parent().parent().hide();
+        self.$el.find('.job_repeat_task_date_input').show();
+        self.$el.find('.job_repeat_task_date_input .close').show();
+      }
+    });
+
+    this.$el.find('section.gn-sub-form-when .close[name=job_when_date]').bind('click', function(e){
+      self.$el.find(this).hide();
+      self.$el.find('div[name=job_when_date_otro]').hide();
+      self.$el.find('div[name=job_when_date]').show();
+      self.$el.find('.job_when_date').val('hoy');
+    });
+
+    this.$el.find('section.gn-sub-form-when .close[name=close_job_when_date_cada]').bind('click', function(e){
+      self.$el.find(this).hide();
+      self.$el.find('div.job_repeat_task_date_input').hide();
+      self.$el.find('select.job_repeat_task_date').parent().parent().show();
+      self.$el.find('select.job_repeat_task_date').val('all');
     });
 
     this.$el.find('.gn-sub-form-where input[type=text]').bind('change', function(){
@@ -274,6 +305,15 @@ var Jobs = {
         self.active_section('.gn-sub-form-money'); 
       else
         self.inactive_section('.gn-sub-form-money'); 
+    });
+
+    this.$el.find('.job_repeat_task').bind('change', function(e){
+      if(self.$el.find(this).is(':checked')){
+        self.$el.find('div.field[name=job_repeat_task_date]').show();
+      }
+      else{
+        self.$el.find('div.field[name=job_repeat_task_date]').hide();
+      }
     });
   },
   active_section: function(section_id){

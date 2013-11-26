@@ -57,11 +57,16 @@
         <option>Termine</option>
       </select>
       <!--[if !IE]> --></div> <!-- <![endif]-->      
-      <label>el d&iacute;a:</label>
-      <!--[if !IE]> --><div class="notIE"><!-- <![endif]-->
-      <label id="gn-skin-when-date" />
-      <input type="text" id="job_when_date" name="job[when]" placeholder="Elige la fecha"/>      
-      <!--[if !IE]> --></div> <!-- <![endif]-->   
+      <label>el d&iacute;a:</label>      
+       <!--[if !IE]> --><div class="notIE" name="job_when_date"><!-- <![endif]-->
+      <label />
+      <%= gn_datetime_select().html_safe %>
+      <!--[if !IE]> --></div> <!-- <![endif]-->
+      <!--[if !IE]> --><div class="notIE" name="job_when_date_otro"><!-- <![endif]-->
+      <label id="gn-skin-when-date" />          
+      <input type="text" class="job_when_date_otro" name="job[when]" placeholder="Elige la fecha"/>      
+      <!--[if !IE]> --></div> <!-- <![endif]-->
+      <button type="button" class="close" name="job_when_date">&times;</button>  
     </div>
     <div class="clear"></div>
     <div class="field">
@@ -103,9 +108,28 @@
       </div>        
       <label id="gn-checkbox-repeat-task">
         <div class="icon checkbox">
-          <input type="checkbox" name="job[repeat]" id="job_repeat_task"></div> 
+          <input type="checkbox" name="job[repeat]" class="job_repeat_task"></div> 
           Repetir tarea peri&oacute;dicamente
       </label>
+    </div>
+    <div class="field" name="job_repeat_task_date">
+      <div class="clear"></div>
+      <label class="text-label">Repetir limpieza</label>
+       <!--[if !IE]> --><div class="notIE"><!-- <![endif]-->
+      <label />
+       <select class="job_repeat_task_date">
+        <option value="all">Todos los días</option>
+        <option value="cada">Cada 3 días</option>
+        <option value="cada">Cada 8 días</option>
+      </select>
+      <!--[if !IE]> --></div> <!-- <![endif]-->
+      <div class="job_repeat_task_date_input">
+        <!--[if !IE]> --><div class="notIE"><!-- <![endif]-->
+      <label id="gn-skin-when-date" />          
+      <input type="text" id="job_repeat_task_date_input" placeholder="Elige la fecha"/>      
+      <!--[if !IE]> --></div> <!-- <![endif]-->
+      <button type="button" class="close" name="close_job_when_date_cada">&times;</button>
+      </div>
     </div>
   </section>
   <section class="gn-sub-form-where">

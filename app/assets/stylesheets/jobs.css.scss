@@ -4,7 +4,7 @@
 
 @font-face {
   font-family: Bitter;
-  src: url('/assets/fonts/Bitter-Regular.otf');
+  src: url('/assets/Bitter-Regular.otf');
 }
 /*
  * Listing Styles
@@ -181,6 +181,33 @@ div#gn-new-job .toggle-btn.active{
   -moz-box-shadow:        inset 0px 1px 4px #adaeae, 0 0px 3px #96c0ca;
     -webkit-box-shadow:   inset 0px 1px 4px  #adaeae, 0 0px 3px #96c0ca;
 }
+.close {
+  float: right;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 20px;
+  color: #000000;
+  text-shadow: 0 1px 0 #ffffff;
+  opacity: 0.2;
+  filter: alpha(opacity=20);
+}
+
+.close:hover,
+.close:focus {
+  color: #000000;
+  text-decoration: none;
+  cursor: pointer;
+  opacity: 0.4;
+  filter: alpha(opacity=40);
+}
+
+button.close {
+  padding: 0;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+  -webkit-appearance: none;
+}
 /*End button*/
 /*Start Icon*/
 div#gn-new-job label.checkbox {
@@ -323,6 +350,9 @@ div#gn-new-job .uneditable-input {
   font-family: 'Bitter', serif;
 }
 /*End input*/
+div#gn-new-job section.active{
+  background: url(/images/section_bgGreen_28x1.png) repeat-y top left !important;
+}
 div#gn-new-job {
   font-family: 'Bitter',serif;    
   margin: 0 auto;
@@ -484,26 +514,40 @@ div#gn-new-job {
       }
       label.text-label{
         text-align: right;
-        width: 150px;
+        width: 154px;
       }
       label#gn-checkbox-repeat-task{
         float: left;
         margin-left: 18px;
       }
+      .close{
+        float: left;
+        display: none;
+      }
       .clear{
         margin-bottom: 20px;
+      }      
+      div.field[name=job_repeat_task_date], .job_repeat_task_date_input{
+        display: none;  
       }
-      #job_require_cleaning{
+      #job_require_cleaning, .job_repeat_task_date{
         width: 120px;
         margin-left: 10px;
       }
-      #job_when_date{
+      div[name=job_when_date_otro]{
+        display: none;
+      }
+      .job_when_date_otro, .job_repeat_task_date_input input{
         margin-left: 10px;
         width: 132px;
         border: 1px solid #C8BFC4;
         height: 13px;
+      }      
+      select.job_when_date{
+        margin-left: 10px;
+        width: 132px;
       }
-      #job_repeat_task{
+      .job_repeat_task{
         visibility: hidden;
       }
       #job_when_hr, #job_when_min, #job_when_meridian{
@@ -528,6 +572,9 @@ div#gn-new-job {
         right: 11px;
       }
       .gn-job-time .notIE {
+        padding-right: 0;
+      }
+      div.notIE[name=job_when_date_otro]{
         padding-right: 0;
       }
     }
