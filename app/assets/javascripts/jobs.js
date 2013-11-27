@@ -99,27 +99,29 @@ var Jobs = {
     markers:[]
   },
   $el:$('body'),
+  $form: $('#gn-new-job-form-home-task'),
 
   init: function(){
     var self = this;
     this.$el = $('.container-form');
+    this.$form = $('#gn-new-job-form-home-task');
     this.event();
     this.create_map('gn-job-location-map');
-    this.create_geocoding('job_address');
-    this.$el.find('.toggle-btn').first().click();
-    this.$el.find('.gn-sub-form-description input[type=radio]').first().click();
-    this.$el.find( ".job_when_date_otro" ).datepicker({
+    this.create_geocoding('input[gn=job_address]');
+    this.$form.find('.toggle-btn').first().click();
+    this.$form.find('.gn-sub-form-description input[type=radio]').first().click();
+    this.$el.find( ".job_when_date_other" ).datepicker({
       dateFormat: "dd-M-yy",
       minDate: new Date(),
       onSelect: function(){
-        $('.gn-job-date').text( $( ".job_when_date_otro" ).val() );
+        $('.gn-job-date').text( $( ".job_when_date_other" ).val() );
          if($( "#job_when_date" )!=="")
           self.active_section('.gn-sub-form-when'); 
         else
           self.inactive_section('.gn-sub-form-when');
       }
     });
-    this.$el.find('#job_repeat_task_date_input').multiDatesPicker({
+    this.$el.find('.job_repeat_task_date_each_input').multiDatesPicker({
       dateFormat: "dd-M-yy"
     });
     $('#ui-datepicker-div').hide();
@@ -138,7 +140,7 @@ var Jobs = {
   },
   create_geocoding: function(input_id){
     var self = this;
-    var input = document.getElementById(input_id);
+    var input = self.$el.find(input_id).get(0);
     var map = this.options.map;
     var searchBox = new google.maps.places.SearchBox(input);
     google.maps.event.addListener(searchBox, 'places_changed', function() {
@@ -174,9 +176,15 @@ var Jobs = {
   },
   event: function(){
     var self = this;
-    //$('.container').children('section').remove();
-    this.$el.find('#gn-add-reference').bind('click', function(){
-      self.$el.find('#job_references').toggle('slow');
+    if($('#container-form').length)
+      $('.container').children('section').remove();
+
+    this.$el.find('div[name=gn-add-reference]').bind('click', function(e){
+      self.$el.find('textarea[gn=job_references]').toggle('slow');
+    });
+
+    this.$el.find('div[name=gn-use-address]').bind('click', function(e){
+      self.$form.find('div[gn=gn-use-my-address]').toggle('slow');
     });
 
     this.$el.find('.icon.radio').bind('click', function(){
@@ -194,39 +202,42 @@ var Jobs = {
     });
 
     this.$el.find('div.toggle-btn').bind('click', function(e){
-      self.$el.find('ul#job_level div[class*=active]').removeClass('active');
-      self.$el.find(this).addClass('active');
+      self.$form.find('ul#job_level div[class*=active]').removeClass('active');
+      self.$form.find(this).addClass('active');
     });
 
     this.$el.find('section.gn-sub-form-money .nav-tabs li > a').bind('click', function(e){
-      self.$el.find('section.gn-sub-form-money .nav-tabs li[class*=active]').removeClass('active');
-      self.$el.find(this).parent('li').addClass('active');
-      self.$el.find('section.gn-sub-form-money .tab-content div[class*=active]').removeClass('active');
-      self.$el.find('section.gn-sub-form-money #'+ self.$el.find(this).attr('data-toggle') ).addClass('active');
+      self.$form.find('section.gn-sub-form-money .nav-tabs li[class*=active]').removeClass('active');
+      self.$form.find(this).parent('li').addClass('active');
+      self.$form.find('section.gn-sub-form-money .tab-content div[class*=active]').removeClass('active');
+      self.$form.find('section.gn-sub-form-money #'+ self.$form.find(this).attr('data-toggle') ).addClass('active');
 
     });
 
     this.$el.find('section.gn-sub-form-description .label-highlight').bind('click', function(e){
-      self.$el.find('#job_notes').toggle('slow');
+      self.$form.find('textarea[gn=job_notes]').toggle('slow');
     });
 
     this.$el.find('#job_category_id').bind('change', function(e){
       self.$el.find('#gn-change-category').addClass('active');     
     });
 
-    this.$el.find('#gn-change-category').bind('click', function(e){      
+    this.$el.find('#gn-change-category').bind('click', function(e){  
       if($(this).hasClass('active')){
         $('#container-form form').hide();      
         switch( parseInt(self.$el.find( "#job_category_id option:selected" ).val()) ){
           case 1:
             self.$el.find('#gn-new-job-form-home-task').show();
             self.$el.find('.icon.category.cook-task').removeClass('cook-task').addClass('home-task');
+            self.$form = $('#gn-new-job-form-home-task');
             break;
-          case 2:            
+          case 2:  
+            self.$form = '';          
             break;
           case 3:
             self.$el.find('#gn-new-job-form-cook-task').show(); 
             self.$el.find('.icon.category.home-task').removeClass('home-task').addClass('cook-task');
+            self.$form = $('#gn-new-job-form-cook-task');
             break;
           default:
             break;
@@ -246,7 +257,7 @@ var Jobs = {
 
     this.$el.find('.gn-sub-form-description select').bind('change', function(){
       var is_empty = false;
-      self.$el.find('.gn-sub-form-description select').each(function(index, element){
+      self.$form.find('.gn-sub-form-description select').each(function(index, element){
         if($(element).val()==""){
           is_empty = true;
           return false;
@@ -260,37 +271,38 @@ var Jobs = {
     });
 
     this.$el.find('select.job_when_date').bind('change', function(e){
-      var date_value = self.$el.find('select.job_when_date option:selected').val();
+      var date_value = self.$form.find('select.job_when_date option:selected').val();
       if(date_value!="otro")
         self.active_section('.gn-sub-form-when');
       else{
-        self.$el.find('div[name=job_when_date]').hide();
-        self.$el.find('div[name=job_when_date_otro]').show();
-        self.$el.find('section.gn-sub-form-when .close').show();
+        self.$form.find('div[name=job_when_date]').hide();
+        self.$form.find('div[name=job_when_date_other]').show();
+        self.$form.find('section.gn-sub-form-when .close').show();
       }     
     });
 
     this.$el.find('select.job_repeat_task_date').bind('change', function(e){
-      var option_value = self.$el.find( "select.job_repeat_task_date option:selected" ).val();
+      var option_value = self.$form.find(this).find("option:selected").val();
+      
       if(option_value=='cada'){
-        self.$el.find(this).parent().parent().hide();
-        self.$el.find('.job_repeat_task_date_input').show();
-        self.$el.find('.job_repeat_task_date_input .close').show();
+        self.$form.find(this).parent().parent().hide();
+        self.$form.find('.job_repeat_task_date_input').show();
+        self.$form.find('.job_repeat_task_date_input .close').show();
       }
     });
 
     this.$el.find('section.gn-sub-form-when .close[name=job_when_date]').bind('click', function(e){
-      self.$el.find(this).hide();
-      self.$el.find('div[name=job_when_date_otro]').hide();
-      self.$el.find('div[name=job_when_date]').show();
-      self.$el.find('.job_when_date').val('hoy');
+      self.$form.find(this).hide();
+      self.$form.find('div[name=job_when_date_other]').hide();
+      self.$form.find('div[name=job_when_date]').show();
+      self.$form.find('.job_when_date').val('hoy');
     });
 
     this.$el.find('section.gn-sub-form-when .close[name=close_job_when_date_cada]').bind('click', function(e){
-      self.$el.find(this).hide();
-      self.$el.find('div.job_repeat_task_date_input').hide();
-      self.$el.find('select.job_repeat_task_date').parent().parent().show();
-      self.$el.find('select.job_repeat_task_date').val('all');
+      self.$form.find(this).hide();
+      self.$form.find('div.job_repeat_task_date_input').hide();
+      self.$form.find('select.job_repeat_task_date').parent().parent().show();
+      self.$form.find('select.job_repeat_task_date').val('all');
     });
 
     this.$el.find('.gn-sub-form-where input[type=text]').bind('change', function(){
@@ -308,13 +320,19 @@ var Jobs = {
     });
 
     this.$el.find('.job_repeat_task').bind('change', function(e){
-      if(self.$el.find(this).is(':checked')){
-        self.$el.find('div.field[name=job_repeat_task_date]').show();
+      console.log( self.$form.find('div.field[name=job_repeat_task_date]'));
+      if(self.$form.find(this).is(':checked')){
+        self.$form.find('div.field[name=job_repeat_task_date]').show();
       }
       else{
-        self.$el.find('div.field[name=job_repeat_task_date]').hide();
+        self.$form.find('div.field[name=job_repeat_task_date]').hide();
       }
     });
+
+    this.$el.find('select[gn=gn-use-my-address-select]').bind('change', function(e){
+      self.$form.find('input[gn=job_address]').val( self.$form.find(this).find('option:selected').text() );
+    });
+
   },
   active_section: function(section_id){
     this.$el.find(section_id).addClass('active');
