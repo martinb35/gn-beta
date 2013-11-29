@@ -1,4 +1,4 @@
-<%= form_for(@job) do |f| %>
+<%= form_for(@job) do |f| %>        
   <% if @job.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@job.errors.count, "error") %> prohibited this job from being saved:</h2>
@@ -153,11 +153,11 @@
       <label class="text-label"></label>
        <!--[if !IE]> --><div class="notIE"><!-- <![endif]-->
       <label />
+      <% @Addresses = Address.all %>
        <select gn="gn-use-my-address-select">
-        <option></option>
-        <option>Address 1</option>
-        <option>Address 2</option>
-        <option>Address 3</option>
+        <% @Addresses.each do |item| %>
+          <option value=<%= item.id %>><%= item.address %> </option>
+        <% end %>
       </select>
       <!--[if !IE]> --></div> <!-- <![endif]-->
     </div>
