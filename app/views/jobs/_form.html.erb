@@ -153,7 +153,7 @@
       <label class="text-label"></label>
        <!--[if !IE]> --><div class="notIE"><!-- <![endif]-->
       <label />
-      <% @Addresses = Address.all %>
+      <% @Addresses = Address.find_all_by_user_id( session[:user_id] ) %>
        <select gn="gn-use-my-address-select">
         <% @Addresses.each do |item| %>
           <option value=<%= item.id %>><%= item.address %> </option>
