@@ -320,7 +320,6 @@ var Jobs = {
     });
 
     this.$el.find('.job_repeat_task').bind('change', function(e){
-      console.log( self.$form.find('div.field[name=job_repeat_task_date]'));
       if(self.$form.find(this).is(':checked')){
         self.$form.find('div.field[name=job_repeat_task_date]').show();
       }

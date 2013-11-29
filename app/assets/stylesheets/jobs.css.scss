@@ -396,7 +396,6 @@ div#gn-new-job {
   }
   div#container-form {
     float: left;
-    height: 500px;
     width: 728px;
     header.gn-form-header{
       background: transparent;
@@ -505,7 +504,10 @@ div#gn-new-job {
       }
       .icon.guides.small {
         margin-left: 10px;
-        margin-right: 20px;        
+        margin-right: 10px;        
+      }
+      .toggle-btn{
+        padding: 5px 8px 8px;
       }
     }
     section.gn-sub-form-when {

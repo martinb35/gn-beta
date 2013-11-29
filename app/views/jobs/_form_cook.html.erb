@@ -152,11 +152,11 @@
       <label class="text-label"></label>
        <!--[if !IE]> --><div class="notIE"><!-- <![endif]-->
       <label />
+       <% @Addresses = Address.all %>
        <select gn="gn-use-my-address-select">
-        <option></option>
-        <option>Address 1</option>
-        <option>Address 2</option>
-        <option>Address 3</option>
+        <% @Addresses.each do |item| %>
+          <option value=<%= item.id %>><%= item.address %> </option>
+        <% end %>
       </select>
       <!--[if !IE]> --></div> <!-- <![endif]-->
     </div>
