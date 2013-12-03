@@ -43,7 +43,7 @@
     </div>
     <div class="field">
       <div class="label-highlight">Deseo añadir notas adicionales</div>
-      <%= f.text_area :notes, {:placeholder => "Agrega notas adicionales aquí", :class => 'hidden' } %>
+      <%= f.text_area :notes, {:placeholder => "Agrega notas adicionales aquí", :class => 'hidden', :gn=>'job_notes' } %>
     </div>
   </section>
   <section class="gn-sub-form-when">
@@ -62,9 +62,9 @@
       <label />
       <%= gn_datetime_select().html_safe %>
       <!--[if !IE]> --></div> <!-- <![endif]-->
-      <!--[if !IE]> --><div class="notIE" name="job_when_date_otro"><!-- <![endif]-->
+      <!--[if !IE]> --><div class="notIE" name="job_when_date_other"><!-- <![endif]-->
       <label id="gn-skin-when-date" />          
-      <input type="text" class="job_when_date_otro" name="job[when]" placeholder="Elige la fecha"/>      
+      <input type="text" class="job_when_date_other" name="job[when]" placeholder="Elige la fecha"/>      
       <!--[if !IE]> --></div> <!-- <![endif]-->
       <button type="button" class="close" name="job_when_date">&times;</button>  
     </div>
@@ -126,7 +126,7 @@
       <div class="job_repeat_task_date_input">
         <!--[if !IE]> --><div class="notIE"><!-- <![endif]-->
       <label id="gn-skin-when-date" />          
-      <input type="text" id="job_repeat_task_date_input" placeholder="Elige la fecha"/>      
+      <input type="text" class="job_repeat_task_date_each_input" placeholder="Elige la fecha"/>      
       <!--[if !IE]> --></div> <!-- <![endif]-->
       <button type="button" class="close" name="close_job_when_date_cada">&times;</button>
       </div>
@@ -135,18 +135,30 @@
   <section class="gn-sub-form-where">
     <div class="icon section map">&nbsp;</div>
     <div class="field">
-      <input type="text" name="job_address" id="job_address" placeholder="Ubicación (calle y número, colonia, delegación)" maxlength="300">
+      <input type="text" name="job_address" gn="job_address" placeholder="Ubicación (calle y número, colonia, delegación)" maxlength="300">
       <label class="checkbox">
         <div class="icon checkbox"><input type="checkbox" name="job_save_address" id="job_save_address"></div> Guardar direcci&oacute;n
       </label>
     </div>
     <div class="clear"></div>
     <div class="field">
-      <div class="label-highlight" id="gn-add-reference" href="#">Añadir referencias</div>
-      <div class="label-highlight" id="gn-use-address" href="#">Usar mis direcciones</div>
+      <div class="label-highlight" name="gn-add-reference" href="#">Añadir referencias</div>
+      <div class="label-highlight" name="gn-use-address" href="#">Usar mis direcciones</div>
     </div>
     <div class="field">
-      <textarea id="job_references" class="hidden" placeholder ="Agrega referencias como color de fachada, negocios al rededor, etc"></textarea>
+      <textarea gn="job_references" class="hidden" placeholder ="Agrega referencias como color de fachada, negocios al rededor, etc"></textarea>
+    </div>
+    <div class="field" gn="gn-use-my-address">
+      <label class="text-label"></label>
+       <!--[if !IE]> --><div class="notIE"><!-- <![endif]-->
+      <label />
+       <% @Addresses = Address.all %>
+       <select gn="gn-use-my-address-select">
+        <% @Addresses.each do |item| %>
+          <option value=<%= item.id %>><%= item.address %> </option>
+        <% end %>
+      </select>
+      <!--[if !IE]> --></div> <!-- <![endif]-->
     </div>
     <div class="field"><small class='label-field'>No te preocupes! La dirección completa solo se comparte con el Handy asignado.</small></div>
     <%= f.hidden_field :latlong, :value => "19.2644,-99.6569" %>

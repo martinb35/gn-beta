@@ -396,7 +396,6 @@ div#gn-new-job {
   }
   div#container-form {
     float: left;
-    height: 500px;
     width: 728px;
     header.gn-form-header{
       background: transparent;
@@ -505,7 +504,10 @@ div#gn-new-job {
       }
       .icon.guides.small {
         margin-left: 10px;
-        margin-right: 20px;        
+        margin-right: 10px;        
+      }
+      .toggle-btn{
+        padding: 5px 8px 8px;
       }
     }
     section.gn-sub-form-when {
@@ -527,17 +529,17 @@ div#gn-new-job {
       .clear{
         margin-bottom: 20px;
       }      
-      div.field[name=job_repeat_task_date], .job_repeat_task_date_input{
+      div.field[name=job_repeat_task_date], .job_repeat_task_date_input {
         display: none;  
       }
       #job_require_cleaning, .job_repeat_task_date{
         width: 120px;
         margin-left: 10px;
       }
-      div[name=job_when_date_otro]{
+      div[name=job_when_date_other]{
         display: none;
       }
-      .job_when_date_otro, .job_repeat_task_date_input input{
+      .job_when_date_other, .job_repeat_task_date_input input{
         margin-left: 10px;
         width: 132px;
         border: 1px solid #C8BFC4;
@@ -574,7 +576,7 @@ div#gn-new-job {
       .gn-job-time .notIE {
         padding-right: 0;
       }
-      div.notIE[name=job_when_date_otro]{
+      div.notIE[name=job_when_date_other]{
         padding-right: 0;
       }
     }
@@ -594,6 +596,9 @@ div#gn-new-job {
         display: inline-block;
         margin-right: 16px;
         margin-top: 10px;
+      }
+      div[gn="gn-use-my-address"] {
+        display: none;
       }
     }
     section.gn-sub-form-money{
@@ -725,7 +730,7 @@ div#gn-new-job {
       margin-right: 22px;
       input[type="submit"]
       {
-        background-image:url(/images/add_button_196x48.png);
+        background:url(/images/add_button_196x48.png);
         width:196px;
         height:48px;
         border:none;
