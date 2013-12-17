@@ -10,26 +10,86 @@
       </ul>
     </div>
   <% end %>
+  
+  <h2>¡Empecemos!, completa tu información básica</h2>
+  
+  <div class="login-form wrapper">
+    <h3>Cuenta</h3>
+    <div class="contact-wrapper">
+      <div class="field">
+        <%= f.text_field :name, :placeholder => "Nombre" %>
+        <%= f.text_field :lastname, :placeholder => "Apellido(s)" %>
+      </div>
+      <div class="field">
+        <%= f.text_field :email, :placeholder => "Correo electrónico" %>
+        <%= f.hidden_field :role_id, :value => 3 %>
+      </div>
+      <div class="field">
+        <%= f.password_field :password, :placeholder => "Contraseña" %>
+        <%= f.password_field :password_confirmation, :placeholder => "Reconfirmar" %>
+      </div>
+    </div>
 
-  <div class="field">
-    Nombre<br>
-    <%= f.text_field :name %>
+    <h3>Dirección</h3>
+    <div class="address-wrapper">
+      <div class="field">
+        <%= f.text_field :calle, :placeholder => "Calle y número" %>
+      </div>
+      <div class="field">
+        <%= f.text_field :cp, :placeholder => "Código postal" %>
+        <%= f.text_field :colonia, :placeholder => "Colonia" %>
+      </div>
+      <div class="field">
+        <%= f.text_field :ciudad, :placeholder => "Ciudad" %>
+        <%= f.text_field :phone, :placeholder => "Teléfono" %>
+      </div>
+    </div>
+
+    <h3>Fecha de nacimiento</h3>
+    <div class="birthdate-wrapper">  
+      <div class="field">
+        <select name="day">
+          <option>Día</option>
+          <%
+          limit = 31;
+          for counter in 1..limit %>
+            <option><%= sprintf '%02d', counter %></option>
+          <% end
+          %>
+        </select>
+        <select name="month">
+          <option>Mes</option>
+          <%
+          limit = 12;
+          for counter in 1..limit %>
+            <option><%= sprintf '%02d', counter %></option>
+          <% end
+          %>
+        </select>
+        <select name="year">
+          <option>Año</option>
+          <%
+          limit = 2014;
+          for counter in 1900..limit %>
+            <option><%= sprintf '%02d', counter %></option>
+          <% end
+          %>
+        </select>
+        <%= f.hidden_field :birthdate %>
+      </div>
+    </div>
+    <div class="gender-wrapper">
+      <div class="field">
+        <input type="radio" name="genero" value="f" />Mujer
+        <input type="radio" name="genero" value="m" />Hombre
+        <%= f.hidden_field :gender %>
+      </div>
+    </div>
   </div>
-  <div class="field">
-    Email<br>
-    <%= f.text_field :email %>
-    <%= f.hidden_field :role_id, :value => 3 %>
-  </div>
-  <div class="field">
-    <%= f.label :password %><br>
-    <%= f.password_field :password %>
-  </div>
-  <div>
-    Repite tu password<br>
-    <%= f.password_field :password_confirmation %>
-  </div>
+  
+  <div class="prefs bg"></div>
+
   <div class="actions">
-    <%= f.submit "Crear cuenta" %>
-    <%= link_to 'Cancelar', tasks_path %>
+    <%= f.submit "" %>
   </div>
 <% end %>
