@@ -104,6 +104,22 @@ div.container > form .address-wrapper > div.field {
   width:1020px;
   height:327px;
   margin:10px auto;
+  .oficios {
+    position:relative;
+    top:100px;
+    left:273px;
+    width:194px;
+    height:193px;
+    cursor:pointer;
+  }
+  .profesion {
+    position:relative;
+    top:-95px;
+    left:540px;
+    width:194px;
+    height:193px;
+    cursor:pointer;
+  }
 }
 
 .actions {

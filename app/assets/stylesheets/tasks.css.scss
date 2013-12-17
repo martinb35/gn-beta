@@ -8,15 +8,33 @@
   height:80px;
 }
 section#brand {
-  height:137px;
+  padding-top:30px;
+  height:60px;
+  background-color:#e4e4e4;
   h1 {
     white-space: nowrap;
     text-indent: -9999px;
+    margin-top:-20px;
   }
   div.clickable.ingresa {
-    background-position:0px -120px;
-    width:170px;
-    height:80px;
+    background:url(unete-87x38.png) no-repeat;
+    width:87px;
+    height:38px;
+  }
+  .ingresa-wrapper {
+    float:right;
+    position:relative;
+    top:10px;
+    right:40px;
+    a:active,
+    a:link,
+    a:hover,
+    a:visited {
+      background:none;
+      color:#006b85;
+      font-weight:800;
+      margin:0;
+    }
   }
 }
 .pin {

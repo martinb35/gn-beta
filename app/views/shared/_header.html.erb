@@ -1,25 +1,13 @@
-<header>
-  <nav>
-    <ul>
-      <li><a href="#">Nosotros</a></li>
-      <li class="menu divider">|</li>
-      <li><a href="#">¿Cómo funciona?</a></li>
-      <li class="menu divider">|</li>
-      <li><a href="#">¿Por qué  utilizar goninis?</a></li>
-      <li class="menu divider">|</li>
-      <li><a href="#">Promociones</a></li>
-      <li class="menu divider">|</li>
-      <li><a href="#">Conviértete en Handy</a></li>
-    </ul>
-  </nav>
-</header>
-<% if @branding %>
-<section>
-  <div class="clickable job logo">
-    <%= link_to "Home", tasks_path %>
+<section id="brand">
+  <a href="/"><h1 class="icon logo left">goninis | Beta privado</h1></a>
+  <div class="clickable icon ingresa right">
+    <%= link_to "¡Unete!", new_user_path %>
+  </div>
+  <div class="ingresa-wrapper">
+    <%= link_to "Ingresa", login_path %>
   </div>
 </section>
-<% elsif @publish %>
+<% if  @publish %>
 <section>
   <div class="clickable job logo publish">
     <%= link_to "New job", tasks_path %>
