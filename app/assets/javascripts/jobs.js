@@ -56,6 +56,7 @@ function initialize_map (map_id, latlong) {
   }
 }
 function string_to_coords (latlong) {
+  if (typeof latlong == 'undefined') return [];
   latlong = latlong.replace ('(', '');
   latlong = latlong.replace (')', '');
   return coords = latlong.split (',');
@@ -342,6 +343,7 @@ var Jobs = {
     this.$el.find(section_id+' > .icon').removeClass('active');
   },
   string_to_coords: function (latlong) {
+  if (typeof latlong == 'undefined') return [];
   latlong = latlong.replace ('(', '');
   latlong = latlong.replace (')', '');
   return coords = latlong.split (',');
@@ -350,10 +352,14 @@ var Jobs = {
 
 jQuery (document)
   .on('page:change', function() {
-    onInit_Jobs();
-    Jobs.init();
+    if (jQuery('#categories').length <= 0) {
+      onInit_Jobs();
+      Jobs.init();
+    }
   })
   .ready(function() {
-    onInit_Jobs();
-    Jobs.init();
+    if (jQuery('#categories').length <= 0) {
+      onInit_Jobs();
+      Jobs.init();
+    }
 });

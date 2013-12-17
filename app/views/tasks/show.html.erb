@@ -3,22 +3,21 @@
     <div class="clickable icon pin">
       <a href="#">&nbsp;</a>
     </div>
-    <h2>Publica una tarea</h2>
-    <p>Lo que necesites,<br/> donde quieras<br/> y cuando quieras...</p>
+    <h2>Publica tu pendiente o proyecto</h2>
   </div>
 </section>
 <section id="categories">
-<% @categories.each do |category| %>
-  <div class="icon category <%= cycle("left", "right") -%>">
-    <%= image_tag(category.icon) %> 
-    <p><%= link_to category.title, new_job_path %></p>
-  </div>
-<% end %>
+  <div class="clickable home service-icon"><%= link_to 'Home', new_job_path %></div>
+  <div class="submenu home"><%= link_to '', new_job_path %></div>
+  <div class="clickable business service-icon"><%= link_to '', new_job_path %></div>
+  <div class="submenu business"><%= link_to '', new_job_path %></div>
+  <div class="clickable pro service-icon "><%= link_to '', new_job_path %></div>
+  <div class="submenu pro"><%= link_to '', new_job_path %></div>
+  <div class="clickable temp service-icon"><%= link_to '', new_job_path %></div>
+  <div class="submenu temp"><%= link_to '', new_job_path %></div>
 </section>
 <section id="pager">
-  <div class="right clickable icon question">
+  <div class="clickable other-task">
     <a href="#">&nbsp;</a>
   </div>
-  <h4 class="right">¿Otra tarea?</h4>
-  <div class="clearfix"></div>
 </section>

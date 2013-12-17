@@ -43,44 +43,92 @@ section#brand {
 section#instructions {
   position:relative;
   margin:0 auto;
-  width:155px;
+  width:316px;
   div.wrapper {
     position:absolute;
-    top:100px;
+    top:20px;
     div.pin {
-      margin:0px 0px 15px 64px;
+      margin:0;
+      float:left;
     }
     text-align:center;
     color:#808080;
     h2 {
       color:#4b525f;
       font-size: 18px; font-size: 1.8rem; /* = 18px */
+      width:315px;
+      margin-top:10px;
+      font-weight:100;
     }
   }
 }
 section#categories {
+  position:relative;
   padding-left:50px;
   padding-right:50px;
   min-height:350px;
-  div.category {
-    background-position:0px -200px;
-    width:340px;
-    height:320px;
-    img {
-      margin:80px 0px 0px 100px;
+  margin:110px auto 0 auto;
+  width:900px;
+  .submenu {
+    display:none;
+    a {
+      position:absolute;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+      z-index:19;
     }
-    p {
-      font-size: 15px; font-size: 1.5rem; /* = 15px */
-      text-align:center;
-      padding-top:20px;
-      a:active,
-      a:link,
-      a:visited,
-      a:hover {
-        color:#006b85;
-        background-color:transparent;
-      }
-    }
+  }
+  .submenu.home,
+  .submenu.business,
+  .submenu.pro,
+  .submenu.temp {
+    position:absolute;
+    background:url(sub-home-464x139.png) no-repeat;
+    width:464px;
+    height:139px;
+    top:50px;
+    left:230px;
+    z-index:9;
+  }
+  .submenu.business {
+    background-image:url(sub-biz-469x139.png);
+    left:430px;
+  }
+  .submenu.pro {
+    background-image:url(sub-pro-469x139.png);
+    left:100px;
+  }
+  .submenu.temp {
+    background-image:url(sub-temp-469x139.png);
+    left:300px;
+  }
+  .service-icon {
+    position:relative;
+    float:left;
+    background:url(services-912x231.png) no-repeat 0 0;
+    width:200px;
+    height:235px;
+    cursor:pointer;
+    margin-right:25px;
+    z-index:8;
+  }
+  .service-icon.on {
+    background-image:url(services-on-912x231.png);
+    z-index:10;
+  }
+  .service-icon:last-child {
+    margin-right:0;
+  }
+  .business {
+    background-position:-238px 0;
+  }
+  .pro {
+    background-position:-472px 0;
+  }
+  .temp {
+    background-position:-711px 0;
   }
 }
 .question {
@@ -93,9 +141,10 @@ section#pager {
     text-align:right;
     color:#4b525f;
   }
-  div.clickable {
-    a {
-      
-    }
+  div.clickable.other-task {
+    margin:0 auto;
+    background:url(otra-151x44.png) no-repeat;
+    width:151px;
+    height:44px;
   }
 }
