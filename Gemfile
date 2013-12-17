@@ -20,6 +20,10 @@ group :assets do
   gem "actionmailer", "~> 4.0.0"
 end
 
+group :production do
+  gem 'rails_12factor'
+end
+
 # Use SCSS for stylesheets
 # gem 'sass-rails', '~> 4.0.0.rc1'
 
