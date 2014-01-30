@@ -129,8 +129,9 @@ var Jobs = {
   },
   create_map: function(map_id){
     var latlong = this.$el.find('#job_latlong').val();
-    var coords = this.string_to_coords (latlong);
+    
     if (latlong != '') {
+        var coords = this.string_to_coords (latlong);
         var mapOptions = {
           zoom: 10,
           center: new google.maps.LatLng(coords[0], coords[1]),
@@ -352,14 +353,12 @@ var Jobs = {
 
 jQuery (document)
   .on('page:change', function() {
-    if (jQuery('#categories').length <= 0) {
-      onInit_Jobs();
+    onInit_Jobs();
+    if($('#gn-new-job').length)
       Jobs.init();
-    }
   })
   .ready(function() {
-    if (jQuery('#categories').length <= 0) {
-      onInit_Jobs();
+    onInit_Jobs();
+    if($('#gn-new-job').length)
       Jobs.init();
-    }
 });
