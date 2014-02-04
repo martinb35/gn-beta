@@ -10,10 +10,10 @@
   <section class="about">
     <nav class="left">
       <ul>
-        <li><a href="#">Nosotros</a></li>
-        <li><a href="#">Ayuda</a></li>
-        <li><a href="#">Privacidad</a></li>
-        <li><a href="#">Condiciones</a></li>
+        <li><a href="http://landing.goninis.com/nosotros">Nosotros</a></li>
+        <li><a href="http://landing.goninis.com/como">Ayuda</a></li>
+        <li><a href="http://landing.goninis.com/privacidad">Privacidad</a></li>
+        <li><a href="http://landing.goninis.com/condiciones">Condiciones</a></li>
         <% if session[:user_id] %>
           <li><%= button_to 'Salir', logout_path, method: :delete %></li>
         <% end %>
