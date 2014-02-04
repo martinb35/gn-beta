@@ -15,7 +15,13 @@ class UsersController < ApplicationController
 
   # GET /users/new
   def new
-    @user = User.new
+    @user = User.new    
+    @user.name = params[:user_name] || ''
+    @user.lastname = params[:lastname] || ''
+    @user.email = params[:email] || ''
+    @user.password = params[:password] || ''
+    @user.password_confirmation = params[:password_confirmation] || ''
+    @user.cp = params[:cp] || ''
   end
 
   # GET /users/1/edit
