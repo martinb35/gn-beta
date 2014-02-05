@@ -53,7 +53,7 @@
           <%
           limit = 31;
           for counter in 1..limit %>
-            <option><%= sprintf '%02d', counter %></option>
+            <option <%= (@day==counter)?'selected':'' %> ><%= sprintf '%02d', counter %></option>
           <% end
           %>
         </select>
@@ -62,7 +62,7 @@
           <%
           limit = 12;
           for counter in 1..limit %>
-            <option><%= sprintf '%02d', counter %></option>
+            <option <%= (@month==counter)?'selected':'' %> ><%= sprintf '%02d', counter %></option>
           <% end
           %>
         </select>
@@ -71,7 +71,7 @@
           <%
           limit = 2014;
           for counter in 1900..limit %>
-            <option><%= sprintf '%02d', counter %></option>
+            <option <%= (@year==counter)?'selected':'' %> ><%= sprintf '%02d', counter %></option>
           <% end
           %>
         </select>
@@ -80,8 +80,8 @@
     </div>
     <div class="gender-wrapper">
       <div class="field">
-        <input type="radio" name="genero" value="f" />Mujer
-        <input type="radio" name="genero" value="m" />Hombre
+        <input type="radio" name="genero" value="f" <%= (@genero=='f')?'checked':'' %> />Mujer
+        <input type="radio" name="genero" value="m" <%= (@genero=='m')?'checked':'' %> />Hombre
         <%= f.hidden_field :gender %>
       </div>
     </div>
