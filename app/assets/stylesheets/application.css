@@ -16,11 +16,11 @@
 @import url(http://fonts.googleapis.com/css?family=Bitter&subset=latin,latin-ext);
 
 
-
 div.container {
-  margin:0px;
   padding:0px;
-  min-width:1110px;
+  width: 1110px;
+  margin: 0 auto;
+  background: #F2F2F2;
 }
 header {
   height:38px;
