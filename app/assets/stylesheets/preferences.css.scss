@@ -1,0 +1,27 @@
+/*
+  Place all the styles related to the matching controller here.
+  They will automatically be included in application.css.
+*/
+.container-body.preferences{
+    background: #000;
+    width: 700px ;
+    margin-left: auto ;
+    margin-right: auto ;
+    position: relative;
+    .sidebar{
+      &.logo{
+        width: 20%;
+        float: left;
+        background: #00FF40;
+      }
+      &.text{
+        width: 50%;
+        float: right;
+        background: #0A2A0A;
+      }
+    }
+    section{
+      clear: both;
+      border-bottom:1px #FF00FF solid;
+    }
+}
