@@ -1,0 +1,2 @@
+module NotificationCategoriesHelper
+end

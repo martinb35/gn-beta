@@ -1,4 +1,8 @@
 GoninisB1::Application.routes.draw do
+  resources :preferences
+
+  resources :notification_categories
+
   resources :roles
 
   controller :sessions do

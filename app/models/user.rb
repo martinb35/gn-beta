@@ -3,4 +3,5 @@ class User < ActiveRecord::Base
   has_secure_password
   ROLES = %w[admin moderator author banned]
   has_many :addresses
+  has_many :preference, dependent: :destroy
 end
