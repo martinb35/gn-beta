@@ -2,26 +2,179 @@
   Place all the styles related to the matching controller here.
   They will automatically be included in application.css.
 */
+$bannerRecommendation: url("section_banner_preferencias.png") no-repeat center center;
+$spriteIcons: url("sprite_icons.png") no-repeat -140px -70px;
+$gnFont: 'Bitter',serif;
+
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+.uneditable-input {
+    background-color: #ffffff;
+    border: 1px solid #b3b3b3;
+        border-bottom-color: #f3f3f3;
+        border-left-color: #d6d6d6;
+        border-right-color: #d6d6d6;        
+    box-shadow: inset 0 1px 2px #d4d4d4;
+    -moz-box-shadow: inset 0 1px 2px #d4d4d4;
+        -webkit-box-shadow: inset 0 1px 2px #d4d4d4;
+    display: inline-block;
+    height: 20px;
+    padding: 6px 10px 7px;
+    margin-bottom: 10px;
+    font-size: 12px;
+    line-height: 20px;
+    color: #8e8e8e;
+    vertical-align: middle;
+        -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    font-family: 'Bitter', serif;
+}
+
 .container-body.preferences{
-    background: #000;
-    width: 700px ;
-    margin-left: auto ;
-    margin-right: auto ;
-    position: relative;
-    .sidebar{
-      &.logo{
-        width: 20%;
-        float: left;
-        background: #00FF40;
-      }
-      &.text{
-        width: 50%;
-        float: right;
-        background: #0A2A0A;
+  font-family: $gnFont;
+  margin-left: auto ;
+  margin-right: auto ;
+  position: relative;
+  h1{
+    color: #006B85;
+    font: bold 16px $gnFont;
+    margin-bottom: 16px;
+  }
+  section{
+    border-top: 1px solid #ffffff;
+    border-bottom: 1px solid #b0b0b0;
+    padding: 30px 10px;
+  }
+  fieldset{
+    border: 1px solid #C4C4C4;
+    padding: 10px 15px 15px 0;
+    font-size: 14px;
+    width: 236px;
+    margin: 16px 60px 16px 0;
+    &.gray{
+      width: 297px;
+      padding: 10px 15px 15px 10px;
+      margin-right: 40px;
+    }
+    &.two-cols{
+      margin-right: 20px;
+      ul{
+        width: 41%;
+        &.left{
+          float: left;
+        }
+        &.rigth{
+          float: right;
+        }
       }
     }
-    section{
-      clear: both;
-      border-bottom:1px #FF00FF solid;
+    legend{
+      color: #006B85;
+      padding-right: 7px;
     }
+    ul{
+      margin: 0 0 0 15px;
+      li{
+        font-size: 14px;
+      }
+    }
+    input{
+      margin-right: 7px;
+    }
+  }
+  section#recommendation{
+    .banner{
+      height: 307px;
+      background: $bannerRecommendation;
+    }
+  }
+  .columns:after{
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+  }
+  .columns .col {
+    float: left;
+    overflow: hidden;
+  }
+  .multines{
+    width: 324px;
+    margin-right: 40px;
+    h1{
+      color: #565D69;
+      font-weight: normal;
+      font-size: 14px;    
+    }
+    textArea{
+      resize: none;
+      width: 302px;
+      height: 90px;
+      background-color: #ffffff;
+          background-image: -moz-linear-gradient(top, #F3F3F3, #ffffff);
+          background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#F3F3F3), to(#ffffff));
+          background-image: -webkit-linear-gradient(top, #F3F3F3, #ffffff);
+          background-image: -o-linear-gradient(top, #F3F3F3, #ffffff);
+          background-image: linear-gradient(to bottom, #F3F3F3, #ffffff);
+          background-repeat: repeat-x;
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#F3F3F3', endColorstr='#ffffff', GradientType=0);
+    }
+  }
+  .icon{
+    width: 16px;
+    height: 15px;
+    background: $spriteIcons;
+  }
+  .helper{
+    background-position: -140px -70px;
+    float: right;
+  }
+  .note{
+    font: italic 12px 'Bitter';
+    color: #B4B4B4;    
+    display: table-cell;
+    vertical-align: bottom;
+    padding-bottom: 16px;
+  }
+  .with-note{
+    display: table;
+    fieldset{
+      margin-right: 20px;
+    }
+  }
+  .file{
+    border: 1px solid #c8c8c8;
+    height: 110px;
+    padding: 20px;
+    .url{
+      padding: 6px;
+      input{
+        margin: 0 auto;
+        width: 93%;
+      }
+    }
+  }
+  .send {
+    background: url("send_button_196x48.png") no-repeat 0 0;    
+    margin: 0 auto;
+    cursor: pointer;
+    height: 48px;
+    width: 196px;
+  }
+  .send:hover, .changeCategory:hover {background-position: 0 -48px;}
 }
