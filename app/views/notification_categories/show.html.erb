@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Notification:</strong>
+  <%= @notification_category.notification %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @notification_category.category %>
+</p>
+
+<%= link_to 'Edit', edit_notification_category_path(@notification_category) %> |
+<%= link_to 'Back', notification_categories_path %>

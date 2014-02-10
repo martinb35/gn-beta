@@ -1,0 +1,29 @@
+<h1>Listing notification_categories</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Notification</th>
+      <th>Category</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @notification_categories.each do |notification_category| %>
+      <tr>
+        <td><%= notification_category.notification %></td>
+        <td><%= notification_category.category %></td>
+        <td><%= link_to 'Show', notification_category %></td>
+        <td><%= link_to 'Edit', edit_notification_category_path(notification_category) %></td>
+        <td><%= link_to 'Destroy', notification_category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Notification category', new_notification_category_path %>
