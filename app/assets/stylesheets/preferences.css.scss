@@ -6,44 +6,45 @@ $bannerRecommendation: url("section_banner_preferencias.png") no-repeat center c
 $spriteIcons: url("sprite_icons.png") no-repeat -140px -70px;
 $gnFont: 'Bitter',serif;
 
-textarea,
-input[type="text"],
-input[type="password"],
-input[type="datetime"],
-input[type="datetime-local"],
-input[type="date"],
-input[type="month"],
-input[type="time"],
-input[type="week"],
-input[type="number"],
-input[type="email"],
-input[type="url"],
-input[type="search"],
-input[type="tel"],
-input[type="color"],
-.uneditable-input {
-    background-color: #ffffff;
-    border: 1px solid #b3b3b3;
-        border-bottom-color: #f3f3f3;
-        border-left-color: #d6d6d6;
-        border-right-color: #d6d6d6;        
-    box-shadow: inset 0 1px 2px #d4d4d4;
-    -moz-box-shadow: inset 0 1px 2px #d4d4d4;
-        -webkit-box-shadow: inset 0 1px 2px #d4d4d4;
-    display: inline-block;
-    height: 20px;
-    padding: 6px 10px 7px;
-    margin-bottom: 10px;
-    font-size: 12px;
-    line-height: 20px;
-    color: #8e8e8e;
-    vertical-align: middle;
-        -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
-    font-family: 'Bitter', serif;
-}
+
 body.preferences{
+  textarea,
+  input[type="text"],
+  input[type="password"],
+  input[type="datetime"],
+  input[type="datetime-local"],
+  input[type="date"],
+  input[type="month"],
+  input[type="time"],
+  input[type="week"],
+  input[type="number"],
+  input[type="email"],
+  input[type="url"],
+  input[type="search"],
+  input[type="tel"],
+  input[type="color"],
+  .uneditable-input {
+      background-color: #ffffff;
+      border: 1px solid #b3b3b3;
+          border-bottom-color: #f3f3f3;
+          border-left-color: #d6d6d6;
+          border-right-color: #d6d6d6;        
+      box-shadow: inset 0 1px 2px #d4d4d4;
+      -moz-box-shadow: inset 0 1px 2px #d4d4d4;
+          -webkit-box-shadow: inset 0 1px 2px #d4d4d4;
+      display: inline-block;
+      height: 20px;
+      padding: 6px 10px 7px;
+      margin-bottom: 10px;
+      font-size: 12px;
+      line-height: 20px;
+      color: #8e8e8e;
+      vertical-align: middle;
+          -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      border-radius: 5px;
+      font-family: 'Bitter', serif;
+  }
   footer{
     margin-top: 0;
   }
