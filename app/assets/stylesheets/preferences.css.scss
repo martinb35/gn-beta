@@ -43,7 +43,11 @@ input[type="color"],
     border-radius: 5px;
     font-family: 'Bitter', serif;
 }
-
+body.preferences{
+  footer{
+    margin-top: 0;
+  }
+}
 .container-body.preferences{
   font-family: $gnFont;
   margin-left: auto ;
@@ -102,6 +106,43 @@ input[type="color"],
       background: $bannerRecommendation;
     }
   }
+  section#preferences{
+    padding: 30px 10px 30px 42px;
+  }
+  section#other-information{
+    padding: 10px 10px 10px 42px;
+    legend, h1{
+      color: #565D69;
+      font-size: 12px;
+      font-weight: normal
+    }
+    h1{
+      margin-top: 20px;
+    }
+    h1.col{
+      margin: 10px;
+    }
+    .like-notification{
+      width: 508px;
+    }
+    #background-verification{
+      margin-bottom: 22px;
+      margin-top: 22px;
+      input[type=checkbox]{
+        margin-top: 10px;
+      }
+    }
+  }
+  section#submit{
+    background: #e4e4e4;
+    input[type=submit]{
+      display:block;
+    border:0 none;
+    cursor:pointer;
+    outline:none;
+    vertical-align:top;
+    }
+  }
   .columns:after{
     content: ".";
     display: block;
@@ -114,7 +155,7 @@ input[type="color"],
     overflow: hidden;
   }
   .multines{
-    width: 324px;
+    width: 346px;
     margin-right: 40px;
     h1{
       color: #565D69;
@@ -123,7 +164,7 @@ input[type="color"],
     }
     textArea{
       resize: none;
-      width: 302px;
+      width: 324px;
       height: 90px;
       background-color: #ffffff;
           background-image: -moz-linear-gradient(top, #F3F3F3, #ffffff);
@@ -160,13 +201,19 @@ input[type="color"],
   .file{
     border: 1px solid #c8c8c8;
     height: 110px;
-    padding: 20px;
+    padding-bottom: 18px;
+    padding-left: 18px;
+    width: 686px;
+    margin-bottom: 30px;
     .url{
       padding: 6px;
       input{
         margin: 0 auto;
         width: 93%;
       }
+    }
+    .multines{
+      width: 380px;
     }
   }
   .send {
@@ -176,5 +223,5 @@ input[type="color"],
     height: 48px;
     width: 196px;
   }
-  .send:hover, .changeCategory:hover {background-position: 0 -48px;}
+  .send:hover, .changeCategory:hover {background-position: 0 -48px;}  
 }

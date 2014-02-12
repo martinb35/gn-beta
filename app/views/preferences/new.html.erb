@@ -1,5 +1,7 @@
-<h1>New preference</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Back', preferences_path %>
+<%= javascript_include_tag 'preferences' %>
+<div class="container-body preferences">
+  <%= render 'form' %>
+  <div class="popup">
+    <%= render partial: "shared/popup" %>
+  </div>
+</div>

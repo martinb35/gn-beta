@@ -16,6 +16,8 @@ class PreferencesController < ApplicationController
   # GET /preferences/new
   def new
     @preference = Preference.new
+    @notification_categories = NotificationCategory.all
+    @user = User.find(session[:user_id])
   end
 
   # GET /preferences/1/edit
@@ -25,7 +27,11 @@ class PreferencesController < ApplicationController
   # POST /preferences
   # POST /preferences.json
   def create
-    @preference = Preference.new(preference_params)
+
+    params[:fields].each do |i, values|
+      @preference = Preference.create(values)
+    end
+    #@preference = Preference.new(preference_params)
 
     respond_to do |format|
       if @preference.save
