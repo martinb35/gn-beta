@@ -1,0 +1,53 @@
+/*
+  Place all the styles related to the matching controller here.
+  They will automatically be included in application.css.
+*/
+$bannerLogoThank: url("thx_tareas_oficios_318x311.png") no-repeat center center;
+$footerThank: url("thx_footer_524x71.png") no-repeat center center;
+
+body.thank{
+  font-family: "Bitter",serif;
+  h1{
+    color: #006B85;
+    font: lighter 20px "Bitter",serif;
+    margin-top: 48px;
+  }
+  a{
+    color: #006B85;
+    text-decoration: underline;
+    &:hover{
+      background:transparent;
+      font-weight: 400;
+    }
+  }
+  .columns:after{
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+  }
+  .columns .col {
+    float: left;
+    overflow: hidden;
+  }
+  section#thank{
+    font-family: "Bitter",serif;
+    .banner-logo{
+      background: $bannerLogoThank;
+      height: 311px;
+      width: 318px;
+    }
+    .banner-text{
+      width: 600px;
+      p{
+        margin-top: 38px;
+        font: lighter 14px "Bitter",serif;
+        line-height: 20pt; 
+      }
+      footer{
+        background: $footerThank;
+      }
+    }
+  }
+}

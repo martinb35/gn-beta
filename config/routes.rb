@@ -1,4 +1,5 @@
 GoninisB1::Application.routes.draw do
+  get "thank/index"
   resources :preferences
 
   resources :notification_categories
