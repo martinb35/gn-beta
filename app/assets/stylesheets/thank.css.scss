@@ -7,6 +7,9 @@ $footerThank: url("thx_footer_524x71.png") no-repeat center center;
 
 body.thank{
   font-family: "Bitter",serif;
+  .container-body{
+    min-height: 284px;
+  }
   h1{
     color: #006B85;
     font: lighter 20px "Bitter",serif;
