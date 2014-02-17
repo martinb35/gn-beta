@@ -88,8 +88,9 @@
   </div>
   
   <div class="prefs bg">
-    <div class="oficios"></div>
-    <div class="profesion"></div>
+    <div class="oficios" name="prefs" prefer="oficios"></div>
+    <div class="profesion" name="prefs" prefer="profesion"></div>
+    <%= f.hidden_field :prefer %>
   </div>
 
   <div class="actions">

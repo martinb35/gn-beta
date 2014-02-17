@@ -104,6 +104,12 @@ div.container > form .address-wrapper > div.field {
   width:1020px;
   height:327px;
   margin:10px auto;
+  &.oficios-active{
+    background:url(gender_tareas_oficios_hover_1020x327.png) no-repeat;
+  }
+  &.profesion-active{
+    background:url(gender_profesion_hover_1020x327.png) no-repeat;
+  }
   .oficios {
     position:relative;
     top:100px;
