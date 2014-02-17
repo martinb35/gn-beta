@@ -37,11 +37,56 @@
             <ul>
         <% end %>        
          <li class="columns">
-            <%= f.check_box :check, { class: 'col', :multiple => true, :name =>"fields[#{category}][check]" } %><p class="col"><%= category.notification %></p><div class="icon helper" name="<%= category.notification.gsub(' ', '-') %>"></div>
+            <%= f.check_box :check, { class: 'col', :multiple => true, :name =>"fields[#{category}][check]" } %><p class="col"><%= category.notification %></p>
             <%= f.hidden_field :notification_category_id, :value => category.id, :multiple => true, :name =>"fields[#{category}][notification_category_id]" %>
             <%= f.hidden_field :user_id, :value => @user.id, :multiple => true, :name =>"fields[#{category}][user_id]" %>
         </li>        
       <% end %>
+        </ul>                
+      </fieldset>  
+      <fieldset class="col">
+        <legend><input type="checkbox">Enseñanza</legend>
+        <ul>
+            <li class="columns">
+                <input type="checkbox" class="col"><p class="col">M&uacute;sica</p>
+                <input type="text" placeholder="Describe aqu&iacute;">
+            </li>
+            <li class="columns">
+                <input type="checkbox" class="col"><p class="col">Idiomas</p>
+                <input type="text" placeholder="&iquest;Cu&aacute;les?">
+            </li>
+            <li class="columns">
+                <input type="checkbox" class="col"><p class="col">Cocina</p>
+                <input type="text" placeholder="&iquest;De qu&eacute; tipo?">
+            </li>
+        </ul>                
+     </fieldset>
+     <fieldset class="col">
+        <legend><input type="checkbox">Redacci&oacute;n y traducci&oacute;n</legend>
+        <ul>
+            <li class="columns">
+                <input type="checkbox" class="col"><p class="col">Creaci&oacute;n de contenidos</p>                
+            </li>
+            <li class="columns">
+                <input type="checkbox" class="col"><p class="col">Edici&oacute;n de textos</p>
+            </li>
+            <li class="columns">
+                <input type="checkbox" class="col"><p class="col">Redacci&oacute;n de Textos</p>
+            </li>
+            <li class="columns">
+                <input type="checkbox" class="col"><p class="col">Traducci&oacute;n de textos</p>
+            </li>
+            <li class="columns">
+              <!--[if !IE]> --><div class="notIE"><!-- <![endif]-->
+              <label id="gn-skin-require-cleaning" />
+              <select id="job_require_cleaning" name="">
+                <option>De Ingl&eacute;s a Español</option>
+                <option>De Español a  Ingl&eacute;s</option>
+              </select>
+              <!--[if !IE]> --></div> <!-- <![endif]-->
+            </li>
+        </ul>                
+     </fieldset>
     </div>
   </section>
   <section id="work-type">

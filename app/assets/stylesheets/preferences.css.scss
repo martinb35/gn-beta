@@ -72,7 +72,7 @@ body.preferences{
     width: 236px;
     margin: 16px 60px 16px 0;
     &.gray{
-      width: 297px;
+      width: 318px;
       padding: 10px 15px 15px 10px;
       margin-right: 40px;
     }
@@ -96,6 +96,7 @@ body.preferences{
       margin: 0 0 0 15px;
       li{
         font-size: 14px;
+        margin: 5px;
       }
     }
     input{
@@ -130,7 +131,7 @@ body.preferences{
     .like-notification{
       width: 508px;
     }
-    section#background-verification{
+    #background-verification{
       margin-bottom: 22px;
       margin-top: 22px;
       input[type=checkbox]{
