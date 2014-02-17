@@ -70,6 +70,6 @@ class NotificationCategoriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def notification_category_params
-      params.require(:notification_category).permit(:notification, :category)
+      params.require(:notification_category).permit(:notification, :category, :prefer)
     end
 end

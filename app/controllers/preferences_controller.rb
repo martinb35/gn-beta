@@ -15,9 +15,10 @@ class PreferencesController < ApplicationController
 
   # GET /preferences/new
   def new
-    @preference = Preference.new
-    @notification_categories = NotificationCategory.all
+    @preference = Preference.new    
     @user = User.find(session[:user_id])
+    @user.prefer = @user.prefer || 'oficios'
+    @notification_categories = NotificationCategory.find_all_by_prefer(@user.prefer, :order => 'category')
   end
 
   # GET /preferences/1/edit

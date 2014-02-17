@@ -10,7 +10,7 @@
     </div>
   <% end %>
   <section id="recommendation">
-    <div class="banner"></div>
+    <div class="banner profesion"></div>
   </section>
   <section id="preferences">
     <h1>Marca las labores que sabes hacer y como te gustaría recibir ofertas</h1>
@@ -42,6 +42,11 @@
             <%= f.hidden_field :user_id, :value => @user.id, :multiple => true, :name =>"fields[#{category}][user_id]" %>
         </li>        
       <% end %>
+    </div>
+  </section>
+  <section>
+    <div class="colums">
+      <input type="checkbox" class="col"><p class="col">Puedo hacer el proyecto de manera remota</p>
     </div>
   </section>
   <section id="other-information">
@@ -221,7 +226,7 @@
     <div class="columns">
       <div class="file">
         <div class="multines col">
-        <h1>Por último, pon la dirección de un video en la recuadro inferior.</h1>
+        <h1>Por último, sube un video de 2 minutos donde nos platiques sobre ti (youtube, vimeo, etc.) y copia la liga de tu video en este espacio</h1>
         <div class="url">
           <input type="text" placeholder="Escribe la url">
         </div>

@@ -3,6 +3,7 @@
   They will automatically be included in application.css.
 */
 $bannerRecommendation: url("section_banner_preferencias.png") no-repeat center center;
+$bannerRecommendationProfesion: url("section_banner_preferencias_profesion.png") no-repeat center center;
 $spriteIcons: url("sprite_icons.png") no-repeat -140px -70px;
 $gnFont: 'Bitter',serif;
 
@@ -103,8 +104,11 @@ body.preferences{
   }
   section#recommendation{
     .banner{
-      height: 307px;
+      height: 318px;
       background: $bannerRecommendation;
+      &.profesion{
+        background: $bannerRecommendationProfesion;
+      }
     }
   }
   section#preferences{
@@ -206,6 +210,9 @@ body.preferences{
     padding-left: 18px;
     width: 686px;
     margin-bottom: 30px;
+    input[type=text]{
+      width: 404px !important;
+    }
     .url{
       padding: 6px;
       input{
@@ -214,7 +221,7 @@ body.preferences{
       }
     }
     .multines{
-      width: 380px;
+      width: 580px;
     }
   }
   .send {

@@ -1,9 +1,10 @@
 <%= javascript_include_tag 'preferences' %>
-<pre>
-	<%= @user.inspect  %>
-</pre>
 <div class="container-body preferences">
-  <%= render 'form' %>
+  <% if @user.prefer == 'oficios' %>
+    <%= render 'form' %>
+  <% else %>
+    <%= render 'form_profesion' %>
+  <% end %>
   <div class="popup">
     <%= render partial: "shared/popup" %>
   </div>
