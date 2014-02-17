@@ -32,11 +32,10 @@ class PreferencesController < ApplicationController
     params[:fields].each do |i, values|
       @preference = Preference.create(values)
     end
-    #@preference = Preference.new(preference_params)
 
     respond_to do |format|
       if @preference.save
-        format.html { redirect_to @preference, notice: 'Preference was successfully created.' }
+        format.html { redirect_to '/thank/index' }
         format.json { render action: 'show', status: :created, location: @preference }
       else
         format.html { render action: 'new' }
