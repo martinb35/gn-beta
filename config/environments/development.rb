@@ -28,4 +28,5 @@ GoninisB1::Application.configure do
   config.assets.debug = false
   
   config.log_level = :debug
+  Paperclip.options[:command_path] = "/usr/local/bin/"
 end

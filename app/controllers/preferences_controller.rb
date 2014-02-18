@@ -18,7 +18,7 @@ class PreferencesController < ApplicationController
     @preference = Preference.new    
     @user = User.find(session[:user_id])
     @user.prefer = @user.prefer || 'oficios'
-    @notification_categories = NotificationCategory.find_all_by_prefer(@user.prefer, :order => 'category')
+    @notification_categories = NotificationCategory.find_all_by_prefer('profesion', :order => 'category')
   end
 
   # GET /preferences/1/edit
@@ -32,6 +32,8 @@ class PreferencesController < ApplicationController
     params[:fields].each do |i, values|
       @preference = Preference.create(values)
     end
+
+    User.find(params[:user_id]).update_attribute(:attach, params[:attach])
 
     respond_to do |format|
       if @preference.save

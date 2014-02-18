@@ -64,3 +64,7 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 
 # Use cancan
 gem "cancan"
+
+#Paperclip is intended as an easy file attachment library for Active Record. Read more https://github.com/thoughtbot/paperclip/
+gem "paperclip", "~> 4.1.0"
+

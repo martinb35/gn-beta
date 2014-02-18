@@ -1,4 +1,4 @@
-<%= form_for(@preference) do |f| %>
+<%= form_for(@preference, :html => { :multipart => true }) do |f| %>
   <% if @preference.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@preference.errors.count, "error") %> prohibited this preference from being saved:</h2>
@@ -274,6 +274,8 @@
         <h1>Por último, sube un video de 2 minutos donde nos platiques sobre ti (youtube, vimeo, etc.) y copia la liga de tu video en este espacio</h1>
         <div class="url">
           <input type="text" placeholder="Escribe la url">
+          <%= f.file_field :attach, :name =>"attach" %>
+           <%= f.hidden_field :user_id, :value => @user.id,  :name =>"user_id" %>
         </div>
         </div>
       </div>      

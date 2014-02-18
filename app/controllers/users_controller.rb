@@ -84,7 +84,7 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:name, :password, :password_confirmation, :email, :role_id, :prefer)
+      params.require(:user).permit(:name, :password, :password_confirmation, :email, :role_id, :prefer, :attach)
     end
     def current_user
       @user = User.find_by_id(session[:user_id])
