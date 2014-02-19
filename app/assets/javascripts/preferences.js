@@ -23,6 +23,10 @@ var gn_preferences = {
     this.el.find('input[name=parent-ckeck]').bind('click', function(){
       self.el.find(this).parent().next().find('input[type=checkbox]').prop('checked', self.el.find(this).is(':checked'));
     });
+
+    this.el.find('#preference_attach').bind('change', function(e){
+      self.el.find('#file_attach').text(self.el.find(this).val());
+    });
   }
 }
 

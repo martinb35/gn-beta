@@ -271,11 +271,17 @@
     <div class="columns">
       <div class="file">
         <div class="multines col">
+          <h1>Anexa algunos trabajos que hayas realizado.</h1>
+          <div class="attach">
+            <%= f.file_field :attach, :name =>"attach" %>
+            <%= f.hidden_field :user_id, :value => @user.id,  :name =>"user_id" %>
+          </div>
+          <p id="file_attach"></p>
+        </div>
+        <div class="multines col">
         <h1>Por último, sube un video de 2 minutos donde nos platiques sobre ti (youtube, vimeo, etc.) y copia la liga de tu video en este espacio</h1>
         <div class="url">
-          <input type="text" placeholder="Escribe la url">
-          <%= f.file_field :attach, :name =>"attach" %>
-           <%= f.hidden_field :user_id, :value => @user.id,  :name =>"user_id" %>
+          <input type="text" placeholder="Escribe la url">                    
         </div>
         </div>
       </div>      

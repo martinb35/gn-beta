@@ -4,6 +4,7 @@
 */
 $bannerRecommendation: url("section_banner_preferencias.png") no-repeat center center;
 $bannerRecommendationProfesion: url("section_banner_preferencias_profesion.png") no-repeat center center;
+$imgAttach: url("adjuntar_archivo_563x38.png") no-repeat center center;
 $spriteIcons: url("sprite_icons.png") no-repeat -140px -70px;
 $gnFont: 'Bitter',serif;
 
@@ -224,7 +225,7 @@ body.preferences{
   }
   .file{
     border: 1px solid #c8c8c8;
-    height: 110px;
+    height: 260px;
     padding-bottom: 18px;
     padding-left: 18px;
     width: 686px;
@@ -241,6 +242,18 @@ body.preferences{
     }
     .multines{
       width: 580px;
+    }
+    .attach{
+      background: $imgAttach;
+      height: 38px;
+      input[type=file]{
+        height: 100%;
+        width: 100%;
+        text-indent: -300px;
+      }
+    }
+    p{
+      margin: 10px;
     }
   }
   .send {
