@@ -1,5 +1,11 @@
-<h1>New preference</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Back', preferences_path %>
+<%= javascript_include_tag 'preferences' %>
+<div class="container-body preferences">
+  <% if @user.prefer == 'oficios' %>
+    <%= render 'form' %>
+  <% else %>
+    <%= render 'form_profesion' %>
+  <% end %>
+  <div class="popup">
+    <%= render partial: "shared/popup" %>
+  </div>
+</div>

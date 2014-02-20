@@ -15,7 +15,10 @@ class PreferencesController < ApplicationController
 
   # GET /preferences/new
   def new
-    @preference = Preference.new
+    @preference = Preference.new    
+    @user = User.find(session[:user_id])
+    @user.prefer = @user.prefer || 'oficios'
+    @notification_categories = NotificationCategory.find_all_by_prefer('profesion', :order => 'category')
   end
 
   # GET /preferences/1/edit
@@ -25,11 +28,16 @@ class PreferencesController < ApplicationController
   # POST /preferences
   # POST /preferences.json
   def create
-    @preference = Preference.new(preference_params)
+
+    params[:fields].each do |i, values|
+      @preference = Preference.create(values)
+    end
+
+    User.find(params[:user_id]).update_attribute(:attach, params[:attach])
 
     respond_to do |format|
       if @preference.save
-        format.html { redirect_to @preference, notice: 'Preference was successfully created.' }
+        format.html { redirect_to '/thank/index' }
         format.json { render action: 'show', status: :created, location: @preference }
       else
         format.html { render action: 'new' }

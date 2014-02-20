@@ -13,12 +13,19 @@ var gn_preferences = {
     var self = this;
 
     this.el.find('.helper').bind('click', function(){
-      console.log($(this).attr('name'));
       self.el.find('.modal').show().find('.modal-body').children('section').hide().parent().find('#' + $(this).attr('name')).show();
     });
 
     this.el.find('.close').bind('click', function(){
       self.el.find('.modal').hide();
+    });
+
+    this.el.find('input[name=parent-ckeck]').bind('click', function(){
+      self.el.find(this).parent().next().find('input[type=checkbox]').prop('checked', self.el.find(this).is(':checked'));
+    });
+
+    this.el.find('#preference_attach').bind('change', function(e){
+      self.el.find('#file_attach').text(self.el.find(this).val());
     });
   }
 }

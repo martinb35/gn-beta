@@ -1,11 +1,11 @@
 <h1>Listing notification_categories</h1>
 
-<table>
+<table class="table table-striped">
   <thead>
     <tr>
       <th>Notification</th>
       <th>Category</th>
-      <th></th>
+      <th>prefer</th>
       <th></th>
       <th></th>
     </tr>
@@ -16,6 +16,7 @@
       <tr>
         <td><%= notification_category.notification %></td>
         <td><%= notification_category.category %></td>
+        <td><%= notification_category.prefer %></td>
         <td><%= link_to 'Show', notification_category %></td>
         <td><%= link_to 'Edit', edit_notification_category_path(notification_category) %></td>
         <td><%= link_to 'Destroy', notification_category, method: :delete, data: { confirm: 'Are you sure?' } %></td>

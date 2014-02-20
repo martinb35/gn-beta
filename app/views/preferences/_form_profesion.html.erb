@@ -1,0 +1,296 @@
+<%= form_for(@preference, :html => { :multipart => true }) do |f| %>
+  <% if @preference.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@preference.errors.count, "error") %> prohibited this preference from being saved:</h2>
+      <ul>
+      <% @preference.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <section id="recommendation">
+    <div class="banner profesion"></div>
+  </section>
+  <section id="preferences">
+    <h1>Marca las labores que sabes hacer y como te gustaría recibir ofertas</h1>
+    <div class="columns">
+      <% 
+      counter = false; 
+      aux = '';  
+      %>
+      <% @notification_categories.each do |category| %>
+        
+        <% if aux != category.category %>
+          <% counter = false; %>
+          <% if aux!='' %>
+              </ul>                
+            </fieldset>  
+          <% end %>
+          <% aux = category.category; %>         
+        <% end %>       
+
+        <% if !counter %>    
+          <% counter = true; %>      
+          <fieldset class="col">
+            <legend><input type="checkbox" name="parent-ckeck"><%= category.category %></legend>
+            <ul>
+        <% end %>        
+         <li class="columns">
+            <%= f.check_box :check, { class: 'col', :multiple => true, :name =>"fields[#{category}][check]" } %><p class="col"><%= category.notification %></p>
+            <%= f.hidden_field :notification_category_id, :value => category.id, :multiple => true, :name =>"fields[#{category}][notification_category_id]" %>
+            <%= f.hidden_field :user_id, :value => @user.id, :multiple => true, :name =>"fields[#{category}][user_id]" %>
+        </li>        
+      <% end %>
+        </ul>                
+      </fieldset>  
+      <fieldset class="col">
+        <legend><input type="checkbox">Enseñanza</legend>
+        <ul>
+            <li class="columns">
+                <input type="checkbox" class="col"><p class="col">M&uacute;sica</p>
+                <input type="text" placeholder="Describe aqu&iacute;">
+            </li>
+            <li class="columns">
+                <input type="checkbox" class="col"><p class="col">Idiomas</p>
+                <input type="text" placeholder="&iquest;Cu&aacute;les?">
+            </li>
+            <li class="columns">
+                <input type="checkbox" class="col"><p class="col">Cocina</p>
+                <input type="text" placeholder="&iquest;De qu&eacute; tipo?">
+            </li>
+        </ul>                
+     </fieldset>
+     <fieldset class="col">
+        <legend><input type="checkbox">Redacci&oacute;n y traducci&oacute;n</legend>
+        <ul>
+            <li class="columns">
+                <input type="checkbox" class="col"><p class="col">Creaci&oacute;n de contenidos</p>                
+            </li>
+            <li class="columns">
+                <input type="checkbox" class="col"><p class="col">Edici&oacute;n de textos</p>
+            </li>
+            <li class="columns">
+                <input type="checkbox" class="col"><p class="col">Redacci&oacute;n de Textos</p>
+            </li>
+            <li class="columns">
+                <input type="checkbox" class="col"><p class="col">Traducci&oacute;n de textos</p>
+            </li>
+            <li class="columns">
+              <!--[if !IE]> --><div class="notIE"><!-- <![endif]-->
+              <label id="gn-skin-require-cleaning" />
+              <select id="job_require_cleaning" name="">
+                <option>De Ingl&eacute;s a Español</option>
+                <option>De Español a  Ingl&eacute;s</option>
+              </select>
+              <!--[if !IE]> --></div> <!-- <![endif]-->
+            </li>
+        </ul>                
+     </fieldset>
+    </div>
+  </section>
+  <section id="work-type">
+    <div class="colums file">
+      <input type="checkbox" class="col"><h1 class="col">Puedo hacer el proyecto de manera remota</h1>
+    </div>
+  </section>
+  <section id="other-information">
+    <div class="columns">
+      <div class="multines col">
+        <h1>&iquest;Algún otro dato que nos quieras hacer saber sobre el desempeño de las tareas?</h1>
+        <textarea></textarea>
+      </div>
+      <div class="multines col">
+        <h1>&iquest;Cuentas con herramientas para ejecutar las tareas? ¿Qué tipo de herramientas?</h1>
+        <textarea></textarea>
+      </div>      
+    </div>
+    <div class="columns">
+      <div class="multines col">
+        <h1>&iquest;Qu&eacute; medios de transporte utilizar&iacute;as para realizar las tareas?</h1>
+        <textarea></textarea>
+      </div>
+      <div class="multines col">
+        <h1>&iquest;Como es que tus habilidades, fortalezas y cualidades pueden contribuir a tus ganas de convertirte en Handy?</h1>
+        <textarea></textarea>
+      </div>
+    </div>
+    <div class="columns">
+      <div class="multines col">
+        <fieldset class="col gray">
+          <legend>¿Qué dispositivos de comunicación social utilizas en tu vida?</legend>
+          <ul>
+              <li class="columns">
+                  <input type="checkbox" class="col"><p class="col">Smarthphone</p>
+              </li>
+              <li class="columns">
+                  <input type="checkbox" class="col"><p class="col">Teléfono movil</p>
+              </li>
+              <li class="columns">
+                  <input type="checkbox" class="col"><p class="col">Computadora de escritorio</p>
+              </li>
+          </ul>                
+        </fieldset>
+      </div>
+      <div class="with-note">
+        <fieldset class="col gray two-cols">
+            <legend>¿Qué días de la semana estas disponible para llevar a cabo las tareas?</legend>
+            <ul class="left">
+                <li class="columns">
+                    <input type="checkbox" class="col"><p class="col">Todos los días</p>
+                </li>
+                <li class="columns">
+                    <input type="checkbox" class="col"><p class="col">Entre semana</p>
+                </li>
+                <li class="columns">
+                    <input type="checkbox" class="col"><p class="col">Fines de semana</p>
+                </li>
+                <li class="columns">
+                    <input type="checkbox" class="col"><p class="col">Días festivos</p>
+                </li>
+                <li class="columns">
+                    <input type="checkbox" class="col"><p class="col">Lunes</p>
+                </li>
+                <li class="columns">
+                    <input type="checkbox" class="col"><p class="col">Martes</p>
+                </li>
+            </ul>
+            <ul class="rigth">
+                <li class="columns">
+                    <input type="checkbox" class="col"><p class="col">Miércoles</p>
+                </li>
+                <li class="columns">
+                    <input type="checkbox" class="col"><p class="col">Jueves</p>
+                </li>
+                <li class="columns">
+                    <input type="checkbox" class="col"><p class="col">Viernes</p>
+                </li>
+                <li class="columns">
+                    <input type="checkbox" class="col"><p class="col">Sábado</p>
+                </li>
+                <li class="columns">
+                    <input type="checkbox" class="col"><p class="col">Domingo</p>
+                </li>
+            </ul>
+        </fieldset>
+        <div class="note">Nota: Trabajaren fines de<br /> semana y d&iacute;as festivos te ayuda<br /> a posicionarte mejor y ganar<br /> m&aacute;s gradualmente.</div>
+      </div>     
+    </div>
+    <div class="columns">
+      <div class="multines col">
+        <h1>¿Qu&eacute; nivel de internet manejas?</h1>
+        <!--[if !IE]> --><div class="notIE"><!-- <![endif]-->
+        <label id="gn-skin-require-cleaning" />
+        <select id="job_require_cleaning" name="job[require_cleaning]">
+          <option>Bien</option>
+          <option>Excelente</option>
+          <option>Basico</option>
+          <option>Bien</option>
+        </select>
+        <!--[if !IE]> --></div> <!-- <![endif]-->
+      </div>      
+    </div>
+    <div class="columns">
+      <div class="with-note">
+        <h1>¿A qu&eacute; hora del d&iacute;a esta disponible para llevar a cabo las tareas?</h1>
+        <div class="col">          
+          <!--[if !IE]> --><div class="notIE"><!-- <![endif]-->
+          <label id="gn-skin-require-cleaning" />
+          <select id="job_require_cleaning" name="job[require_cleaning]">
+            <option>Bien</option>
+            <option>Excelente</option>
+            <option>Basico</option>
+            <option>Bien</option>
+          </select>
+          <!--[if !IE]> --></div> <!-- <![endif]-->
+        </div>
+        
+        <h1 class="col">a</h1>
+        <div class="col">
+          <!--[if !IE]> --><div class="notIE"><!-- <![endif]-->
+          <label id="gn-skin-require-cleaning" />
+          <select id="job_require_cleaning" name="job[require_cleaning]">
+            <option>Bien</option>
+            <option>Excelente</option>
+            <option>Basico</option>
+            <option>Bien</option>
+          </select>
+          <!--[if !IE]> --></div> <!-- <![endif]-->
+        </div>
+        <div class="note">Nota: trabajar en horas pico<br />(temprano o noche) te ayuda a<br /> posicionarte mejor y ganar<br /> m&aacute;s gradualmente.</div>
+      </div>
+    </div>
+    <div class="columns">
+      <div class="with-note">
+        <fieldset class="col like-notification">
+          <legend>¿C&oacute;mo te gustar&iacute;a recibir notificaciones de trabajo?</legend>
+          <ul>
+              <li class="columns">
+                  <input type="checkbox" class="col"><p class="col">Cuento con internet en mi celular, a trav&eacute;s de una notificaci&oacute;n</p>
+              </li>
+              <li class="columns">
+                  <input type="checkbox" class="col"><p class="col">A trav&eacute;s de un correo electr&oacute;nico</p>
+              </li>
+              <li class="columns">
+                  <input type="checkbox" class="col"><p class="col">A trav&eacute;s de una llamada</p>
+              </li>
+               <li class="columns">
+                  <input type="checkbox" class="col"><p class="col">V&iacute;a SMS</p>
+              </li>
+          </ul>                
+        </fieldset>
+         <div class="note">Nota: contestar dentro de la<br /> primera hora te ayuda posi-<br />cionarte mejor y ganar<br /> m&aacute;s gradualmente.</div>
+      </div>
+    </div>
+    <div class="columns">
+      <div class="multines col">
+        <h1>¿Algún otro dato que nos quieras hacer saber sobre tu disponibilidad y flexibilidad de tiempo?</h1>
+        <textarea></textarea>
+      </div>
+      <div class="multines col">
+        <h1>¿C&oacute;mo es que ser Handy contribuir&iacute;a a tu desarrollo y como crees que impactar&iacute;a en la comunidad?</h1>
+        <textarea></textarea>
+      </div>
+    </div>
+    <div class="columns">
+      <div class="multines col">
+        <h1>¿Por qu&eacute; te gustar&iacute;a ser Handy?</h1>
+        <textarea></textarea>
+      </div>
+      <div class="multines col">
+        <h1> ¿C&oacute;mo te entereaste de Goninis?</h1>
+        <textarea></textarea>
+      </div>
+    </div>
+    <div class="columns" id="background-verification">
+      <h1 class="col">¿Autorizas verificaci&oacute;n de antecedentes?</h1>
+      <input type="checkbox" class="col">
+    </div>
+            
+
+    <div class="columns">
+      <div class="file">
+        <div class="multines col">
+          <h1>Anexa algunos trabajos que hayas realizado.</h1>
+          <div class="attach">
+            <%= f.file_field :attach, :name =>"attach" %>
+            <%= f.hidden_field :user_id, :value => @user.id,  :name =>"user_id" %>
+          </div>
+          <p id="file_attach"></p>
+        </div>
+        <div class="multines col">
+        <h1>Por último, sube un video de 2 minutos donde nos platiques sobre ti (youtube, vimeo, etc.) y copia la liga de tu video en este espacio</h1>
+        <div class="url">
+          <input type="text" placeholder="Escribe la url">                    
+        </div>
+        </div>
+      </div>      
+    </div>    
+  </section>
+  <section id="submit">
+    <div class="columns">
+      <div class="send"><%= f.submit " ", :class => 'send' %></div>      
+    </div>    
+  </section>
+<% end %>
+

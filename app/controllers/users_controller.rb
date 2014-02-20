@@ -43,7 +43,8 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to login_path }
+        session[:user_id] = @user.id
+        format.html { redirect_to new_preference_path }
         format.json { render action: 'show', status: :created, location: @user }
       else
         format.html { render action: 'new' }
@@ -83,7 +84,7 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:name, :password, :password_confirmation, :email, :role_id)
+      params.require(:user).permit(:name, :password, :password_confirmation, :email, :role_id, :prefer, :attach)
     end
     def current_user
       @user = User.find_by_id(session[:user_id])

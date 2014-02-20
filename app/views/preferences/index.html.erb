@@ -1,217 +1,30 @@
-<%= javascript_include_tag 'preferences' %>
-<div class="container-body preferences">
-  <section id="recommendation">
-    <div class="banner"></div>
-  </section>
-  <section id="preferences">
-    <h1>Marca las labores que sabes hacer y como te gustaría recibir ofertas</h1>
-    <div class="columns">
-      <fieldset class="col">
-          <legend><input type="checkbox">Limpieza</legend>
-          <ul>
-              <li class="columns">
-                  <input type="checkbox" class="col"><p class="col">Limpieza regular</p><div class="icon helper" name="regular"></div>
-              </li>
-              <li class="columns">
-                  <input type="checkbox" class="col"><p class="col">Limpieza profunda</p><div class="icon helper" name="profunda"></div>
-              </li>
-              <li class="columns">
-                  <input type="checkbox" class="col"><p class="col">Limpieza de temporada</p><div class="icon helper"></div>
-              </li>
-          </ul>                
-      </fieldset>
-      <fieldset class="col">
-        <legend><input type="checkbox">Limpieza</legend>
-        <ul>
-            <li class="columns">
-                <input type="checkbox" class="col"><p class="col">Limpieza regular</p><div class="icon helper"></div>
-            </li>
-            <li class="columns">
-                <input type="checkbox" class="col"><p class="col">Limpieza profunda</p><div class="icon helper"></div>
-            </li>
-            <li class="columns">
-                <input type="checkbox" class="col"><p class="col">Limpieza de temporada</p><div class="icon helper"></div>
-            </li>
-        </ul>                
-     </fieldset>
-    </div>
-    
-  </section>
-  <section>
-    <div class="columns">
-      <div class="multines col">
-        <h1>&iquest;Algún otro dato que nos quieras hacer saber sobre el desempeño de las tareas?</h1>
-        <textarea></textarea>
-      </div>
-      <div class="multines col">
-        <h1>&iquest;Cuentas con herramientas para ejecutar las tareas? ¿Qué tipo de herramientas?</h1>
-        <textarea></textarea>
-      </div>      
-    </div>
-    <div class="columns">
-      <div class="multines col">
-        <h1>&iquest;Qu&eacute; medios de transporte utilizar&iacute;as para realizar las tareas?</h1>
-        <textarea></textarea>
-      </div>
-      <div class="multines col">
-        <h1>&iquest;Como es que tus habilidades, fortalezas y cualidades pueden contribuir a tus ganas de convertirte en Handy?</h1>
-        <textarea></textarea>
-      </div>
-    </div>
-    <div class="columns">
-      <fieldset class="col gray">
-          <legend>¿Qué dispositivos de comunicación social utilizas en tu vida?</legend>
-          <ul>
-              <li class="columns">
-                  <input type="checkbox" class="col"><p class="col">Smarthphone</p>
-              </li>
-              <li class="columns">
-                  <input type="checkbox" class="col"><p class="col">Teléfono movil</p>
-              </li>
-              <li class="columns">
-                  <input type="checkbox" class="col"><p class="col">Computadora de escritorio</p>
-              </li>
-          </ul>                
-      </fieldset>
-      <div class="with-note">
-          <fieldset class="col gray two-cols">
-              <legend>¿Qué días de la semana estas disponible para llevar a cabo las tareas?</legend>
-              <ul class="left">
-                  <li class="columns">
-                      <input type="checkbox" class="col"><p class="col">Todos los días</p>
-                  </li>
-                  <li class="columns">
-                      <input type="checkbox" class="col"><p class="col">Entre semana</p>
-                  </li>
-                  <li class="columns">
-                      <input type="checkbox" class="col"><p class="col">Fines de semana</p>
-                  </li>
-                  <li class="columns">
-                      <input type="checkbox" class="col"><p class="col">Días festivos</p>
-                  </li>
-                  <li class="columns">
-                      <input type="checkbox" class="col"><p class="col">Lunes</p>
-                  </li>
-                  <li class="columns">
-                      <input type="checkbox" class="col"><p class="col">Martes</p>
-                  </li>
-              </ul>
-              <ul class="rigth">
-                  <li class="columns">
-                      <input type="checkbox" class="col"><p class="col">Miércoles</p>
-                  </li>
-                  <li class="columns">
-                      <input type="checkbox" class="col"><p class="col">Jueves</p>
-                  </li>
-                  <li class="columns">
-                      <input type="checkbox" class="col"><p class="col">Viernes</p>
-                  </li>
-                  <li class="columns">
-                      <input type="checkbox" class="col"><p class="col">Sábado</p>
-                  </li>
-                  <li class="columns">
-                      <input type="checkbox" class="col"><p class="col">Domingo</p>
-                  </li>
-              </ul>
-          </fieldset>
-          <div class="note">Nota: Trabajaren fines de<br /> semana y d&iacute;as festivos te ayuda<br /> a posicionarte mejor y ganar<br /> m&aacute;s gradualmente.</div>
-      </div>
-    </div>
-    <div class="columns">
-      <div class="multines col">
-        <h1>¿Qu&eacute; nivel de internet manejas?</h1>
-        <select>
-          <option>Bien</option>
-          <option>Excelente</option>
-          <option>Basico</option>
-          <option>Bien</option>
-        </select>
-      </div>      
-    </div>
-    <div class="columns">
-      <div class="with-note">
-        <h1>¿A qu&eacute; hora del d&iacute;a esta disponible para llevar a cabo las tareas?</h1>
-        <select class="col">
+<h1>Listing preferences</h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Notification category</th>
+      <th>Check</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
 
-        </select>
-        <h1 class="col">a</h1>
-        <select class="col"></select>
-        <div class="note">Nota: trabajar en horas pico<br />(temprano o noche) te ayuda a<br /> posicionarte mejor y ganar<br /> m&aacute;s gradualmente.</div>
-      </div>
-    </div>
-    <div class="columns">
-      <div class="with-note">
-        <fieldset class="col gray">
-          <legend>¿C&oacute;mo te gustar&iacute;a recibir notificaciones de trabajo?</legend>
-          <ul>
-              <li class="columns">
-                  <input type="checkbox" class="col"><p class="col">Cuento con internet en mi celular, a trav&eacute;s de una notificaci&oacute;n</p>
-              </li>
-              <li class="columns">
-                  <input type="checkbox" class="col"><p class="col">A trav&eacute;s de un correo electr&oacute;nico</p>
-              </li>
-              <li class="columns">
-                  <input type="checkbox" class="col"><p class="col">A trav&eacute;s de una llamada</p>
-              </li>
-               <li class="columns">
-                  <input type="checkbox" class="col"><p class="col">V&iacute;a SMS</p>
-              </li>
-          </ul>                
-        </fieldset>
-         <div class="note">Nota: contestar dentro de la<br /> primera hora te ayuda posi-<br />cionarte mejor y ganar<br /> m&aacute;s gradualmente.</div>
-      </div>
-    </div>
-    <div class="columns">
-      <div class="multines col">
-        <h1>¿Algún otro dato que nos quieras hacer saber sobre tu disponibilidad y flexibilidad de tiempo?</h1>
-        <textarea></textarea>
-      </div>
-      <div class="multines col">
-        <h1>¿C&oacute;mo es que ser Handy contribuir&iacute;a a tu desarrollo y como crees que impactar&iacute;a en la comunidad?</h1>
-        <textarea></textarea>
-      </div>
-    </div>
-    <div class="columns">
-      <div class="multines col">
-        <h1>¿Por qu&eacute; te gustar&iacute;a ser Handy?</h1>
-        <textarea></textarea>
-      </div>
-      <div class="multines col">
-        <h1> ¿C&oacute;mo te entereaste de Goninis?</h1>
-        <textarea></textarea>
-      </div>
-    </div>
-    <div class="columns">
-      <div class="multines col">
-        <h1 class="col">¿Autorizas verificaci&oacute;n de antecedentes?</h1><input type="checkbox" class="col">
-      </div>      
-    </div>
-    <div class="columns">
-      <div class="file">
-        <div class="multines col">
-        <h1>Por último, pon la dirección de un video en la recuadro inferior.</h1>
-        <div class="url">
-          <input type="text" placeholder="Escribe la url">
-        </div>
-        </div>
-      </div>      
-    </div>
-  </section>
-  <section>
-    <div class="columns">
-      <div class="send"></div>
-    </div>    
-  </section>
-</div>
-<div class="popup">
-  <%= render partial: "shared/popup" %>
-</div>
+  <tbody>
+    <% @preferences.each do |preference| %>
+      <tr>
+        <td><%= preference.user.name %></td>
+        <td><%= preference.notification_category.notification %></td>
+        <td><%= preference.check %></td>
+        <td><%= link_to 'Show', preference %></td>
+        <td><%= link_to 'Edit', edit_preference_path(preference) %></td>
+        <td><%= link_to 'Destroy', preference, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 
-<!--<ul>
-      <li class="helper" name="regular" >regular</li>
-      <li class="helper" name="profunda" >profunca</li>
-      <li class="helper" name="temporada" >temporada</li>
-      <li class="helper" name="corrida" >corrida</li>
-      <li class="helper" name="elaborada" >elaborada</li>
-      <li class="helper" name="especial" >especial</li>
-    </ul>-->
+<br>
+
+<%= link_to 'New Preference', new_preference_path %>
