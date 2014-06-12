@@ -1,0 +1,263 @@
+<hr>
+<section class="gn-sub-form-tasktype clearfix">
+	<div class="icon section levels">&nbsp;</div>
+
+	<div class="field">
+      <label class="label-field" for="">¿Cuál es tu tarea?</label>      
+    </div>
+    <div class="field">
+    	<ul id="job_level">        
+	        <li><div class="toggle-btn active">Comprar y entregar un regalo</div><span class="icon guides small"></span></li>
+	        <li><div class="toggle-btn">Recoger y entregar un regalo</div><span class="icon guides small"></span></li>
+    	</ul>
+    </div>
+
+    <div class="field clearfix">
+    	<label class="label-field" for="job_Tamaño del hogar">Tu presupuesto para la compra del regalo es de</label>
+    	<input type="text" name="" gn="" placeholder="$0.00 m.n." maxlength="" autocomplete="off">
+    	<span class="icon guides small"></span>
+    </div>
+
+    <div class="field ubicacion">
+    	<label class="label-field">¿Cuáles son las características del regalo y qué cuidados debe tener el handy</label>
+    	<div class="label-highlight selected">Esta descripción es pública</div>
+    	<div class="label-highlight">Añadir una nota privada</div>
+    	<div class="textCombo">
+    		<div class="textarea">
+      			<textarea gn="" id="" name="" placeholder="Describe brevemente las características del regalo y cuidados especiales" ></textarea>
+		    	<div class="dragAndDrop">
+		    		<p>Si tienes alguna imagen del regalo <a href="">adjúntala aquí</a></p>
+		    	</div>
+    		</div>
+
+	    	<label class="cheknote">
+	          <div class="icon checkbox">
+	            <input type="checkbox" name="" class="">
+	          </div> 
+	          El objeto es frágil
+	        </label>
+	        <ul class="linedInputs">
+	        	<li>
+	        		<label class="label-field">Peso aproximado</label>
+	        		<input class="peso" type="text" name="" gn="" placeholder="$0.0 kg" maxlength="" autocomplete="off">
+	        	</li>
+	        	<li>
+	        		<label class="label-field">Tamaño aproximado</label>
+	        		<input class="medida" type="text" name="" gn="" placeholder="ancho, largo, profundo" maxlength="" autocomplete="off">
+	        	</li>
+	        </ul>
+    	</div>
+    </div>
+
+    <div class="field clearfix last">
+    	<ul class="twoTextareas">
+    		<li>
+    			<label class="label-field">Si se requiere que el regalo sea envuelto por el handy, describir los detalles aquí</label>
+    			<textarea gn="job_notes" id="job_notes" name="job[notes]"></textarea>
+    		</li>
+    		<li>
+    			<label class="label-field">Si el regalo va a llevar una nota, </br>agregar el texto aquí</label>
+    			<textarea gn="job_notes" id="job_notes" name="job[notes]"></textarea>
+    		</li>
+    	</ul>
+    </div>
+
+    <div class="field ubicacion">
+      <label class="label-field">¿Qué habilidades o recursos requiere tener el handy?</label>
+      <textarea gn="job_notes" id="job_notes" name="job[notes]" placeholder="Aquí indica si el handy requiere coche para las maniobras o si requiere contar con alguna habilidad para ejecutar tu tarea."></textarea>
+    </div>
+
+    <div class="field last">
+      <label class="label-field">¿Algo que deba evitarse?</label>
+      <textarea gn="job_notes" id="job_notes" name="job[notes]" placeholder=""></textarea>
+    </div>
+ </section>
+ <hr>
+
+<section class="gn-sub-form-when clearfix">
+	<div class="icon section calendar">&nbsp;</div>
+	<div class="field ubicacion clearfix">
+		<label class="label-field">Requiero que regalo se</label>
+	    <ul>
+	    	<li>
+		        <div class="notIE"><!-- <![endif]-->
+		        	<label>
+			            <select id="" name="">
+			            	<option value="">Recoja</option>
+			            </select>
+		          	<!--[if !IE]> -->
+		        	</label>
+		        </div>
+	    	</li>
+	    	<label class="label-field">el</label>
+	    	<li>
+		        <div class="notIE"><!-- <![endif]-->
+			        <label>
+			            <select id="" name="">
+			            	<option value="">Elige el día</option>
+			            </select>
+			          <!--[if !IE]> -->
+			        </label>
+		        </div>
+	    	</li>
+	    </ul>
+	</div>
+	<div class="field ubicacion clearfix">      
+      <div class="gn-job-time clearfix">
+        <label class="label-field">a las:</label>
+        <!--[if !IE]> -->
+        <div class="notIE">
+        <!-- <![endif]-->
+        	<label class="gn-skin-when-time">
+	        	<select id="job_when_hr" name="job[when]">
+	            	<option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option>
+	            </select>
+          <!--[if !IE]> -->
+        	</label>
+        </div>
+          <!-- <![endif]-->   
+        <!--[if !IE]> -->
+        <div class="notIE"><!-- <![endif]-->
+        	<label class="gn-skin-when-time">
+	            <select id="job_when_min" name="job[when]">
+	            	<option>00</option>
+	            	<option>15</option>
+	            	<option>30</option>
+	            	<option>45</option>
+	            </select>
+          <!--[if !IE]> -->
+        	</label>
+        </div> <!-- <![endif]-->   
+        <!--[if !IE]> -->
+        <div class="notIE"><!-- <![endif]-->
+        	<label class="gn-skin-when-time-last">
+	            <select id="job_when_meridian" name="job[when]">
+	            	<option>AM</option>
+	            	<option>PM</option>
+	            </select>
+          <!--[if !IE]> -->
+        	</label>
+        </div> <!-- <![endif]--> 
+	        <label id="gn-checkbox-repeat-task" class="label-field">
+	          <div class="icon checkbox">
+	            <input type="checkbox" name="job[repeat]" class="job_repeat_task">
+	          </div> 
+	          Repetir tarea periódicamente
+	        </label>
+    	</div>      
+	</div>
+
+	<div class="field ubicacion clearfix">
+		<label class="label-field">Requiero que regalo se entregue</label>
+	    <ul>
+	    	<li>
+		        <div class="notIE"><!-- <![endif]-->
+		        	<label>
+			            <select id="" name="">
+			            	<option value="">Elige el día</option>
+			            </select>
+		          	<!--[if !IE]> -->
+		        	</label>
+		        </div>
+	    	</li>
+	    </ul>
+	</div>
+	<div class="field clearfix last">      
+      <div class="gn-job-time clearfix">
+        <label class="label-field">a las:</label>
+        <!--[if !IE]> -->
+        <div class="notIE">
+        <!-- <![endif]-->
+        	<label class="gn-skin-when-time">
+	        	<select id="job_when_hr" name="job[when]">
+	            	<option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option>
+	            </select>
+          <!--[if !IE]> -->
+        	</label>
+        </div>
+          <!-- <![endif]-->   
+        <!--[if !IE]> -->
+        <div class="notIE"><!-- <![endif]-->
+        	<label class="gn-skin-when-time">
+	            <select id="job_when_min" name="job[when]">
+	            	<option>00</option>
+	            	<option>15</option>
+	            	<option>30</option>
+	            	<option>45</option>
+	            </select>
+          <!--[if !IE]> -->
+        	</label>
+        </div> <!-- <![endif]-->   
+        <!--[if !IE]> -->
+        <div class="notIE"><!-- <![endif]-->
+        	<label class="gn-skin-when-time-last">
+	            <select id="job_when_meridian" name="job[when]">
+	            	<option>AM</option>
+	            	<option>PM</option>
+	            </select>
+          <!--[if !IE]> -->
+        	</label>
+        </div> <!-- <![endif]--> 
+	        <label id="gn-checkbox-repeat-task" class="label-field">
+	          <div class="icon checkbox">
+	            <input type="checkbox" name="job[repeat]" class="job_repeat_task">
+	          </div> 
+	          Repetir tarea periódicamente
+	        </label>
+    	</div>      
+	</div>
+</section>
+<hr>
+
+<section class="gn-sub-form-where">
+    <div class="icon section map">&nbsp;</div>    
+    <div class="field clearfix ">
+    	<label class="label-field">Recoger</label>
+    	<input type="text" name="" gn="" placeholder="Ubicación (calle y número, colonia, delegación)" maxlength="300" autocomplete="off">
+    </div>
+    <div class="field clearfix ">
+    	<label class="label-field">Entregar</label>
+    	<input type="text" name="" gn="" placeholder="Ubicación (calle y número, colonia, delegación)" maxlength="300" autocomplete="off">
+    </div>
+	<div class="field last ubicacion">
+	    <div class="label-highlight">Añadir referencias</div>
+	    <div class="label-highlight">Usar mis direcciones</div>
+	    <p><span class="icon padlock"></span>
+	      ¡No te preocupes! La dirección completa sólo se compartirá con el handy asignado
+	    </p>
+	</div>
+</section>
+<hr>
+
+<section class="gn-sub-form-money">
+  <div class="icon section money">&nbsp;</div>
+
+  <div class="field last">
+    <ul class="nav-tabs">
+      <li class="active"><a href="javascript:void(0);" data-toggle="tab1">Asignación rápida</a></li>
+      <li class=""><a href="javascript:void(0);" data-toggle="tab2">Revisar ofertas</a></li>
+    </ul>
+    <div class="tab-content">
+      <div class="tab-pane active" id="tab1">
+        <span>¿Cuanto estás dispuesta a pagar?
+          <div class="gn-icon guides small"></div>
+        </span>
+        <span>
+          <input type="text" name="job[offer]" id="job_offer" placeholder="$0.00 m.n." maxlength="200">
+          <label>Oferta promedio:</label>
+          <div class="job-flash">$000-00</div>
+        </span>
+      </div>
+      <div class="tab-pane" id="tab2">
+      	<span class="info">Recibe ofertas de varios handys y elige la que más te guste <div class="icon guides small"></div></span>      	
+      </div>
+    </div>
+    <div class="tab-footer label-field">El primer handy en aceptar tu oferta sera automaticamente asignado
+    </div>
+  </div>
+</section>
+<hr>
+
+<div class="actions">
+  <input name="commit" type="submit" value="">
+</div>

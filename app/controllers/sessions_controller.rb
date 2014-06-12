@@ -8,6 +8,8 @@ class SessionsController < ApplicationController
     user = User.find_by(email: params[:email])
     if user and user.authenticate(params[:password])
       session[:user_id] = user.id
+      session[:user_name] = user.name
+      session[:user_email] = user.email
       redirect_to jobs_url
     else
       redirect_to login_url, alert: "Invalid user/password combination"

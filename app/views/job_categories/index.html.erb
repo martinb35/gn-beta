@@ -3,8 +3,10 @@
 <table>
   <thead>
     <tr>
+      <th>ID</th>
       <th>Title</th>
       <th>Icon</th>
+      <th>Service</th>
       <th></th>
       <th></th>
       <th></th>
@@ -14,8 +16,10 @@
   <tbody>
     <% @job_categories.each do |job_category| %>
       <tr>
+        <td><%= job_category.id %></td>
         <td><%= job_category.title %></td>
         <td><%= job_category.icon %></td>
+        <td><%= job_category.service_id %></td>
         <td><%= link_to 'Show', job_category %></td>
         <td><%= link_to 'Edit', edit_job_category_path(job_category) %></td>
         <td><%= link_to 'Destroy', job_category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
