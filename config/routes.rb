@@ -1,4 +1,6 @@
 GoninisB1::Application.routes.draw do
+  resources :services
+  
   resources :demos
 
   get "thank/index"

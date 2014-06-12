@@ -70,7 +70,7 @@ class JobCategoriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def job_category_params
-      params.require(:job_category).permit(:title, :icon)
+      params.require(:job_category).permit(:title, :icon, :service_id)
     end
     def current_user
       @user = User.find_by_id(session[:user_id])

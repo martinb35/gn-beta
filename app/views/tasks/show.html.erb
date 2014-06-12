@@ -1,23 +1,68 @@
 <section id="instructions">
   <div class="wrapper">
-    <div class="clickable icon pin">
-      <a href="#">&nbsp;</a>
+    <nav>
+      <a href="#">Seguridad, nuestra tarea No. 1</a>
+      <a href="http://landing.goninis.com/como">¿Cómo funciona?</a>
+      <a href="http://landing.goninis.com/porque"> ¿Por qué utilizar goninis?</a>
+      <a href="http://landing.goninis.com/conviertete" class="last">Conviértete en Handy</a>
+    </nav>
+  </div>
+</section>
+<section id="categories" class="clearfix">
+  <div class="shadowL"></div>
+  <nav id="tabsShow">
+    <%= link_to "Publica tu pendiente o proyecto", {controller: "jobs", action: "new", form_id: @job_category}, {:class => 'publica'} %>
+    <%= link_to "¿Quieres trabajar?", new_user_path, {:class => 'trabajar'} %>
+  </nav>
+
+  <div class="clickable home service-icon on" option="service" show="right"></div>
+  <nav class="submenu home clearfix" name="options" option="service">
+    <a href="#"><label>Limpieza de hogar</label></a>
+    <div class="lineR"></div>
+    <div class="lineL"></div>
+    <a href="#"><label>Cocinar / Hornear</label></a>
+    <div class="lineR"></div>
+    <div class="lineL"></div>
+    <a href="#"><label>Otras tareas del hogar</label></a>
+  </nav>
+
+  <div class="clickable business service-icon on" show="right"></div>
+  <nav class="submenu business clearfix" name="options">
+    <a href="#"><label>Limpieza de lugar</label></a>
+    <div class="lineR"></div>
+    <div class="lineL"></div>
+    <a href="#"><label>Ayuda por evento</label></a>
+    <div class="lineR"></div>
+    <div class="lineL"></div>
+    <a href="#"><label>Otras tareas</label></a>
+  </nav>
+
+  <div class="clickable pro service-icon on" option="service" show="left"></div>
+  <nav class="submenu pro clearfix" name="options">
+    <a href="#"><label>Diseño y multimedia</label></a>
+    <div class="lineR"></div>
+    <div class="lineL"></div>
+    <a href="#"><label>IT y Programación</label></a>
+    <div class="lineR"></div>
+    <div class="lineL"></div>
+    <a href="#"><label>Otros proyectos</label></a>
+  </nav>
+
+  <div class="clickable temp service-icon on" show="left"></div>
+  <nav class="submenu temp clearfix" name="options">
+    <a href="#"><label>Viaje de placer</label></a>
+    <div class="lineR"></div>
+    <div class="lineL"></div>
+    <a href="#"><label>Viaje de negocios</label></a>
+    <div class="lineR"></div>
+    <div class="lineL"></div>
+    <a href="#"><label>Viaje en grupo</label></a>
+  </nav>
+
+  <div class="shadowR"></div>
+  <div id="pager">
+    <div class="clickable other-task">
+      <%= link_to "jobs", controller: "jobs", action: "new", form_id: @job_category %>
     </div>
-    <h2>Publica tu pendiente o proyecto</h2>
-  </div>
-</section>
-<section id="categories">
-  <div class="clickable home service-icon"><%= link_to 'Home', new_job_path %></div>
-  <div class="submenu home"><%= link_to '', new_job_path %></div>
-  <div class="clickable business service-icon"><%= link_to '', new_job_path %></div>
-  <div class="submenu business"><%= link_to '', new_job_path %></div>
-  <div class="clickable pro service-icon "><%= link_to '', new_job_path %></div>
-  <div class="submenu pro"><%= link_to '', new_job_path %></div>
-  <div class="clickable temp service-icon"><%= link_to '', new_job_path %></div>
-  <div class="submenu temp"><%= link_to '', new_job_path %></div>
-</section>
-<section id="pager">
-  <div class="clickable other-task">
-    <a href="#">&nbsp;</a>
-  </div>
+  </div>  
 </section>

@@ -3,6 +3,12 @@ class TasksController < ApplicationController
   skip_authorization_check
   
   def show
-    @categories = JobCategory.order(:title)
+    @service = Service.order(:title)
+    @job_category = 8
+    if !session[:user_id]
+    	@user_session = nil
+    else
+    	@user_session = session    		
+    end
   end
 end

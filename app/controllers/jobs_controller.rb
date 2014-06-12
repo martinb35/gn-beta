@@ -62,6 +62,7 @@ class JobsController < ApplicationController
       redirect_to login_url, :alert => 'Debes iniciar sesión para ver las tareas disponibles'
     end
     @job = Job.new
+    @form_id = params[:form_id] || ''
     @branding = true
   end
 

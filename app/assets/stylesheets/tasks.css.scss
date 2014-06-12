@@ -5,16 +5,16 @@
 .logo {
   background-position:0px -40px;
   width:240px;
-  height:80px;
+  height:57px;
 }
 section#brand {
-  padding-top:30px;
-  height:60px;
+  padding-top:24px;
+  height:66px;
   background-color:#e4e4e4;
   h1 {
     white-space: nowrap;
     text-indent: -9999px;
-    margin-top:-20px;
+    margin-top:-11px;
   }
   div.clickable.ingresa {
     background:url(unete-87x38.png) no-repeat;
@@ -34,6 +34,66 @@ section#brand {
       color:#006b85;
       font-weight:800;
       margin:0;
+      font-size: 13px;
+    }
+  }
+  .logged {
+    float: right;
+    li {
+      display: inline-block;
+      font-family: 'Bitter', serif;      
+    }
+    li.usuario{
+      a{
+        color: #006b85;
+        font-size: 14px;
+      }
+    }
+    li.mensajes{
+      width:20px;
+      height:20px;
+      background: url("sprite_icons.png") no-repeat -140px -105px;
+    }
+    li.activo {
+      background: url("sprite_icons.png") no-repeat -175px -105px;
+    }
+    li.masOpciones {
+      position: relative;
+      a.btn-submenu {
+        width: 26px;
+        height: 26px;
+        background: url("sprite_icons.png") no-repeat 0 -141px;
+        display: block;
+      }
+      a.btn-submenu:hover{
+        background-position: 0 -177px;
+      }
+
+      ul.submenu {
+        position: absolute;
+        right: 0;
+        top: 24px;
+        border:1px solid #bdbdbd;
+        background-color: #f5f5f5;
+        padding: 10px;
+        width: 222px;
+        z-index: 10000000000;
+        li {
+          display: block;
+          text-align: right;
+          color: #3b3c48;
+          font-size: 12px;
+        }
+        li:hover{
+          background-color: #dfdfdf;
+        }
+        hr {
+          border-top: 1px solid #b3b3b3;
+          border-bottom:  1px solid #ffffff;
+          border-left: 0;
+          border-right: 0;
+        }  
+      }
     }
   }
 }
@@ -42,11 +102,25 @@ section#brand {
 }
 section#instructions {
   position:relative;
-  margin:0 auto;
-  width:316px;
+  margin:13px auto;
   div.wrapper {
-    position:absolute;
-    top:20px;
+    nav {
+      text-align: left;
+      a{
+        color: #4b525f;
+        font-size: 13px;
+        padding: 0 12px;
+        border-left: 1px solid #a1c142;
+      }
+      a:first-child{
+        color: #006B85;
+        padding-left: 0;
+        border-left: 0;
+      }
+      a:hover{
+        background-color: transparent;
+      }
+    }
     div.pin {
       margin:0;
       float:left;
@@ -64,11 +138,45 @@ section#instructions {
 }
 section#categories {
   position:relative;
-  padding-left:50px;
-  padding-right:50px;
-  min-height:350px;
-  margin:110px auto 0 auto;
-  width:900px;
+  min-height:478px;
+  margin:0 auto;
+  width:982px;
+  background-color: white;
+  padding: 0; 
+  .shadowL, .shadowR{
+    width: 11px;
+    height: 478px;
+    background:#f2f2f2 url("bg_shadow_LR.png") no-repeat 0 0;
+    position: absolute;
+    top: 0;    
+  }
+  .shadowL{
+    left: 0;
+  }
+  .shadowR{
+    background-position: right 0;
+    right: 0;
+  }
+  #tabsShow {
+    text-align: center;
+    margin: 37px 0 0 0;
+    a{
+      border: 1px solid #C4E464;
+      padding: 11px 11px 11px 50px;
+      font-size: 15px;
+      display: inline-block;
+    }
+    a.publica{
+      background: url("sprite_icons.png") no-repeat -25px -172px;
+    }
+    a.trabajar{
+      margin-left: 22px;
+      background: url("sprite_icons.png") no-repeat -25px -137px;      
+    }
+  }
+  .home {
+    margin-left: 24px;
+  }
   .submenu {
     display:none;
     a {
@@ -85,40 +193,61 @@ section#categories {
   .submenu.pro,
   .submenu.temp {
     position:absolute;
-    background:url(sub-home-464x139.png) no-repeat;
-    width:464px;
-    height:139px;
-    top:50px;
-    left:230px;
-    z-index:9;
+    height:82px;
+    top:177px;
+    left:200px;
+    z-index:12;
+    background-color: #f2f2f2;
+    border: 1px solid #e4e4e4;
+    margin: 0;
   }
   .submenu.business {
-    background-image:url(sub-biz-469x139.png);
-    left:430px;
+    left:440px;
   }
   .submenu.pro {
-    background-image:url(sub-pro-469x139.png);
-    left:100px;
+    left:93px;
   }
   .submenu.temp {
-    background-image:url(sub-temp-469x139.png);
-    left:300px;
+    left:336px;
   }
+  .submenu a {
+    float: left;
+    position: initial;
+    width: auto;
+    height: 95px;
+    color: #4b525f;
+    display: inline-table;
+    margin-top: -6px;
+    max-width: 136px;
+    padding: 0 30px;
+    text-align: center;
+  }
+  .submenu a:hover {
+    background-color: white;
+    border: 1px solid #e4e4e4;
+    color: #006b85;
+  }
+  .submenu a label {
+    display: table-cell;
+    vertical-align: middle;
+    line-height: 15px;
+  }  
   .service-icon {
     position:relative;
     float:left;
     background:url(services-912x231.png) no-repeat 0 0;
-    width:200px;
+    width:204px;
     height:235px;
     cursor:pointer;
-    margin-right:25px;
+    margin-right:32px;
+    margin-top: 40px;
     z-index:8;
   }
   .service-icon.on {
     background-image:url(services-on-912x231.png);
     z-index:10;
   }
-  .service-icon:last-child {
+  .service-icon.temp {
     margin-right:0;
   }
   .business {
@@ -134,17 +263,29 @@ section#categories {
 .question {
   background-position:-120px 0px;
 }
-section#pager {
-  padding-right:50px;
+#pager {
+  margin: 42px auto 0 386px;
+  float: left;
   h4 {
     font-size: 14px; font-size: 1.4rem; /* = 14px */
     text-align:right;
     color:#4b525f;
   }
   div.clickable.other-task {
-    margin:0 auto;
     background:url(otra-151x44.png) no-repeat;
     width:151px;
     height:44px;
   }
+}
+.lineR, .lineL{
+    height: 66px;
+    margin-top: 8px;
+    border-right: 1px solid;
+    float: left;
+  }
+  .lineR{
+    border-color: #fdfdfd;
+  }
+  .lineL{
+    border-color: #d5d5d5;
 }
