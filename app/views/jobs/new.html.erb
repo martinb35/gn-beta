@@ -27,7 +27,7 @@
       <% when 3 %>
         <%= render(partial: "jobs/forms/form_limpieza_hogar")  %>
       <% when 4 %>
-        <%= render(partial: "jobs/forms/form_coninar_ornear")  %>
+        <%= render(partial: "jobs/forms/form_cocinar_hornear")  %>
       <% when 5 %>
         <%= render(partial: "jobs/forms/form_otras_tareas_hogar")  %>
       <% when 6 %>
@@ -48,6 +48,8 @@
         <%= render(partial: "jobs/forms/form_viaje_negocios")  %>
       <% when 14 %>
         <%= render(partial: "jobs/forms/form_viaje_grupo")  %>
+      <% when 16 %>
+        <%= render(partial: "jobs/forms/form_otras_tareas_negocio")  %>
       <% else %>
         <%= render(partial: "jobs/forms/form_limpieza_lugar")  %>
     <% end %>

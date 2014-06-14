@@ -1,1 +1,180 @@
-form_otros_proyectos
+<hr>
+<section class="gn-sub-form-tasktype clearfix">
+	<div class="icon section levels">&nbsp;</div>
+	<div class="field ubicacion clearfix">
+		<label class="label-field">Titulo de tu proyecto</label>
+	    <input class="tituloTarea" type="text" name="" gn="" placeholder="" maxlength="300">
+	</div>
+
+	<div class="field ubicacion">
+		<label class="label-field label-field-taller">Describe brevemente ¿a qué se dedican?</label>		
+		<div class="label-highlight selected">Esta descripción es pública</div>
+		<div class="label-highlight">Añadir una nota privada</div>
+    	<textarea class="mainTextarea" gn="" id="" name="" placeholder="Ej. Somos un sitio web de servicios que conecta a personas ocupadas que necesitan más tiempo libre en su día con personas que quieren conseguir un ingreso extra ofreciendo su ayuda o servicios."></textarea> 
+	</div>
+
+	<div class="field ubicacion clearfix">
+		<label class="label-field label-field-taller">¿Cuentas con un sitio web o página de red social que sirva como referencia?</label>
+		<input class="tituloTarea" type="text" name="" gn="" placeholder="Nota: si no cuentas con sitio web, deja este espacio en blanco" maxlength="300">
+	</div>
+
+	<div class="field ubicacion clearfix">
+		<div class="notIE">
+          <label>
+            <select id="" name="">
+              <option value="">Selecciona tu industria</option>
+            </select>
+          </label>
+        </div>
+	</div>
+
+	<div class="field ubicacion">
+		<label class="label-field label-field-taller">Describe ¿qué necesitas?</label>		
+		<div class="label-highlight selected">Esta descripción es pública</div>
+		<div class="label-highlight">Añadir una nota privada</div>
+		<div class="textarea">
+    		<textarea gn="" id="" name="" placeholder="Incluye todos los detalles importantes para la realización de tu proyecto, mientras mejor describas lo que necesitas, mejores propuestas recibirás"></textarea>
+	    	<div class="dragAndDrop">
+	        	<p>Arrastra tus archivos o <a href="">adjúntalos</a></p>
+	    	</div>
+    	</div>
+    	<p class="note">Ej. Imágenes, bosquejos, documentos o contenido que pueda ser de ayuda.</p>
+	</div>
+
+	<div class="field last">
+		<label class="label-field">¿Con qué habilidades debe contar el handy</label>
+		<textarea gn="" id="" name="" placeholder=""></textarea>
+		<label class="label-field">¿Con qué habilidades debe contar el handy</label>
+		<textarea gn="" id="" name="" placeholder=""></textarea>
+	</div>
+</section>
+<hr>
+
+<section class="gn-sub-form-when clearfix">
+	<div class="icon section calendar">&nbsp;</div>
+	<div class="field ubicacion clearfix">
+		<label class="label-field">Requiero que esta tarea</label>
+	    <ul>
+	    	<li>
+		        <div class="notIE"><!-- <![endif]-->
+		        	<label>
+			            <select id="" name="">
+			            	<option value="">Comience</option>
+			            </select>
+		          	<!--[if !IE]> -->
+		        	</label>
+		        </div>
+	    	</li>
+	    	<label class="label-field">el día</label>
+	    	<li>
+		        <div class="notIE"><!-- <![endif]-->
+			        <label>
+			            <select id="" name="">
+			            	<option value="">Elige el día</option>
+			            </select>
+			          <!--[if !IE]> -->
+			        </label>
+		        </div>
+	    	</li>
+	    </ul>
+	</div>
+	<div class="field last clearfix">      
+    	<div class="gn-job-time clearfix">
+        	<label class="label-field">a las:</label>
+        	<!--[if !IE]> -->
+	        <div class="notIE">
+	        <!-- <![endif]-->
+	        	<label class="gn-skin-when-time">
+		        	<select id="job_when_hr" name="job[when]">
+		            	<option>00</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option>
+		            </select>
+	          <!--[if !IE]> -->
+	        	</label>
+	        </div>
+        	<!-- <![endif]-->   
+        	<!--[if !IE]> -->
+	        <div class="notIE"><!-- <![endif]-->
+	        	<label class="gn-skin-when-time">
+		            <select id="job_when_min" name="job[when]">
+		            	<option>00</option>
+		            	<option>15</option>
+		            	<option>30</option>
+		            	<option>45</option>
+		            </select>
+	          <!--[if !IE]> -->
+	        	</label>
+	        </div> <!-- <![endif]-->   
+        <!--[if !IE]> -->
+	        <div class="notIE"><!-- <![endif]-->
+	        	<label class="gn-skin-when-time-last">
+		            <select id="job_when_meridian" name="job[when]">
+		            	<option>AM</option>
+		            	<option>PM</option>
+		            </select>
+	          <!--[if !IE]> -->
+	        	</label>
+	        </div> <!-- <![endif]--> 
+	        <label id="gn-checkbox-repeat-task" class="label-field">
+	          <div class="icon checkbox">
+	            <input type="checkbox" name="job[repeat]" class="job_repeat_task">
+	          </div> 
+	          Repetir tarea periódicamente
+	        </label>
+    	</div>      
+	</div>	
+</section>
+<hr>
+
+<section class="gn-sub-form-where">
+  <div class="icon section map">&nbsp;</div>
+  <div class="field ubicacion clearfix ">
+    <div class="icon radio checked">
+      <input id="" name="ubicacion[tarea]" type="radio" value="true" checked="checked">
+      <label>Ubicación para la tarea</label>
+    </div>
+    <div class="icon radio">
+      <input id="" name="ubicacion[tarea]" type="radio" value="false">
+      <label>No se requiere, la tarea es virtual</label>
+    </div>
+    <input class="direccion" type="text" placeholder="Ubicación (calle y número, colonia, delegación)">
+  </div>
+  <div class="field last ubicacion">
+    <div class="label-highlight">Añadir referencias</div>
+    <div class="label-highlight">Usar mis direcciones</div>
+    <p><span class="icon padlock"></span>
+      ¡No te preocupes! La dirección completa sólo se compartirá con el handy asignado
+    </p>
+  </div>
+</section>
+<hr>
+
+<section class="gn-sub-form-money">
+	<div class="icon section money">&nbsp;</div>
+
+	<div class="field last">
+	    <ul class="nav-tabs">
+	    	<li class="active"><a href="javascript:void(0);" data-toggle="tab1">Asignación rápida</a></li>
+	    	<li class=""><a href="javascript:void(0);" data-toggle="tab2">Revisar ofertas</a></li>
+	    </ul>
+	    <div class="tab-content">
+	    	<div class="tab-pane active" id="tab1">
+	    		<span>¿Cuanto estás dispuesta a pagar por esta tarea?
+	          		<div class="gn-icon guides small"></div>
+	        	</span>
+	        <span>
+	        	<input type="text" name="job[offer]" id="job_offer" placeholder="$0.00 m.n." maxlength="200">
+	        </span>
+	      </div>
+	      <div class="tab-pane" id="tab2">
+	      		<span class="info">Recibe ofertas de varios handys y elige la que más te guste <div class="icon guides small"></div></span>      	
+	      </div>
+	    </div>
+	    <div class="tab-footer label-field">El primer handy en aceptar tu oferta sera automaticamente asignado
+	    </div>
+	</div>
+</section>
+<hr>
+
+<div class="actions">
+  <input name="commit" type="submit" value="">
+</div>
