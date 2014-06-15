@@ -9,8 +9,14 @@
 	<div class="field ubicacion">
 		<label class="label-field label-field-taller">Describe brevemente ¿a qué se dedican?</label>		
 		<div class="label-highlight selected">Esta descripción es pública</div>
-		<div class="label-highlight">Añadir una nota privada</div>
-    	<textarea class="mainTextarea" gn="" id="" name="" placeholder="Ej. Somos un sitio web de servicios que conecta a personas ocupadas que necesitan más tiempo libre en su día con personas que quieren conseguir un ingreso extra ofreciendo su ayuda o servicios."></textarea> 
+		<div class="label-highlight" id="addNotePrivate">Añadir una nota privada</div>
+    	<textarea class="mainTextarea" gn="" id="" name="" placeholder="Ej. Somos un sitio web de servicios que conecta a personas ocupadas que necesitan más tiempo libre en su día con personas que quieren conseguir un ingreso extra ofreciendo su ayuda o servicios."></textarea>
+    	<div id="NotePrivate">
+	        <label class="label-field" for="job_Nivel de limpieza">Nota privada</label>
+	        <div class="label-highlight" id="hideNotePrivate">Quitar nota</div>
+	        <textarea  gn="job_notes" id="job_notes_private">
+        </textarea>
+      </div>
 	</div>
 
 	<div class="field ubicacion clearfix">

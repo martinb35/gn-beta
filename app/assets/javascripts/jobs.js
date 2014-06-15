@@ -7,7 +7,25 @@ var gn_jobs = {
 
   initialize: function(element){
     this.el = element;
+    this.removeHeader();
     this.event();
+  },
+  removeHeader: function(){
+    //this.el.find('#brand').remove();
+  },
+  showDescriptionLimpiezaHogar: function(){
+    this.el.find('#job_notes').show();
+    this.el.find('#hideDescriptionLimpiezaHogar').show();
+    this.el.find('#addNotePrivate').show();
+  },
+  hideDescriptionLimpiezaHogar: function(){
+    this.el.find('#job_notes').hide();
+    this.el.find('#hideDescriptionLimpiezaHogar').hide();
+    this.el.find('#addNotePrivate').hide();
+  },
+  showGastosHandy: function(element){
+    //Show 
+    console.log(element);
   },
   event: function(){
     var self = this;
@@ -31,12 +49,35 @@ var gn_jobs = {
       self.el.find('div.icon.radio[class*=checked]').removeClass('checked');
       self.el.find(this).addClass('checked');
       $child.attr('checked', true); 
+      self.showGastosHandy($child);
     });
 
     this.el.find('#job_category_id').bind('change', function(e){
       self.el.find('#gn-change-category').addClass('active');
     });
 
+    //description-limpieza-hogar
+    this.el.find('#showDescriptionLimpiezaHogar').click(function(){
+      self.el.find(this).addClass('selected');
+      self.showDescriptionLimpiezaHogar();
+    });
+
+    this.el.find('#hideDescriptionLimpiezaHogar').click(function(){
+      self.el.find('#showDescriptionLimpiezaHogar').removeClass('selected');
+      self.hideDescriptionLimpiezaHogar();
+    });
+
+    this.el.find('#hideNotePrivate').click(function(){
+      self.el.find('#NotePrivate').hide();
+    });
+
+    this.el.find('#addNotePrivate').click(function(){
+      self.el.find('#NotePrivate').show();
+    });
+
+    this.el.find('input[name="job[material]"]').click(function(){
+      alert('job[material]');
+    });
   }
 }
 

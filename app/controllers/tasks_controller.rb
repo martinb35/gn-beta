@@ -3,6 +3,7 @@ class TasksController < ApplicationController
   skip_authorization_check
   
   def show
+    @branding = true
     @service = Service.order(:title)
     @job_category = JobCategory.where(title: 'Otras tareas').first
     if !session[:user_id]

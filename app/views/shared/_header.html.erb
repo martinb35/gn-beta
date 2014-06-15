@@ -1,42 +1,45 @@
-<section id="brand">
-  <a href="/"><h1 class="icon logo left">goninis | Beta privado</h1></a>
-  <% if @user_session %>
-    <ul class="logged clearfix">
-      <li class="usuario">      
-        <a href="">
-          <%= image_tag "img_avatar.png", :alt => 'IMG' %>
-          <span><%= @user_session['user_name'] %></span>
-        </a>
-      </li>
-      <li class="mensajes">
-        <a href=""></a>
-      </li>
-      <li class="masOpciones">
-        <a href="javascript:void(0);" class="btn-submenu"></a>
-        <ul class="submenu">
-          <li><a href="javascript:void(0);">Mi panel</a></li>
-          <li><a href="javascript:void(0);">Notificaciones</a></li>
-          <li><a href="javascript:void(0);">Mis transacciones</a></li>
-          <li><a href="javascript:void(0);">Mis direcciones</a></li>
-          <li><a href="javascript:void(0);">Mi tarjeta de crédito</a></li>
-          <hr>
-          <li><a href="javascript:void(0);">Cuenta</a></li>
-          <li><a href="javascript:void(0);">Publicar un pendiente o proyecto</a></li>
-          <hr>
-          <li><%= link_to 'Cerrar sesión', logout_path, method: :delete %></li>
-        </ul>
+<% if @branding %>
+  <section id="brand">
+    <a href="/"><h1 class="icon logo left">goninis | Beta privado</h1></a>
+    <% if @user_session %>
+      <ul class="logged clearfix">
+        <li class="usuario">      
+          <a href="">
+            <%= image_tag "img_avatar.png", :alt => 'IMG' %>
+            <span><%= @user_session['user_name'] %></span>
+          </a>
+        </li>
+        <li class="mensajes">
+          <a href=""></a>
+        </li>
+        <li class="masOpciones">
+          <a href="javascript:void(0);" class="btn-submenu"></a>
+          <ul class="submenu">
+            <li><a href="javascript:void(0);">Mi panel</a></li>
+            <li><a href="javascript:void(0);">Notificaciones</a></li>
+            <li><a href="javascript:void(0);">Mis transacciones</a></li>
+            <li><a href="javascript:void(0);">Mis direcciones</a></li>
+            <li><a href="javascript:void(0);">Mi tarjeta de crédito</a></li>
+            <hr>
+            <li><a href="javascript:void(0);">Cuenta</a></li>
+            <li><a href="javascript:void(0);">Publicar un pendiente o proyecto</a></li>
+            <hr>
+            <li><%= link_to 'Cerrar sesión', logout_path, method: :delete %></li>
+          </ul>
 
-      </li>
-    </ul>
-  <% else %>
-    <div class="clickable icon ingresa right">
-      <%= link_to "¡Unete!", new_user_path %>
-    </div>
-    <div class="ingresa-wrapper">
-      <%= link_to "Ingresa", login_path %>
-    </div>
-  <% end %>  
-</section>
+        </li>
+      </ul>
+    <% else %>
+      <div class="clickable icon ingresa right">
+        <%= link_to "¡Unete!", new_user_path %>
+      </div>
+      <div class="ingresa-wrapper">
+        <%= link_to "Ingresa", login_path %>
+      </div>
+    <% end %>  
+  </section>
+<% end %>
+
 <% if  @publish %>
 <section>
   <div class="clickable job logo publish">

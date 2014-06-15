@@ -59,11 +59,17 @@
       </div>
     </div>
     <div class="field last">
-      <div class="label-highlight selected">Esta descripción es pública</div>
-      <div class="label-highlight">Quitar nota adicional</div>
-      <div class="label-highlight">Añadir una nota privada</div>
+      <div class="label-highlight selected" id="showDescriptionLimpiezaHogar">Esta descripción es pública</div>
+      <div class="label-highlight" id="hideDescriptionLimpiezaHogar">Quitar nota adicional</div>
+      <div class="label-highlight" id="addNotePrivate">Añadir una nota privada</div>
       <span class="icon guides small"></span>
       <textarea gn="job_notes" id="job_notes" name="job[notes]" placeholder="Saber detalles le permite al handy determinar cuánto tiempo le tomará ejecutar tu tarea y te dará una idea de que esperar antes de limpiar. Detalla asuntos que no están contemplados en el formulario general. Como ejemplo: precauciones con mascotas, posibles alergias a productos de limpieza, dimensiones aproximadas de la casa, etc." style="display: inline-block;"></textarea>
+      <div id="NotePrivate">
+        <label class="label-field" for="job_Nivel de limpieza">Nota privada</label>
+        <div class="label-highlight" id="hideNotePrivate">Quitar nota</div>
+        <textarea  gn="job_notes" id="job_notes_private">
+        </textarea>
+      </div>
     </div>
  </section>
  <hr>
