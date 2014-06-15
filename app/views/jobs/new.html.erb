@@ -7,7 +7,7 @@
     <header class="gn-form-header">
       <form method="GET" action="/jobs/new">
         <!--[if !IE]> --><div class="notIE"><!-- <![endif]-->
-        <div class="icon category home-task">
+        <div class="icon category <%= @cls %>">
           <label class="category-title" />
           <select id="job_category_id" class="category-title" name="form_id">
               <% JobCategory.all.each do |category| %>
@@ -18,39 +18,8 @@
           <%= button_to '', new_job_path, class:'button change-category', id: 'gn-change-category' %>
         </form>
       <!--[if !IE]> --></div> <!-- <![endif]-->
-    </header>    
-    <% case Integer(@form_id) %>
-      <% when 1 %>
-        <%= render(partial: "jobs/forms/form")  %>
-      <% when 2 %>
-        <%= render(partial: "jobs/forms/form_diseno_multimedia")  %>
-      <% when 3 %>
-        <%= render(partial: "jobs/forms/form_limpieza_hogar")  %>
-      <% when 4 %>
-        <%= render(partial: "jobs/forms/form_coninar_ornear")  %>
-      <% when 5 %>
-        <%= render(partial: "jobs/forms/form_otras_tareas_hogar")  %>
-      <% when 6 %>
-        <%= render(partial: "jobs/forms/form_limpieza_lugar")  %>
-      <% when 7 %>
-        <%= render(partial: "jobs/forms/form_ayuda_evento")  %>
-      <% when 8 %>
-        <%= render(partial: "jobs/forms/form_otras_tareas")  %>
-      <% when 9 %>
-        <%= render(partial: "jobs/forms/form_diseno_multimedia")  %>
-      <% when 10 %>
-        <%= render(partial: "jobs/forms/form_it_programacion")  %>
-      <% when 11 %>
-        <%= render(partial: "jobs/forms/form_otros_proyectos")  %>
-      <% when 12 %>
-        <%= render(partial: "jobs/forms/form_viaje_placer")  %>
-      <% when 13 %>
-        <%= render(partial: "jobs/forms/form_viaje_negocios")  %>
-      <% when 14 %>
-        <%= render(partial: "jobs/forms/form_viaje_grupo")  %>
-      <% else %>
-        <%= render(partial: "jobs/forms/form_limpieza_lugar")  %>
-    <% end %>
+    </header>
+    <%= render(partial: "jobs/forms/"+@form_name)  %>
   </div>
   <%= render(partial: "jobs/forms/sidebar")  %>
 </div>

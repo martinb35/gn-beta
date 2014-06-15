@@ -22,7 +22,6 @@ var gn_sidebar_form = {
   }, 
   createMap: function(){
     this.options.map = new google.maps.Map(document.getElementById(this.options.mapId), this.options.mapOptions);
-    console.log('createMsp');
   },
   createGeocoding: function(){
     var self = this;
@@ -40,7 +39,6 @@ var gn_sidebar_form = {
       }
       map.fitBounds(bounds)
     });
-    console.log('createGeocoding');
   },
   createMarker: function(place){
     var image = {

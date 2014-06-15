@@ -38,7 +38,51 @@ var gn_tasks = {
     this.el.find('div[option=service]').mouseout(function(){      
       //self.el.find('nav[name=list]').hide();
       //self.el.find('.clickable').css('visibility', 'visible');
-    });    
+    });
+
+    this.el.find('#categories').mouseover(function(e){
+      var _hasClasss = false;
+      var _isShow = false;
+      if (self.el.find(e.target).hasClass('clickable')) {
+        _hasClasss = true;
+      }
+
+      else if (self.el.find(e.target).parent().hasClass('clickable')) {
+        _hasClasss = true;
+      }
+
+      else if (self.el.find(e.target).children().hasClass('clickable')) {
+        _hasClasss = true;
+      }
+
+      else if (self.el.find(e.target).parent().hasClass('submenu')) {
+        _hasClasss = true;
+      }
+      else if (self.el.find(e.target).parent().parent().hasClass('submenu')) {
+        _hasClasss = true;
+      }
+      else if (self.el.find(e.target).children().hasClass('submenu')) {
+        _hasClasss = true;
+      }
+
+      else if (self.el.find(e.target).hasClass('submenu')) {
+        _hasClasss = true;
+      }
+      
+      if (self.el.find(e.target).attr('id') == 'categories') {
+        _hasClasss = false;
+      };      
+      if (!_hasClasss) {
+        $.each(self.el.find('nav[name=options]'), function(index, element){
+          if (self.el.find(element).css('display') == "block")
+            _isShow = true;
+        });
+        if (_isShow) {
+          self.el.find('nav[name=options]').hide();
+          self.el.find('.clickable').css('visibility', 'visible');
+        };
+      };
+    });
   }
 }
 

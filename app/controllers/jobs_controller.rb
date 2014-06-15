@@ -48,6 +48,7 @@ class JobsController < ApplicationController
       end
       @jobs = Job.all
       @publish = true
+      @branding = true
     end
   end
   
@@ -63,7 +64,51 @@ class JobsController < ApplicationController
     end
     @job = Job.new
     @form_id = params[:form_id] || ''
-    @branding = true
+    @branding = false
+    case @form_id
+    when '3'
+      @cls = 'limpieza-hogar'
+      @form_name = 'form_limpieza_hogar'
+    when '4'
+      @cls = 'cocinar-hornear'
+      @form_name = 'form_cocinar_hornear'
+    when '5'
+      @cls = 'otras-tareas-hogar'
+      @form_name = 'form_otras_tareas_hogar'
+    when '6'
+      @cls = 'limpieza-lugar'
+      @form_name = 'form_limpieza_lugar'
+    when '7'
+      @cls = 'ayuda-evento'
+      @form_name = 'form_ayuda_evento'
+    when '8'
+      @cls = 'otras-tareas'
+      @form_name = 'form_otras_tareas'
+    when '9'
+      @cls = 'diseno-multimedia'
+      @form_name = 'form_diseno_multimedia'
+    when '10'
+      @cls = 'it-programacion'
+      @form_name = 'form_it_programacion'
+    when '11'
+      @cls = 'otros-proyectos'
+      @form_name = 'form_otros_proyectos'
+    when '12'
+      @cls = 'viaje-placer'
+      @form_name = 'form_viaje_placer'
+    when '13'
+      @cls = 'viaje-negocios'
+      @form_name = 'form_viaje_negocios'
+    when '14'
+      @cls = 'viaje-grupo'
+      @form_name = 'form_viaje_grupo'
+    when '16'
+      @cls = 'otras-tareas-negocio'
+      @form_name = 'form_otras_tareas_negocio'
+    else
+      @cls = 'otras-tareas'
+      @form_name = 'form_otras_tareas'
+    end
   end
 
   # GET /jobs/1/edit
