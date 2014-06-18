@@ -11,6 +11,7 @@ class JobsController < ApplicationController
     if !session[:user_id]
       redirect_to login_url, :alert => 'Debes iniciar sesion para ver las tareas disponibles'
     else
+      @user_session = session
       if params[:id]
         if params[:status] && params[:revision]
           @user = User.find_by_id (params[:revision])
@@ -47,6 +48,7 @@ class JobsController < ApplicationController
         end
       end
       @jobs = Job.all
+      @job_category = JobCategory.where(title: 'Otras tareas').first
       @publish = true
       @branding = true
     end

@@ -423,7 +423,15 @@ div#gn-new-job .uneditable-input {
   -moz-border-radius: 5px;
   border-radius: 5px;
   font-family: 'Bitter', serif;
-  resize: none; 
+  resize: none;
+  background: #efefef; /* Old browsers */
+    background: -moz-linear-gradient(top, #efefef 0%, #ffffff 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#efefef), color-stop(100%,#ffffff)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #efefef 0%,#ffffff 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #efefef 0%,#ffffff 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #efefef 0%,#ffffff 100%); /* IE10+ */
+    background: linear-gradient(to bottom, #efefef 0%,#ffffff 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#efefef', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
 }
 /*End input*/
 div#gn-new-job {
@@ -447,7 +455,7 @@ div#gn-new-job {
     display: inline-block;
     height: 28px;
     outline: medium none;
-    padding: 4px 22px 5px 5px;
+    padding: 4px 28px 5px 5px;
     width: auto;
     box-shadow: none;
     background: #ffffff; /* Old browsers */
@@ -1173,4 +1181,15 @@ button.close {
 }
 .leftmargin {
   margin-left: 15px;
+}
+.notaPrivada {
+  margin-top: 25px;
+  .label-field{
+    font-style: italic;
+    display: inline-block;
+    font-size: 13px;
+  }
+}
+.checkbox.label-field{
+  margin-left: 14px;
 }

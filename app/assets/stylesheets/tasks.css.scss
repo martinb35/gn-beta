@@ -167,11 +167,21 @@ section#categories {
       display: inline-block;
     }
     a.publica{
-      background: url("sprite_icons.png") no-repeat -25px -172px;
+      background: url("sprite_icons2.png") no-repeat 10px -75px;
+      color: #666666;
+    }
+    a.publica:hover {
+      background-position: 10px -115px;
+      color: #006A85;
     }
     a.trabajar{
       margin-left: 22px;
-      background: url("sprite_icons.png") no-repeat -25px -137px;      
+      background: url("sprite_icons2.png") no-repeat 10px 5px;
+      color: #666666;
+    }
+    a.trabajar:hover {
+      background-position: 10px -35px;
+      color: #006A85;
     }
   }
   .home {
@@ -196,7 +206,7 @@ section#categories {
     height:82px;
     top:177px;
     left:200px;
-    z-index:12;
+    z-index:9;
     background-color: #f2f2f2;
     border: 1px solid #e4e4e4;
     margin: 0;

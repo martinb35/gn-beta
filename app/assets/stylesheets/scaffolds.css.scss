@@ -107,7 +107,14 @@ select {
   border: 1px solid #C8BFC4;
   border-radius: 4px;
   box-shadow: inset 1px 1px 2px #ddd8dc;
-  background-color: #fff;        
+  background-color: #fff;
+  -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    overflow:hidden;
+    text-indent: 0.01px;
+    text-overflow: '';
+
 }
 .notIE label:after {
   content: '';
@@ -117,14 +124,19 @@ select {
   display: inline-block;
   top: 4px;
   right: 4px;
-  background: url(/images/select-button_18x19.png) no-repeat left center;
+  background-image: url(/images/select-button_18x19.png);
+  background-repeat: no-repeat;
+  background-position: left center;
   pointer-events: none;
 }
 @media screen and (min-width:0\0) { 
   .notIE label:after
   {
-    display:none;
+    /*display:none;*/
   }
+}
+select::-ms-expand /*hack para ocultar arrow en ie9*/{
+    display: none;
 }
 div.container > form {
   padding:30px;
@@ -159,4 +171,7 @@ div.container > form {
     width:130px;
     float:left;
   }
+}
+.hidden {
+  display: none;
 }
