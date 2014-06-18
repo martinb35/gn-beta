@@ -305,11 +305,81 @@ div#gn-new-job {
       position: absolute;
     }
   }
-  .icon.category.cook-task {
+  .icon.category.cocinar-hornear {
+    display: inline-block;
+    padding: 68px 0 0 65px;
     background: url("/images/headerIcons_cook.png") no-repeat 0 0;
     background-position: 0 2px;
   }
-  .icon.category.home-task {
+  .icon.category.limpieza-hogar {
+    display: inline-block;
+    padding: 68px 0 0 65px;
+    background: url("/images/sprite_headerIcons.png") no-repeat 0 0;
+    background-position: 0 12px;
+  }
+  .icon.category.otras-tareas-hogar {
+    display: inline-block;
+    padding: 68px 0 0 65px;
+    background: url("/images/sprite_headerIcons.png") no-repeat 0 0;
+    background-position: 0 12px;
+  }
+  .icon.category.limpieza-lugar {
+    display: inline-block;
+    padding: 68px 0 0 65px;
+    background: url("/images/sprite_headerIcons.png") no-repeat 0 0;
+    background-position: 0 12px;
+  }
+  .icon.category.ayuda-evento {
+    display: inline-block;
+    padding: 68px 0 0 65px;
+    background: url("/images/sprite_headerIcons.png") no-repeat 0 0;
+    background-position: 0 12px;
+  }
+  .icon.category.otras-tareas {
+    display: inline-block;
+    padding: 68px 0 0 65px;
+    background: url("/images/sprite_headerIcons.png") no-repeat 0 0;
+    background-position: 0 12px;
+  }
+  .icon.category.diseno-multimedia {
+    display: inline-block;
+    padding: 68px 0 0 65px;
+    background: url("/images/sprite_headerIcons.png") no-repeat 0 0;
+    background-position: 0 12px;
+  }
+  .icon.category.it-programacion {
+    display: inline-block;
+    padding: 68px 0 0 65px;
+    background: url("/images/sprite_headerIcons.png") no-repeat 0 0;
+    background-position: 0 12px;
+  }
+  .icon.category.otros-proyectos {
+    display: inline-block;
+    padding: 68px 0 0 65px;
+    background: url("/images/sprite_headerIcons.png") no-repeat 0 0;
+    background-position: 0 12px;
+  }
+  .icon.category.viaje-placer {
+    display: inline-block;
+    padding: 68px 0 0 65px;
+    background: url("/images/sprite_headerIcons.png") no-repeat 0 0;
+    background-position: 0 12px;
+  }
+  .icon.category.viaje-negocios {
+    display: inline-block;
+    padding: 68px 0 0 65px;
+    background: url("/images/sprite_headerIcons.png") no-repeat 0 0;
+    background-position: 0 12px;
+  }
+  .icon.category.viaje-grupo {
+    display: inline-block;
+    padding: 68px 0 0 65px;
+    background: url("/images/sprite_headerIcons.png") no-repeat 0 0;
+    background-position: 0 12px;
+  }
+  .icon.category.otras-tareas-negocio {
+    display: inline-block;
+    padding: 68px 0 0 65px;
     background: url("/images/sprite_headerIcons.png") no-repeat 0 0;
     background-position: 0 12px;
   }
@@ -470,7 +540,7 @@ div#gn-new-job {
       height: auto;
       .button.change-category {
         float: right;
-        margin-top: 46px;
+        margin-top: -50px;
       }
       select.category-title {
         font-size: 18px; font-size: 1.8rem; /* = 18px */

@@ -45,6 +45,6 @@
   <div class="clickable job logo publish">
     <%= link_to "New job", tasks_path %>
   </div>
-  <div class="clickable new"><%= link_to "New job", new_job_path %></div>
+  <div class="clickable new"><%= link_to "New job", controller: "jobs", action: "new", form_id: @job_category.id %></div>
 </section>
 <% end %>
