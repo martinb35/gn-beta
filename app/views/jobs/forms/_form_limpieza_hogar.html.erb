@@ -1,203 +1,203 @@
-<hr>
-<section class="gn-sub-form-tasktype clearfix">
-	<div class="icon section levels">&nbsp;</div>
+<%= form_for(@job) do |f| %>        
+  <% if @job.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@job.errors.count, "error") %> prohibited this job from being saved:</h2>
 
-	<div class="field">
-      <label class="label-field" for="job_Nivel de limpieza">Nivel de limpieza</label>
-      <ul id="job_level">        
-        <li><div class="toggle-btn active">Normal</div><span class="icon guides small"></span></li>
-        <li><div class="toggle-btn">Profunda</div><span class="icon guides small"></span></li>
-        <li><div class="toggle-btn">De Temporada</div><span class="icon guides small"></span></li>
+      <ul>
+      <% @job.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
       </ul>
     </div>
+  <% end %> 
+  <hr>
+  <section class="gn-sub-form-tasktype clearfix">
+  	<div class="icon section levels">&nbsp;</div>
 
-    <div class="field clearfix">
-    	<label class="label-field" for="job_Tamaño del hogar">Tamaño del hogar</label>
-    	<!--[if !IE]> -->
-    	<div class="notIE"><!-- <![endif]-->
-	    	<label>
-		    	<select id="job_floor" name="job[floor]"><option value="">No. de pisos</option>
-					<option value="1">Uno</option>
-					<option value="2">Dos</option>
-					<option value="3">Tres</option>
-				</select>
-		    	<!--[if !IE]> -->
-		    </label>
-    	</div> <!-- <![endif]-->
-    	<!--[if !IE]> -->
-    	<div class="notIE"><!-- <![endif]-->
-	    	<label>
-		    	<select id="job_room" name="job[room]">
-		    		<option value="">No. de dormitorios</option>
-					<option value="1">Uno</option>
-					<option value="2">Dos</option>
-					<option value="3">Tres</option>
-				</select>
-	      	<!--[if !IE]> -->
-	      	</label>
-      </div> <!-- <![endif]-->
+  	<div class="field">
+        <label class="label-field" for="job_Nivel de limpieza">Nivel de limpieza</label>
+        <ul id="job_level">
+          <% Level.all().each do |level| %>
+            <li><div class="toggle-btn"><%= level.title  %></div><span class="icon guides small"></span></li>
+          <% end %>
+        </ul>
+      </div>
+
+      <div class="field clearfix">
+      	<label class="label-field" for="job_Tamaño del hogar">Tamaño del hogar</label>
       	<!--[if !IE]> -->
       	<div class="notIE"><!-- <![endif]-->
-    	<label>
-	    	<select id="job_bathroom" name="job[bathroom]"><option value="">No. de baños</option>
-				<option value="1">Uno</option>
-				<option value="2">Dos</option>
-				<option value="3">Tres</option>
-			</select>
-		    <!--[if !IE]> -->
-		</label>
-		</div> <!-- <![endif]-->
-    </div>
+  	    	<label>
+  		    	<%= f.collection_select(:floor, Floor.all, :id, :title, {:include_blank => 'No. de pisos'}) %>
+  		    	<!--[if !IE]> -->
+  		    </label>
+      	</div> <!-- <![endif]-->
+      	<!--[if !IE]> -->
+      	<div class="notIE"><!-- <![endif]-->
+  	    	<label>
+  		    	 <%= f.collection_select(:room, Room.all, :id, :title, {:include_blank => 'No. de dormitorios'}) %>
+  	      	<!--[if !IE]> -->
+  	      	</label>
+        </div> <!-- <![endif]-->
+        	<!--[if !IE]> -->
+        	<div class="notIE"><!-- <![endif]-->
+      	<label>
+  	    	 <%= f.collection_select(:bathroom, Bathroom.all, :id, :title, {:include_blank => 'No. de baños'}) %>
+  		    <!--[if !IE]> -->
+  		</label>
+  		</div> <!-- <![endif]-->
+      </div>
+      <div class="field clearfix">
+        <div class="icon radio checked">
+        	<%= f.radio_button :material, true %>
+        	<label>Tengo todos los artículos de limpieza en casa</label>
+        </div>
+        <div class="icon radio">
+        	<%= f.radio_button :material, false %>
+        	<label>El handy debe traer material de limpieza</label>
+        </div>
+      </div>
+      <div class="field last">
+        <div class="label-highlight" id="showDescriptionLimpiezaHogar">Deseo añadir notas adicionales</div>
+      </div>
+      <div class="field last hidden">
+        <div class="label-highlight selected">Esta descripción es pública</div>
+        <div class="label-highlight">Quitar nota adicional</div>
+        <div class="label-highlight">Añadir una nota privada</div>
+        <span class="icon guides small"></span>
+        <%= f.text_area :notes, {:placeholder => "Saber detalles le permite al handy determinar cuánto tiempo le tomará ejecutar tu tarea y te dará una idea de que esperar antes de limpiar. Detalla asuntos que no están contemplados en el formulario general. Como ejemplo: precauciones con mascotas, posibles alergias a productos de limpieza, dimensiones aproximadas de la casa, etc.", :class => 'hidden', :gn=>'job_notes'} %>
+      </div>
+      <div class="field last notaPrivada hidden">
+        <div class="label-field">Nota privada</div>
+        <div class="label-highlight">Quitar nota</div>
+        <textarea gn="job_notes" id="" name="job[notes]" placeholder=""></textarea>
+      </div>
+   </section>
+   <hr>
+
+  <section class="gn-sub-form-when clearfix">
+    <div class="icon section calendar">&nbsp;</div>
     <div class="field clearfix">
-      <div class="icon radio checked">
-      	<input id="job_material_true" name="job[material]" type="radio" value="true" checked="checked">
-      	<label>Tengo todos los artículos de limpieza en casa</label>
-      </div>
-      <div class="icon radio">
-      	<input id="job_material_false" name="job[material]" type="radio" value="false">
-      	<label>El handy debe traer material de limpieza</label>
-      </div>
+      <label class="label-field">Requiero que esta tarea</label>
+      <ul>
+        <li>
+          <div class="notIE"><!-- <![endif]-->
+            <label>
+              <select id="" name="">
+                <option value="">Comience</option>
+              </select>
+            <!--[if !IE]> -->
+            </label>
+          </div>
+        </li>
+        <li>
+          <div class="notIE"><!-- <![endif]-->
+            <label>
+              <select id="" name="">
+                <option value="">Elige el día</option>
+              </select>
+            <!--[if !IE]> -->
+            </label>
+          </div>
+        </li>
+      </ul>
     </div>
-    <div class="field last">
-      <div class="label-highlight">Deseo añadir notas adicionales</div>
-    </div>
-    <div class="field last hidden">
-      <div class="label-highlight selected">Esta descripción es pública</div>
-      <div class="label-highlight">Quitar nota adicional</div>
-      <div class="label-highlight">Añadir una nota privada</div>
-      <span class="icon guides small"></span>
-      <textarea gn="job_notes" id="job_notes" name="job[notes]" placeholder="Saber detalles le permite al handy determinar cuánto tiempo le tomará ejecutar tu tarea y te dará una idea de que esperar antes de limpiar. Detalla asuntos que no están contemplados en el formulario general. Como ejemplo: precauciones con mascotas, posibles alergias a productos de limpieza, dimensiones aproximadas de la casa, etc." style="display: inline-block;"></textarea>
-    </div>
-    <div class="field last notaPrivada hidden">
-      <div class="label-field">Nota privada</div>
-      <div class="label-highlight">Quitar nota</div>
-      <textarea gn="job_notes" id="" name="job[notes]" placeholder=""></textarea>
-    </div>
- </section>
- <hr>
+    <div class="field clearfix last">      
+        <div class="gn-job-time clearfix">
+          <label class="label-field">a las:</label>
+          <!--[if !IE]> -->
+          <div class="notIE">
+          <!-- <![endif]-->
+            <label class="gn-skin-when-time">
+              <select id="job_when_hr" name="job[when]">
+                <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option>
+              </select>
+            <!--[if !IE]> -->
+            </label>
+          </div>
+            <!-- <![endif]-->   
+          <!--[if !IE]> -->
+          <div class="notIE"><!-- <![endif]-->
+            <label class="gn-skin-when-time">
+              <select id="job_when_min" name="job[when]">
+                <option>00</option>
+                <option>15</option>
+                <option>30</option>
+                <option>45</option>
+              </select>
+            <!--[if !IE]> -->
+            </label>
+          </div> <!-- <![endif]-->   
+          <!--[if !IE]> -->
+          <div class="notIE"><!-- <![endif]-->
+            <label class="gn-skin-when-time-last">
+              <select id="job_when_meridian" name="job[when]">
+                <option>AM</option>
+                <option>PM</option>
+              </select>
+            <!--[if !IE]> -->
+            </label>
+          </div> <!-- <![endif]--> 
+          <label id="gn-checkbox-repeat-task" class="label-field">
+            <div class="icon checkbox">
+              <input type="checkbox" name="job[repeat]" class="job_repeat_task">
+            </div> 
+            Repetir tarea periódicamente
+          </label>
+        </div>      
+     </div>
+  </section>
+  <hr>
 
-<section class="gn-sub-form-when clearfix">
-  <div class="icon section calendar">&nbsp;</div>
-  <div class="field clearfix">
-    <label class="label-field">Requiero que esta tarea</label>
-    <ul>
-      <li>
-        <div class="notIE"><!-- <![endif]-->
-          <label>
-            <select id="" name="">
-              <option value="">Comience</option>
-            </select>
-          <!--[if !IE]> -->
-          </label>
-        </div>
-      </li>
-      <li>
-        <div class="notIE"><!-- <![endif]-->
-          <label>
-            <select id="" name="">
-              <option value="">Elige el día</option>
-            </select>
-          <!--[if !IE]> -->
-          </label>
-        </div>
-      </li>
-    </ul>
-  </div>
-  <div class="field clearfix last">      
-      <div class="gn-job-time clearfix">
-        <label class="label-field">a las:</label>
-        <!--[if !IE]> -->
-        <div class="notIE">
-        <!-- <![endif]-->
-          <label class="gn-skin-when-time">
-            <select id="job_when_hr" name="job[when]">
-              <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option>
-            </select>
-          <!--[if !IE]> -->
-          </label>
-        </div>
-          <!-- <![endif]-->   
-        <!--[if !IE]> -->
-        <div class="notIE"><!-- <![endif]-->
-          <label class="gn-skin-when-time">
-            <select id="job_when_min" name="job[when]">
-              <option>00</option>
-              <option>15</option>
-              <option>30</option>
-              <option>45</option>
-            </select>
-          <!--[if !IE]> -->
-          </label>
-        </div> <!-- <![endif]-->   
-        <!--[if !IE]> -->
-        <div class="notIE"><!-- <![endif]-->
-          <label class="gn-skin-when-time-last">
-            <select id="job_when_meridian" name="job[when]">
-              <option>AM</option>
-              <option>PM</option>
-            </select>
-          <!--[if !IE]> -->
-          </label>
-        </div> <!-- <![endif]--> 
-        <label id="gn-checkbox-repeat-task" class="label-field">
-          <div class="icon checkbox">
-            <input type="checkbox" name="job[repeat]" class="job_repeat_task">
-          </div> 
-          Repetir tarea periódicamente
+  <section class="gn-sub-form-where">
+      <div class="icon section map">&nbsp;</div>
+      <div class="field last ubicacion clearfix ">
+        <input type="text" name="job_address" gn="job_address" placeholder="Ubicación (calle y número, colonia, delegación)" maxlength="300" autocomplete="off" class="direccion">
+        <label class="checkbox label-field">
+          <div class="icon checkbox"><input type="checkbox" name="job_save_address" id="job_save_address">
+          </div> Guardar dirección
         </label>
-      </div>      
-   </div>
-</section>
-<hr>
-
-<section class="gn-sub-form-where">
-    <div class="icon section map">&nbsp;</div>
-    <div class="field last ubicacion clearfix ">
-      <input type="text" name="job_address" gn="job_address" placeholder="Ubicación (calle y número, colonia, delegación)" maxlength="300" autocomplete="off">
-      <label class="checkbox label-field">
-        <div class="icon checkbox"><input type="checkbox" name="job_save_address" id="job_save_address">
-        </div> Guardar dirección
-      </label>
-    </div>
-	<div class="field last ubicacion">
-	    <div class="label-highlight">Añadir referencias</div>
-	    <div class="label-highlight">Usar mis direcciones</div>
-	    <p><span class="icon padlock"></span>
-	      ¡No te preocupes! La dirección completa sólo se compartirá con el handy asignado
-	    </p>
-	</div>
-</section>
-<hr>
-
-<section class="gn-sub-form-money">
-  <div class="icon section money">&nbsp;</div>
-
-  <div class="field last">
-    <ul class="nav-tabs">
-      <li class="active"><a href="javascript:void(0);" data-toggle="tab1">Asignación rápida</a></li>
-      <li class=""><a href="javascript:void(0);" data-toggle="tab2">Revisar ofertas</a></li>
-    </ul>
-    <div class="tab-content">
-      <div class="tab-pane active" id="tab1">
-        <span>¿Cuanto estás dispuesta a pagar?
-          <div class="gn-icon guides small"></div>
-        </span>
-        <span>
-          <input type="text" name="job[offer]" id="job_offer" placeholder="$0.00 m.n." maxlength="200">
-          <label>Oferta promedio:</label>
-          <div class="job-flash">$000-00</div>
-        </span>
       </div>
-      <div class="tab-pane" id="tab2">
-      	<span class="info">Recibe ofertas de varios handys y elige la que más te guste <div class="icon guides small"></div></span>      	
+  	<div class="field last ubicacion">
+  	    <div class="label-highlight">Añadir referencias</div>
+  	    <div class="label-highlight">Usar mis direcciones</div>
+  	    <p><span class="icon padlock"></span>
+  	      ¡No te preocupes! La dirección completa sólo se compartirá con el handy asignado
+  	    </p>
+  	</div>
+  </section>
+  <hr>
+
+  <section class="gn-sub-form-money">
+    <div class="icon section money">&nbsp;</div>
+
+    <div class="field last">
+      <ul class="nav-tabs">
+        <li class="active"><a href="javascript:void(0);" data-toggle="tab1">Asignación rápida</a></li>
+        <li class=""><a href="javascript:void(0);" data-toggle="tab2">Revisar ofertas</a></li>
+      </ul>
+      <div class="tab-content">
+        <div class="tab-pane active" id="tab1">
+          <span>¿Cuanto estás dispuesta a pagar?
+            <div class="gn-icon guides small"></div>
+          </span>
+          <span>
+            <input type="text" name="job[offer]" id="job_offer" placeholder="$0.00 m.n." maxlength="200">
+            <label>Oferta promedio:</label>
+            <div class="job-flash">$000-00</div>
+          </span>
+        </div>
+        <div class="tab-pane" id="tab2">
+        	<span class="info">Recibe ofertas de varios handys y elige la que más te guste <div class="icon guides small"></div></span>      	
+        </div>
+      </div>
+      <div class="tab-footer label-field">El primer handy en aceptar tu oferta sera automaticamente asignado
       </div>
     </div>
-    <div class="tab-footer label-field">El primer handy en aceptar tu oferta sera automaticamente asignado
-    </div>
+  </section>
+  <hr>
+
+  <div class="actions">
+    <%= f.submit "" %>
   </div>
-</section>
-<hr>
-
-<div class="actions">
-  <input name="commit" type="submit" value="">
-</div>
+<% end %>

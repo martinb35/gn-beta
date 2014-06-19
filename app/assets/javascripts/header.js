@@ -26,7 +26,10 @@ var gn_header= {
   }
 }
 
-$(function(){
-	if ($('#brand').length)
-		gn_header.initialize($('#brand'));
-});
+var ready = function() {
+  if ($('#brand').length)
+    gn_header.initialize($('#brand'));
+};
+
+$(document).ready(ready);
+$(document).on('page:load', ready);

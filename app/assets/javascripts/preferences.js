@@ -30,6 +30,9 @@ var gn_preferences = {
   }
 }
 
-$(function(){
+var ready = function() {
   gn_preferences.initialize();
-});
+};
+
+$(document).ready(ready);
+$(document).on('page:load', ready);

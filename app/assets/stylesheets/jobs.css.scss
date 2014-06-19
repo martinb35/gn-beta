@@ -304,85 +304,39 @@ div#gn-new-job {
     input[type="radio"]{
       position: absolute;
     }
-  }
-  .icon.category.cocinar-hornear {
-    display: inline-block;
-    padding: 68px 0 0 65px;
-    background: url("/images/headerIcons_cook.png") no-repeat 0 0;
-    background-position: 0 2px;
-  }
-  .icon.category.limpieza-hogar {
-    display: inline-block;
-    padding: 68px 0 0 65px;
-    background: url("/images/sprite_headerIcons.png") no-repeat 0 0;
-    background-position: 0 12px;
-  }
-  .icon.category.otras-tareas-hogar {
-    display: inline-block;
-    padding: 68px 0 0 65px;
-    background: url("/images/sprite_headerIcons.png") no-repeat 0 0;
-    background-position: 0 12px;
-  }
-  .icon.category.limpieza-lugar {
-    display: inline-block;
-    padding: 68px 0 0 65px;
-    background: url("/images/sprite_headerIcons.png") no-repeat 0 0;
-    background-position: 0 12px;
-  }
-  .icon.category.ayuda-evento {
-    display: inline-block;
-    padding: 68px 0 0 65px;
-    background: url("/images/sprite_headerIcons.png") no-repeat 0 0;
-    background-position: 0 12px;
-  }
-  .icon.category.otras-tareas {
-    display: inline-block;
-    padding: 68px 0 0 65px;
-    background: url("/images/sprite_headerIcons.png") no-repeat 0 0;
-    background-position: 0 12px;
-  }
-  .icon.category.diseno-multimedia {
-    display: inline-block;
-    padding: 68px 0 0 65px;
-    background: url("/images/sprite_headerIcons.png") no-repeat 0 0;
-    background-position: 0 12px;
-  }
-  .icon.category.it-programacion {
-    display: inline-block;
-    padding: 68px 0 0 65px;
-    background: url("/images/sprite_headerIcons.png") no-repeat 0 0;
-    background-position: 0 12px;
-  }
-  .icon.category.otros-proyectos {
-    display: inline-block;
-    padding: 68px 0 0 65px;
-    background: url("/images/sprite_headerIcons.png") no-repeat 0 0;
-    background-position: 0 12px;
-  }
-  .icon.category.viaje-placer {
-    display: inline-block;
-    padding: 68px 0 0 65px;
-    background: url("/images/sprite_headerIcons.png") no-repeat 0 0;
-    background-position: 0 12px;
-  }
-  .icon.category.viaje-negocios {
-    display: inline-block;
-    padding: 68px 0 0 65px;
-    background: url("/images/sprite_headerIcons.png") no-repeat 0 0;
-    background-position: 0 12px;
-  }
-  .icon.category.viaje-grupo {
-    display: inline-block;
-    padding: 68px 0 0 65px;
-    background: url("/images/sprite_headerIcons.png") no-repeat 0 0;
-    background-position: 0 12px;
-  }
+  }  
+  .icon.category.limpieza-hogar,
+  .icon.category.otras-tareas-hogar,
+  .icon.category.cocinar-hornear,
+  .icon.category.limpieza-lugar,
+  .icon.category.ayuda-evento,
+  .icon.category.otras-tareas,
+  .icon.category.diseno-multimedia,
+  .icon.category.it-programacion,
+  .icon.category.otros-proyectos,
+  .icon.category.viaje-placer,
+  .icon.category.viaje-negocios,
+  .icon.category.viaje-grupo,
   .icon.category.otras-tareas-negocio {
     display: inline-block;
-    padding: 68px 0 0 65px;
+    padding: 48px 0 0 75px;
+    margin-top: 20px;
     background: url("/images/sprite_headerIcons.png") no-repeat 0 0;
-    background-position: 0 12px;
+    background-position: 0 2px;
   }
+  .icon.category.limpieza-hogar { background-position: 10px -94px; }
+  .icon.category.cocinar-hornear { background-position: 0px -190px; padding: 48px 0 0 87px; position: relative; left: -18px}
+  .icon.category.otras-tareas-hogar { background-position: 0 -298px; padding: 48px 0 0 70px;}
+  .icon.category.limpieza-lugar { background-position: 10px -94px; }
+  .icon.category.ayuda-evento { background-position: 0 -398px; }
+  .icon.category.otras-tareas { background-position: 0 -500px; }
+  .icon.category.diseno-multimedia { background-position: 0 -583px; }
+  .icon.category.it-programacion { background-position: 0 -700px; }
+  .icon.category.otros-proyectos { background-position: 0 -800px; }
+  .icon.category.viaje-placer { background-position: 0 -900px; }
+  .icon.category.viaje-negocios { background-position: 0 -1000px; }
+  .icon.category.viaje-grupo { background-position: 0 -1087px; }
+  .icon.category.otras-tareas-negocio { background-position: 0 -500px; }
 }
 /*End button*/
 
@@ -416,7 +370,7 @@ div#gn-new-job .uneditable-input {
   height: 20px;
   padding: 6px 10px 7px;
   font-size: 12px;
-  line-height: 20px;
+  line-height: 16px;
   color: #8e8e8e;
   vertical-align: middle;
       -webkit-border-radius: 5px;
@@ -540,7 +494,7 @@ div#gn-new-job {
       height: auto;
       .button.change-category {
         float: right;
-        margin-top: -50px;
+        margin-top: -60px;
       }
       select.category-title {
         font-size: 18px; font-size: 1.8rem; /* = 18px */

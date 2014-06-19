@@ -21,6 +21,9 @@ var gn_thank = {
   }
 }
 
-$(function(){
+var ready = function() {
   gn_thank.initialize();
-});
+};
+
+$(document).ready(ready);
+$(document).on('page:load', ready);

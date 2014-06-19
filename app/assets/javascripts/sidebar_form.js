@@ -60,7 +60,10 @@ var gn_sidebar_form = {
   }
 }
 
-$(function(){
+var ready = function() {
   if ($('.gn-sidebar').length)
     gn_sidebar_form.initialize($('.gn-sidebar'));
-});
+};
+
+$(document).ready(ready);
+$(document).on('page:load', ready);

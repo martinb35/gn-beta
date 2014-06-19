@@ -16,7 +16,11 @@ var gn_users = {
     });
   }
 }
-$(function(){
+
+var ready = function() {
   if($('body.users').length)
     gn_users.initialize($('body.users'));
-});
+};
+
+$(document).ready(ready);
+$(document).on('page:load', ready);
