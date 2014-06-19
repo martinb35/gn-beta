@@ -1,4 +1,7 @@
 GoninisB1::Application.routes.draw do
+  get "profile/index"
+  get "profile/edit"
+  resources :profile
   resources :services
   
   resources :demos
@@ -14,6 +17,8 @@ GoninisB1::Application.routes.draw do
     get  'login' => :new
     post 'login' => :create
     delete 'logout' => :destroy
+    get   'identify' => :identify
+    get   'recover' => :recover
   end
   
   get "sessions/create"

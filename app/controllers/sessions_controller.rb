@@ -20,4 +20,14 @@ class SessionsController < ApplicationController
     session[:user_id] = nil
     redirect_to tasks_url
   end
+
+  def identify
+    @publish = false
+    @branding = true  
+  end
+
+  def recover
+    @publish = false
+    @branding = true 
+  end
 end

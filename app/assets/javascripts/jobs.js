@@ -81,7 +81,10 @@ var gn_jobs = {
   }
 }
 
-$(function(){
+var ready = function() {
   if ($('.jobs').length)
     gn_jobs.initialize($('.jobs'));
-});
+};
+
+$(document).ready(ready);
+$(document).on('page:load', ready);

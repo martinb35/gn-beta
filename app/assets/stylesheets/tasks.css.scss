@@ -5,7 +5,7 @@
 .logo {
   background-position:0px -40px;
   width:240px;
-  height:57px;
+  height:80px;
 }
 section#brand {
   padding-top:24px;
@@ -40,19 +40,55 @@ section#brand {
   .logged {
     float: right;
     li {
-      display: inline-block;
-      font-family: 'Bitter', serif;      
+      font-family: 'Bitter', serif;
+      float: left;      
+    }
+    li.separador {
+      border-left: 1px solid white;
+      border-right: 1px solid #ADA9A9;
+      height: 28px;
+      margin: 4px 0;
     }
     li.usuario{
       a{
         color: #006b85;
         font-size: 14px;
+        display: inline-table;
+        span {
+          padding: 0 15px;
+        }
+        img, span{
+          display: table-cell;
+          vertical-align: middle;
+        }
       }
     }
     li.mensajes{
       width:20px;
       height:20px;
       background: url("sprite_icons.png") no-repeat -140px -105px;
+      margin: 8px 14px;
+      position: relative;
+      a {
+        visibility: hidden;
+        position: absolute;
+        top: -7px;
+        left: 14px;
+        background-color: #E4E4E4;
+        border: 1px solid #A3A4A7;
+        border-radius: 2px;
+        padding: 0 3px;
+        font-size: 11px;
+        height: 14px;
+        color: #0A0A0A;
+        font-weight: bold;
+      }   
+    }
+    li.mensajes.on{
+      background-position: -175px -105px;
+      a {        
+        visibility: visible;
+      }  
     }
     li.activo {
       background: url("sprite_icons.png") no-repeat -175px -105px;
@@ -64,6 +100,7 @@ section#brand {
         height: 26px;
         background: url("sprite_icons.png") no-repeat 0 -141px;
         display: block;
+        margin: 5px;
       }
       a.btn-submenu:hover{
         background-position: 0 -177px;
@@ -78,20 +115,30 @@ section#brand {
         padding: 10px;
         width: 222px;
         z-index: 10000000000;
+        line-height: 24px;
         li {
           display: block;
           text-align: right;
           color: #3b3c48;
           font-size: 12px;
+          float: none;
+          a {
+            padding-right: 10px
+          }
         }
         li:hover{
           background-color: #dfdfdf;
+          a {
+            color: #0A0A0A;
+            background-color: transparent;
+          }
         }
         hr {
           border-top: 1px solid #b3b3b3;
           border-bottom:  1px solid #ffffff;
           border-left: 0;
           border-right: 0;
+          margin: 5px   0;
         }  
       }
     }
@@ -256,6 +303,9 @@ section#categories {
   .service-icon.on {
     background-image:url(services-on-912x231.png);
     z-index:10;
+  }
+  .service-icon:hover {
+    background-image:url(services-hover-912x231.png);
   }
   .service-icon.temp {
     margin-right:0;

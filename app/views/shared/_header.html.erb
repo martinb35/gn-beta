@@ -9,9 +9,11 @@
             <span><%= @user_session['user_name'] %></span>
           </a>
         </li>
-        <li class="mensajes">
-          <a href=""></a>
+        <li class="separador"></li>
+        <li class="mensajes on">
+          <a href="">3</a>
         </li>
+        <li class="separador"></li>
         <li class="masOpciones">
           <a href="javascript:void(0);" class="btn-submenu"></a>
           <ul class="submenu">
@@ -21,7 +23,9 @@
             <li><a href="javascript:void(0);">Mis direcciones</a></li>
             <li><a href="javascript:void(0);">Mi tarjeta de crédito</a></li>
             <hr>
-            <li><a href="javascript:void(0);">Cuenta</a></li>
+            <li>
+              <%= link_to "Cuenta", controller: "profile", action: "index" %>
+            </li>
             <li><a href="javascript:void(0);">Publicar un pendiente o proyecto</a></li>
             <hr>
             <li><%= link_to 'Cerrar sesión', logout_path, method: :delete %></li>

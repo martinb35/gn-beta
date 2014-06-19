@@ -1,7 +1,7 @@
 <section id="instructions">
   <div class="wrapper">
     <nav>
-      <a href="#">Seguridad, nuestra tarea No. 1</a>
+      <a href="http://landing.goninis.com/seguridad">Seguridad, nuestra tarea No. 1</a>
       <a href="http://landing.goninis.com/como">¿Cómo funciona?</a>
       <a href="http://landing.goninis.com/porque"> ¿Por qué utilizar goninis?</a>
       <a href="http://landing.goninis.com/conviertete" class="last">Conviértete en Handy</a>
@@ -17,46 +17,48 @@
 
   <div class="clickable home service-icon on" option="service" show="right"></div>
   <nav class="submenu home clearfix" name="options" option="service">
-    <a href="#"><label>Limpieza de hogar</label></a>
+    <%= link_to('/jobs/new?form_id=3') do %>
+      <label>Limpieza de hogar</label>
+    <% end %>
     <div class="lineR"></div>
     <div class="lineL"></div>
-    <a href="#"><label>Cocinar / Hornear</label></a>
+    <a href="/jobs/new?form_id=4"><label>Cocinar / Hornear</label></a>
     <div class="lineR"></div>
     <div class="lineL"></div>
-    <a href="#"><label>Otras tareas del hogar</label></a>
+    <a href="/jobs/new?form_id=5"><label>Otras tareas del hogar</label></a>
   </nav>
 
   <div class="clickable business service-icon on" show="right" option="service"></div>
   <nav class="submenu business clearfix" name="options" option="service">
-    <a href="#"><label>Limpieza de lugar</label></a>
+    <a href="/jobs/new?form_id=6"><label>Limpieza de lugar</label></a>
     <div class="lineR"></div>
     <div class="lineL"></div>
-    <a href="#"><label>Ayuda por evento</label></a>
+    <a href="/jobs/new?form_id=7"><label>Ayuda por evento</label></a>
     <div class="lineR"></div>
     <div class="lineL"></div>
-    <a href="#"><label>Otras tareas</label></a>
+    <a href="/jobs/new?form_id=16"><label>Otras tareas</label></a>
   </nav>
 
   <div class="clickable pro service-icon on" option="service" show="left"></div>
   <nav class="submenu pro clearfix" name="options" option="service">
-    <a href="#"><label>Diseño y multimedia</label></a>
+    <a href="/jobs/new?form_id=9"><label>Diseño y multimedia</label></a>
     <div class="lineR"></div>
     <div class="lineL"></div>
-    <a href="#"><label>IT y Programación</label></a>
+    <a href="/jobs/new?form_id=10"><label>IT y Programación</label></a>
     <div class="lineR"></div>
     <div class="lineL"></div>
-    <a href="#"><label>Otros proyectos</label></a>
+    <a href="/jobs/new?form_id=11"><label>Otros proyectos</label></a>
   </nav>
 
   <div class="clickable temp service-icon on" show="left" option="service"></div>
   <nav class="submenu temp clearfix" name="options" option="service">
-    <a href="#"><label>Viaje de placer</label></a>
+    <a href="/jobs/new?form_id=12"><label>Viaje de placer</label></a>
     <div class="lineR"></div>
     <div class="lineL"></div>
-    <a href="#"><label>Viaje de negocios</label></a>
+    <a href="/jobs/new?form_id=13"><label>Viaje de negocios</label></a>
     <div class="lineR"></div>
     <div class="lineL"></div>
-    <a href="#"><label>Viaje en grupo</label></a>
+    <a href="/jobs/new?form_id=14"><label>Viaje en grupo</label></a>
   </nav>
 
   <div class="shadowR"></div>
