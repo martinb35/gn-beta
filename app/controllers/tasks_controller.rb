@@ -7,7 +7,6 @@ class TasksController < ApplicationController
     @service = Service.order(:title)
     job = JobCategory.where(title: 'Otras tareas').first
 
-    puts "step"
     if job.id
       @job_id = job.id
     else
