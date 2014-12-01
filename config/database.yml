@@ -5,7 +5,7 @@
 #   gem 'sqlite3'
 development:
   adapter: postgresql
-  database: gnbeta
+  database: goninis
   username: postgres
   password: chipi
   pool: 5
