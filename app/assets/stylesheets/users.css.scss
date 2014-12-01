@@ -16,17 +16,20 @@
   padding:30px 50px;
 }
 
-.contact-wrapper {  
-  width:239px;
+.contact-wrapper {
+  background:url(users_261x108.png) no-repeat;  
+  width:261px;
   margin-bottom:20px;
 }
 
 .address-wrapper {
-  width:239px;
+  background:url(users_261x109.png) no-repeat;
+  width:261px;
   margin-bottom:20px;
 }
 
 .birthdate-wrapper {
+  background:url(user_195x27.png) no-repeat;
   width:195px;
   height:27px;
   margin:10px 0;
@@ -98,7 +101,6 @@ div.container > form .address-wrapper > div.field {
 
 .prefs.bg {
   background:url(gender_1020x327.png) no-repeat;
-  width:1020px;
   height:327px;
   margin:10px auto;
   &.oficios-active{
