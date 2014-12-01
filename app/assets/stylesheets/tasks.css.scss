@@ -10,7 +10,7 @@
 section#brand {
   padding-top:24px;
   height:66px;
-  background-color:#e4e4e4;
+  /*background-color:#e4e4e4;*/
   h1 {
     white-space: nowrap;
     text-indent: -9999px;
@@ -184,11 +184,13 @@ section#instructions {
   }
 }
 section#categories {
+  background-color: white;
+}
+section#categories, section#profile {
   position:relative;
   min-height:478px;
   margin:0 auto;
-  width:982px;
-  background-color: white;
+  width:982px;  
   padding: 0; 
   .shadowL, .shadowR{
     width: 11px;
