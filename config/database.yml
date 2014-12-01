@@ -7,7 +7,7 @@ development:
   adapter: postgresql
   database: goninis
   username: postgres
-  password: gjpv
+  password: chipi
   pool: 5
   timeout: 5000
 
