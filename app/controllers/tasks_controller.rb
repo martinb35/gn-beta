@@ -5,7 +5,14 @@ class TasksController < ApplicationController
   def show
     @branding = true
     @service = Service.order(:title)
-    @job_category = JobCategory.where(title: 'Otras tareas').first
+    job = JobCategory.where(title: 'Otras tareas').first
+
+    if job.id
+      @job_id = job.id
+    else
+      @job_id = nil
+    end
+
     if !session[:user_id]
     	@user_session = nil
     else

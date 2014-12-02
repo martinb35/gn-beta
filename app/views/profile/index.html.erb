@@ -1,2 +1,21 @@
-<%= render(partial: "sidebar")  %>
-<%= render(partial: "show")  %>
+<section id="instructions">
+  <div class="wrapper">
+    <nav>
+      <a href="http://landing.goninis.com/seguridad">Seguridad, nuestra tarea No. 1</a>
+      <a href="http://landing.goninis.com/como">¿Cómo funciona?</a>
+      <a href="http://landing.goninis.com/porque"> ¿Por qué utilizar goninis?</a>
+      <a href="http://landing.goninis.com/conviertete" class="last">Conviértete en Handy</a>
+    </nav>
+  </div>
+</section>
+
+<section id="profile" class="clearfix">
+    <div class="shadowL"></div>
+
+    <div class="wrapperProfile">    
+        <%= render(partial: "sidebar")  %>
+        <%= render(partial: "edit")  %>
+    </div>
+
+    <div class="shadowR"></div>
+</section>

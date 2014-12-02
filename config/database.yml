@@ -5,9 +5,9 @@
 #   gem 'sqlite3'
 development:
   adapter: postgresql
-  database: gnbeta
+  database: goninis
   username: postgres
-  password: footoh7H
+  password: chipi
   pool: 5
   timeout: 5000
 
